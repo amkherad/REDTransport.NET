@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2019.1/system/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2019.1/system/resharper-host/local/Transient/ReSharperHost/v191/SolutionCaches/_REDTransport.NET.-76557525.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="REDTransport.NET" t="IncludeRecursive">
+        <e p="Client" t="Include" />
+        <e p="EndPointDescriptor.cs" t="Include" />
+        <e p="Http" t="Include">
+          <e p="HttpClientWrapper.cs" t="Include" />
+        </e>
+        <e p="PushNotification" t="Include">
+          <e p="IPushNotificationClient.cs" t="Include" />
+        </e>
+        <e p="REDTransport.NET.csproj" t="IncludeRecursive" />
+        <e p="Server" t="Include" />
+        <e p="Tasks" t="Include">
+          <e p="ITaskTrackerPersistentStorage.cs" t="Include" />
+          <e p="Message.cs" t="Include" />
+          <e p="TaskInfo.cs" t="Include" />
+          <e p="TaskTracker.cs" t="Include" />
+        </e>
+        <e p="Transporter.cs" t="Include" />
+        <e p="TransporterExtensions.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="REDTransport.NET.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="REDTransport.NET.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
