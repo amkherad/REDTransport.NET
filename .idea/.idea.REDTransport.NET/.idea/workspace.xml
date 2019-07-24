@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8193df90-7ec6-40df-8b83-94ad027df817" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/REDTransport.NET/EndPointDescriptor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/REDTransport.NET/Http/HttpClientWrapper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/REDTransport.NET/PushNotification/IPushNotificationClient.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/REDTransport.NET/Tasks/ITaskTrackerPersistentStorage.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/REDTransport.NET/Tasks/Message.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/REDTransport.NET/Tasks/TaskInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/REDTransport.NET/Tasks/TaskTracker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/REDTransport.NET/TransporterExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REDTransport.NET/PushNotification/IPushNotificationClient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET/PushNotification/IPushNotificationClient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REDTransport.NET/Tasks/Message.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET/Tasks/Message.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REDTransport.NET/Tasks/TaskInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET/Tasks/TaskInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REDTransport.NET/Tasks/TaskTracker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET/Tasks/TaskTracker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REDTransport.NET/Transporter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET/Transporter.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,31 +16,64 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/REDTransport.NET/Transporter.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="33" column="124" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="124" />
+            <state relative-caret-position="556">
+              <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
               <folding>
-                <marker date="1563967011234" expanded="true" signature="6:126" ph="..." />
-                <marker date="1563967011234" expanded="true" signature="154:1789" ph="{...}" />
-                <marker date="1563967011234" expanded="true" signature="185:1787" ph="{...}" />
-                <marker date="1563967011234" expanded="true" signature="385:598" ph="{...}" />
-                <marker date="1563967011234" expanded="true" signature="683:919" ph="{...}" />
-                <marker date="1563967011234" expanded="true" signature="937:962" ph="/* OK-OK ... */" />
-                <marker date="1563967011234" expanded="true" signature="1087:1781" ph="{...}" />
-                <marker date="1563967011234" expanded="true" signature="1110:1593" ph="/* var taskCompletionSource = new TaskCompletionSource&lt;T&gt;(); ... */" />
-                <marker date="1563967011234" expanded="true" signature="1713:1758" ph="{...}" />
+                <marker date="1563969261324" expanded="true" signature="6:198" ph="..." />
+                <marker date="1563969261324" expanded="true" signature="226:3076" ph="{...}" />
+                <marker date="1563969261324" expanded="true" signature="257:3074" ph="{...}" />
+                <marker date="1563969261324" expanded="true" signature="574:836" ph="{...}" />
+                <marker date="1563969261324" expanded="true" signature="889:1090" ph="{...}" />
+                <marker date="1563969261324" expanded="true" signature="1167:1403" ph="{...}" />
+                <marker date="1563969261324" expanded="true" signature="1433:1732" ph="{...}" />
+                <marker date="1563969261324" expanded="true" signature="1519:1720" ph="{...}" />
+                <marker date="1563969261324" expanded="true" signature="1600:1706" ph="{...}" />
+                <marker date="1563969261324" expanded="true" signature="1743:1768" ph="/* OK-OK ... */" />
+                <marker date="1563969261324" expanded="true" signature="1903:2426" ph="{...}" />
+                <marker date="1563969261324" expanded="true" signature="2204:2326" ph="{...}" />
+                <marker date="1563969261324" expanded="true" signature="2564:3068" ph="{...}" />
+                <marker date="1563969261324" expanded="true" signature="2587:3058" ph="/* var taskCompletionSource = new TaskCompletionSource&lt;T&gt;(); ... */" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/TaskInfo.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+              <folding>
+                <marker date="1563969061460" expanded="true" signature="63:351" ph="{...}" />
+                <marker date="1563969061460" expanded="true" signature="91:349" ph="{...}" />
+                <marker date="1563969061460" expanded="true" signature="266:343" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/REDTransport.NET/PushNotification/IPushNotificationClient.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+              <folding>
+                <marker date="1563968467078" expanded="true" signature="6:43" ph="..." />
+                <marker date="1563968467078" expanded="true" signature="88:206" ph="{...}" />
+                <marker date="1563968467078" expanded="true" signature="135:204" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/REDTransport.NET/TransporterExtensions.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+            <state relative-caret-position="100">
+              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
               <folding>
                 <marker date="1563967011254" expanded="true" signature="6:67" ph="..." />
                 <marker date="1563967011254" expanded="true" signature="95:536" ph="{...}" />
@@ -60,40 +90,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/Message.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-              <folding>
-                <marker date="1563966875719" expanded="true" signature="32:82" ph="{...}" />
-                <marker date="1563966875719" expanded="true" signature="59:80" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/REDTransport.NET/PushNotification/IPushNotificationClient.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-              <folding>
-                <marker date="1563966774073" expanded="true" signature="43:113" ph="{...}" />
-                <marker date="1563966774073" expanded="true" signature="90:111" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/TaskTracker.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+            <state relative-caret-position="220">
+              <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
               <folding>
-                <marker date="1563965400116" expanded="true" signature="32:337" ph="{...}" />
-                <marker date="1563965400116" expanded="true" signature="63:335" ph="{...}" />
-                <marker date="1563965400116" expanded="true" signature="258:329" ph="{...}" />
+                <marker date="1563968814808" expanded="true" signature="67:730" ph="{...}" />
+                <marker date="1563968814808" expanded="true" signature="98:728" ph="{...}" />
+                <marker date="1563968814808" expanded="true" signature="344:476" ph="{...}" />
+                <marker date="1563968814808" expanded="true" signature="557:722" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -108,19 +113,6 @@
                 <marker date="1563965448105" expanded="true" signature="6:63" ph="..." />
                 <marker date="1563965448105" expanded="true" signature="97:269" ph="{...}" />
                 <marker date="1563965448105" expanded="true" signature="174:267" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/TaskInfo.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-              <folding>
-                <marker date="1563965396526" expanded="true" signature="32:83" ph="{...}" />
-                <marker date="1563965396526" expanded="true" signature="60:81" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -190,14 +182,14 @@
         <option value="$PROJECT_DIR$/REDTransport.NET/Task/TaskTracker.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET/Task/TaskInfo.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET/Task/ITaskTrackerPersistentStorage.cs" />
-        <option value="$PROJECT_DIR$/REDTransport.NET/Tasks/TaskInfo.cs" />
-        <option value="$PROJECT_DIR$/REDTransport.NET/Tasks/TaskTracker.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET/Tasks/ITaskTrackerPersistentStorage.cs" />
-        <option value="$PROJECT_DIR$/REDTransport.NET/PushNotification/IPushNotificationClient.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET/Tasks/Action.cs" />
-        <option value="$PROJECT_DIR$/REDTransport.NET/Tasks/Message.cs" />
-        <option value="$PROJECT_DIR$/REDTransport.NET/Transporter.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET/TransporterExtensions.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET/PushNotification/IPushNotificationClient.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET/Tasks/Message.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET/Tasks/TaskTracker.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET/Tasks/TaskInfo.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET/Transporter.cs" />
       </list>
     </option>
   </component>
@@ -234,6 +226,24 @@
               <item name="" type="784c90a0:SolutionExplorerRootNode" />
               <item name="REDTransport.NET" type="24d0babc:SolutionExplorerModelNode" />
               <item name="REDTransport.NET" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="REDTransport.NET" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="REDTransport.NET" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Http" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="REDTransport.NET" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="REDTransport.NET" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="PushNotification" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="REDTransport.NET" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="REDTransport.NET" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Tasks" type="24d0babc:SolutionExplorerModelNode" />
             </path>
           </expand>
           <select />
@@ -273,12 +283,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1563962218388</updated>
-      <workItem from="1563962223729" duration="4032000" />
+      <workItem from="1563962223729" duration="6377000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4032000" />
+    <option name="totallyTimeSpent" value="6377000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -301,7 +311,7 @@
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Unit Tests" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" weight="0.3292402" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -361,20 +371,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Http/HttpClientWrapper.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="34" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="34" />
-          <folding>
-            <marker date="1563962925463" expanded="true" signature="55:359" ph="{...}" />
-            <marker date="1563962925463" expanded="true" signature="105:357" ph="{...}" />
-            <marker date="1563962925463" expanded="true" signature="146:166" ph="{...}" />
-            <marker date="1563962925463" expanded="true" signature="228:248" ph="{...}" />
-            <marker date="1563962925463" expanded="true" signature="331:351" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4934096A-08F5-4F40-9E9D-4A4C306EFBE3/c1/33e99b5b/TaskCompletionSource`1.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="760">
@@ -401,25 +397,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/TaskInfo.cs">
+    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Http/HttpClientWrapper.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
-          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="34" />
           <folding>
-            <marker date="1563965396526" expanded="true" signature="32:83" ph="{...}" />
-            <marker date="1563965396526" expanded="true" signature="60:81" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/ITaskTrackerPersistentStorage.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-          <folding>
-            <marker date="1563965448105" expanded="true" signature="6:63" ph="..." />
-            <marker date="1563965448105" expanded="true" signature="97:269" ph="{...}" />
-            <marker date="1563965448105" expanded="true" signature="174:267" ph="{...}" />
+            <marker date="1563962925463" expanded="true" signature="55:359" ph="{...}" />
+            <marker date="1563962925463" expanded="true" signature="105:357" ph="{...}" />
+            <marker date="1563962925463" expanded="true" signature="146:166" ph="{...}" />
+            <marker date="1563962925463" expanded="true" signature="228:248" ph="{...}" />
+            <marker date="1563962925463" expanded="true" signature="331:351" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -438,25 +425,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/PushNotification/IPushNotificationClient.cs">
+    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/ITaskTrackerPersistentStorage.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        <state relative-caret-position="180">
+          <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
           <folding>
-            <marker date="1563966774073" expanded="true" signature="43:113" ph="{...}" />
-            <marker date="1563966774073" expanded="true" signature="90:111" ph="{...}" />
+            <marker date="1563965448105" expanded="true" signature="6:63" ph="..." />
+            <marker date="1563965448105" expanded="true" signature="97:269" ph="{...}" />
+            <marker date="1563965448105" expanded="true" signature="174:267" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/TaskTracker.cs">
+    <entry file="file://$PROJECT_DIR$/REDTransport.NET/PushNotification/IPushNotificationClient.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <marker date="1563968467078" expanded="true" signature="6:43" ph="..." />
+            <marker date="1563968467078" expanded="true" signature="88:206" ph="{...}" />
+            <marker date="1563968467078" expanded="true" signature="135:204" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/Message.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
-          <caret line="5" column="8" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           <folding>
-            <marker date="1563965400116" expanded="true" signature="32:337" ph="{...}" />
-            <marker date="1563965400116" expanded="true" signature="63:335" ph="{...}" />
-            <marker date="1563965400116" expanded="true" signature="258:329" ph="{...}" />
+            <marker date="1563968467048" expanded="true" signature="32:207" ph="{...}" />
+            <marker date="1563968467048" expanded="true" signature="59:205" ph="{...}" />
+            <marker date="1563968467048" expanded="true" signature="126:199" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -464,44 +464,63 @@
     <entry file="file://$PROJECT_DIR$/REDTransport.NET/REDTransport.NET.csproj">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/Message.cs">
+    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/TaskTracker.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        <state relative-caret-position="220">
+          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
           <folding>
-            <marker date="1563966875719" expanded="true" signature="32:82" ph="{...}" />
-            <marker date="1563966875719" expanded="true" signature="59:80" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Transporter.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="33" column="124" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="124" />
-          <folding>
-            <marker date="1563967011234" expanded="true" signature="6:126" ph="..." />
-            <marker date="1563967011234" expanded="true" signature="154:1789" ph="{...}" />
-            <marker date="1563967011234" expanded="true" signature="185:1787" ph="{...}" />
-            <marker date="1563967011234" expanded="true" signature="385:598" ph="{...}" />
-            <marker date="1563967011234" expanded="true" signature="683:919" ph="{...}" />
-            <marker date="1563967011234" expanded="true" signature="937:962" ph="/* OK-OK ... */" />
-            <marker date="1563967011234" expanded="true" signature="1087:1781" ph="{...}" />
-            <marker date="1563967011234" expanded="true" signature="1110:1593" ph="/* var taskCompletionSource = new TaskCompletionSource&lt;T&gt;(); ... */" />
-            <marker date="1563967011234" expanded="true" signature="1713:1758" ph="{...}" />
+            <marker date="1563968814808" expanded="true" signature="67:730" ph="{...}" />
+            <marker date="1563968814808" expanded="true" signature="98:728" ph="{...}" />
+            <marker date="1563968814808" expanded="true" signature="344:476" ph="{...}" />
+            <marker date="1563968814808" expanded="true" signature="557:722" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/REDTransport.NET/TransporterExtensions.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        <state relative-caret-position="100">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
           <folding>
             <marker date="1563967011254" expanded="true" signature="6:67" ph="..." />
             <marker date="1563967011254" expanded="true" signature="95:536" ph="{...}" />
             <marker date="1563967011254" expanded="true" signature="143:534" ph="{...}" />
             <marker date="1563967011254" expanded="true" signature="324:528" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/TaskInfo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+          <folding>
+            <marker date="1563969061460" expanded="true" signature="63:351" ph="{...}" />
+            <marker date="1563969061460" expanded="true" signature="91:349" ph="{...}" />
+            <marker date="1563969061460" expanded="true" signature="266:343" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Transporter.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+          <folding>
+            <marker date="1563969261324" expanded="true" signature="6:198" ph="..." />
+            <marker date="1563969261324" expanded="true" signature="226:3076" ph="{...}" />
+            <marker date="1563969261324" expanded="true" signature="257:3074" ph="{...}" />
+            <marker date="1563969261324" expanded="true" signature="574:836" ph="{...}" />
+            <marker date="1563969261324" expanded="true" signature="889:1090" ph="{...}" />
+            <marker date="1563969261324" expanded="true" signature="1167:1403" ph="{...}" />
+            <marker date="1563969261324" expanded="true" signature="1433:1732" ph="{...}" />
+            <marker date="1563969261324" expanded="true" signature="1519:1720" ph="{...}" />
+            <marker date="1563969261324" expanded="true" signature="1600:1706" ph="{...}" />
+            <marker date="1563969261324" expanded="true" signature="1743:1768" ph="/* OK-OK ... */" />
+            <marker date="1563969261324" expanded="true" signature="1903:2426" ph="{...}" />
+            <marker date="1563969261324" expanded="true" signature="2204:2326" ph="{...}" />
+            <marker date="1563969261324" expanded="true" signature="2564:3068" ph="{...}" />
+            <marker date="1563969261324" expanded="true" signature="2587:3058" ph="/* var taskCompletionSource = new TaskCompletionSource&lt;T&gt;(); ... */" />
           </folding>
         </state>
       </provider>
