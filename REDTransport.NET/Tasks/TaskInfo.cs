@@ -1,15 +1,23 @@
+using System;
 using System.Threading.Tasks;
 
 namespace REDTransport.NET.Tasks
 {
-    public class TaskInfo
+    public class TaskInfo<T>
     {
-        public TaskCompletionSource<Message> TaskCompletionSource { get; }
+        public TaskCompletionSource<T> TaskCompletionSource { get; }
+        
+        public TimeSpan? Timeout { get; }
         
         
-        public TaskInfo(TaskCompletionSource<Message> taskCompletionSource)
+        public TaskInfo(TaskCompletionSource<T> taskCompletionSource)
         {
             TaskCompletionSource = taskCompletionSource;
+        }
+        public TaskInfo(TaskCompletionSource<T> taskCompletionSource, TimeSpan? timeout)
+        {
+            TaskCompletionSource = taskCompletionSource;
+            Timeout = timeout;
         }
     }
 }

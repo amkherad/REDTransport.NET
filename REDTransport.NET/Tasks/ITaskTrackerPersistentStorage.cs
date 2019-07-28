@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 
 namespace REDTransport.NET.Tasks
 {
-    public interface ITaskTrackerPersistentStorage : ICollection<TaskInfo>
+    public interface ITaskTrackerPersistentStorage<T> : ICollection<TaskInfo<T>>
     {
-        Task<IEnumerable<TaskInfo>> PendingTasks { get; set; }
+        Task<IEnumerable<TaskInfo<T>>> PendingTasks { get; set; }
         
         
     }

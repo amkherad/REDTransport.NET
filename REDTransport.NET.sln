@@ -2,6 +2,19 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REDTransport.NET", "REDTransport.NET\REDTransport.NET.csproj", "{D3CCDBBA-5B25-4615-BD79-E759FFE4533D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REDTransport.NET.SignalR.Client", "REDTransport.NET.SignalR.Client\REDTransport.NET.SignalR.Client.csproj", "{113BCA75-FB03-426B-A44D-F10E18F7711E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REDTransport.NET.SignalR", "REDTransport.NET.SignalR\REDTransport.NET.SignalR.csproj", "{609E2B0F-CD30-48DE-B304-76035DDA1A69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REDTransport.NET.RESTClient", "REDTransport.NET.RESTClient\REDTransport.NET.RESTClient.csproj", "{18AE1C5E-3E38-46E3-AACE-6345C9388A9D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6F77980F-98A6-411F-BB8D-2ADAF48B410A}"
+ProjectSection(SolutionItems) = preProject
+	.nuget\.version = .nuget\.version
+	.nuget\nuget-publish-dev.sh = .nuget\nuget-publish-dev.sh
+	.nuget\nuget-publish.sh = .nuget\nuget-publish.sh
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +25,17 @@ Global
 		{D3CCDBBA-5B25-4615-BD79-E759FFE4533D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3CCDBBA-5B25-4615-BD79-E759FFE4533D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3CCDBBA-5B25-4615-BD79-E759FFE4533D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{113BCA75-FB03-426B-A44D-F10E18F7711E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{113BCA75-FB03-426B-A44D-F10E18F7711E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{113BCA75-FB03-426B-A44D-F10E18F7711E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{113BCA75-FB03-426B-A44D-F10E18F7711E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{609E2B0F-CD30-48DE-B304-76035DDA1A69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{609E2B0F-CD30-48DE-B304-76035DDA1A69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{609E2B0F-CD30-48DE-B304-76035DDA1A69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{609E2B0F-CD30-48DE-B304-76035DDA1A69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18AE1C5E-3E38-46E3-AACE-6345C9388A9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18AE1C5E-3E38-46E3-AACE-6345C9388A9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18AE1C5E-3E38-46E3-AACE-6345C9388A9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18AE1C5E-3E38-46E3-AACE-6345C9388A9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

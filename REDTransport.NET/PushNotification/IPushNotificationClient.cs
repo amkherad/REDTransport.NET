@@ -1,10 +1,11 @@
-using System;
-using REDTransport.NET.Tasks;
+using System.Collections.Generic;
+using System.Threading;
+using REDTransport.NET.Message;
 
 namespace REDTransport.NET.PushNotification
 {
     public interface IPushNotificationClient
     {
-        void RegisterCallback(Action<Message> callback);
+        IAsyncEnumerable<ResponseMessage> Listen(CancellationToken cancellationToken);
     }
 }

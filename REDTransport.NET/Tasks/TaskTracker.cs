@@ -2,25 +2,31 @@ using System.Collections.Generic;
 
 namespace REDTransport.NET.Tasks
 {
-    public class TaskTracker
+    public class TaskTracker<T>
     {
-        public ITaskTrackerPersistentStorage PersistentStorage { get; set; }
+        public ITaskTrackerPersistentStorage<T> PersistentStorage { get; protected set; }
 
-        private Dictionary<int, TaskInfo> _taskMappings;  
         
-        
-        
-        public TaskTracker(ITaskTrackerPersistentStorage persistentStorage)
+        private readonly Dictionary<string, TaskInfo<T>> _taskMappings;
+
+
+        public TaskTracker(
+            ITaskTrackerPersistentStorage<T> persistentStorage
+        )
         {
-            _taskMappings = new Dictionary<int, TaskInfo>();
+            _taskMappings = new Dictionary<string, TaskInfo<T>>();
             PersistentStorage = persistentStorage;
         }
 
-        public bool TryGetTaskByMessage(Message message, out TaskInfo taskInfo)
+        public bool TryGetTaskByUniqueId(string correlationId, out TaskInfo<T> taskInfo)
         {
-            var messageId = Message.GetMessageId(message).GetHashCode();
+            return _taskMappings.TryGetValue(correlationId, out taskInfo);
+        }
 
-            return _taskMappings.TryGetValue(messageId, out taskInfo);
+
+        public void Track(string correlationId, TaskInfo<T> trackedTask)
+        {
+            _taskMappings.Add(correlationId, trackedTask);
         }
     }
 }

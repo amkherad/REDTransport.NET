@@ -5,7 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Server" />
+      <ProjectReference Include="..\REDTransport.NET\REDTransport.NET.csproj" />
     </ItemGroup>
 
 </Project>
