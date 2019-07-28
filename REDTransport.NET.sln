@@ -15,6 +15,10 @@ ProjectSection(SolutionItems) = preProject
 	.nuget\nuget-publish.sh = .nuget\nuget-publish.sh
 EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REDTransport.NET.Server.AspNet", "REDTransport.NET.Server.AspNet\REDTransport.NET.Server.AspNet.csproj", "{0F730FEA-1457-48F9-A428-29E0327CF2C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REDTransport.NET.SignalR.Server", "REDTransport.NET.SignalR.Server\REDTransport.NET.SignalR.Server.csproj", "{B62EF079-8CA1-4B65-8788-769B90802866}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,5 +41,13 @@ Global
 		{18AE1C5E-3E38-46E3-AACE-6345C9388A9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18AE1C5E-3E38-46E3-AACE-6345C9388A9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18AE1C5E-3E38-46E3-AACE-6345C9388A9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F730FEA-1457-48F9-A428-29E0327CF2C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F730FEA-1457-48F9-A428-29E0327CF2C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F730FEA-1457-48F9-A428-29E0327CF2C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F730FEA-1457-48F9-A428-29E0327CF2C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B62EF079-8CA1-4B65-8788-769B90802866}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B62EF079-8CA1-4B65-8788-769B90802866}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B62EF079-8CA1-4B65-8788-769B90802866}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B62EF079-8CA1-4B65-8788-769B90802866}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
