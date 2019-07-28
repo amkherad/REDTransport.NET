@@ -14,6 +14,9 @@
       </e>
       <e p="REDTransport.NET" t="IncludeRecursive">
         <e p="EndPointDescriptor.cs" t="Include" />
+        <e p="Http" t="Include">
+          <e p="HttpConverter.cs" t="Include" />
+        </e>
         <e p="Message" t="Include">
           <e p="RequestMessage.cs" t="Include" />
           <e p="ResponseActions.cs" t="Include" />
@@ -43,8 +46,8 @@
         </e>
       </e>
       <e p="REDTransport.NET.RESTClient" t="IncludeRecursive">
+        <e p="HttpTransporter.cs" t="Include" />
         <e p="REDTransport.NET.RESTClient.csproj" t="IncludeRecursive" />
-        <e p="Transporter.cs" t="Include" />
         <e p="TransporterExtensions.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
@@ -93,8 +96,8 @@
         </e>
       </e>
       <e p="REDTransport.NET.SignalR.Server" t="IncludeRecursive">
-        <e p="Class1.cs" t="Include" />
         <e p="REDTransport.NET.SignalR.Server.csproj" t="IncludeRecursive" />
+        <e p="SignalRHub.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

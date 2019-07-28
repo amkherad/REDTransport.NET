@@ -4,21 +4,21 @@ using System.Net.Http.Headers;
 using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
-using REDTransport.NET.RESTClient;
+using REDTransport.NET.Message;
 
-namespace REDTransport.NET
+namespace REDTransport.NET.RESTClient
 {
-    public static class TransporterExtensions
+    public static class HttpTransporterExtensions
     {
-        public static Task<HttpResponseMessage> SendAsync(
-            this Transporter transporter,
+        public static Task<ResponseMessage> SendAsync(
+            this HttpTransporter httpTransporter,
             HttpMethod method,
             Uri requestUri,
             HttpRequestHeaders headers,
             HttpContent content,
             CancellationToken cancellationToken)
         {
-            if (transporter == null) throw new ArgumentNullException(nameof(transporter));
+            if (httpTransporter == null) throw new ArgumentNullException(nameof(httpTransporter));
 
             var message = new HttpRequestMessage(method, requestUri)
             {
@@ -33,29 +33,29 @@ namespace REDTransport.NET
                 }
             }
 
-            return transporter.SendAsync(message, cancellationToken);
+            return httpTransporter.SendAsync(message, cancellationToken);
         }
 
-        public static Task<HttpResponseMessage> GetAsync(
-            this Transporter transporter,
+        public static Task<ResponseMessage> GetAsync(
+            this HttpTransporter httpTransporter,
             Uri requestUri,
             CancellationToken cancellationToken)
         {
-            if (transporter == null) throw new ArgumentNullException(nameof(transporter));
+            if (httpTransporter == null) throw new ArgumentNullException(nameof(httpTransporter));
 
             var message = new HttpRequestMessage(HttpMethod.Get, requestUri);
 
-            return transporter.SendAsync(message, cancellationToken);
+            return httpTransporter.SendAsync(message, cancellationToken);
         }
 
         public static async Task<T> GetAsync<T>(
-            this Transporter transporter,
+            this HttpTransporter httpTransporter,
             Uri requestUri,
             CancellationToken cancellationToken)
         {
-            if (transporter == null) throw new ArgumentNullException(nameof(transporter));
+            if (httpTransporter == null) throw new ArgumentNullException(nameof(httpTransporter));
 
-            var response = await transporter.GetAsync(requestUri, cancellationToken);
+            var response = await httpTransporter.GetAsync(requestUri, cancellationToken);
 
             var jsonStream = await response.Content.ReadAsStreamAsync();
 

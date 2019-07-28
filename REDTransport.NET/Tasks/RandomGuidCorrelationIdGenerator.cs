@@ -1,11 +1,11 @@
 using System;
-using System.Net.Http;
+using REDTransport.NET.Message;
 
 namespace REDTransport.NET.Tasks
 {
     public class RandomGuidCorrelationIdGenerator : ICorrelationIdGenerator
     {
-        public string GenerateNewId(HttpRequestMessage message)
+        public string GenerateNewId(RequestMessage message)
         {
             return Guid.NewGuid().ToString("D");
         }

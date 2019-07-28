@@ -1,9 +1,9 @@
-using System.Net.Http;
+using REDTransport.NET.Message;
 
 namespace REDTransport.NET.Tasks
 {
     public interface ICorrelationIdGenerator
     {
-        string GenerateNewId(HttpRequestMessage message);
+        string GenerateNewId(RequestMessage message);
     }
 }
