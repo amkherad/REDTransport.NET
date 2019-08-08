@@ -18,14 +18,14 @@ namespace REDTransport.NET.RESTClient
 
         public IPushNotificationClient PushNotificationClient { get; set; }
 
-        public HttpConverter HttpConverter { get; }
+        public DefaultHttpConverter HttpConverter { get; }
 
 
         public HttpTransporter(
             HttpClient httpClient,
             TaskTracker<ResponseMessage> taskTracker,
             IPushNotificationClient pushNotificationClient,
-            HttpConverter httpConverter
+            DefaultHttpConverter httpConverter
         )
         {
             if (taskTracker == null) throw new ArgumentNullException(nameof(taskTracker));
@@ -40,7 +40,7 @@ namespace REDTransport.NET.RESTClient
 
         public HttpTransporter(
             ITaskTrackerPersistentStorage<ResponseMessage> persistentStorage,
-            IPushNotificationClient pushNotificationClient, HttpConverter httpConverter
+            IPushNotificationClient pushNotificationClient, DefaultHttpConverter httpConverter
         )
         {
             if (persistentStorage == null) throw new ArgumentNullException(nameof(persistentStorage));
@@ -130,11 +130,11 @@ namespace REDTransport.NET.RESTClient
 
                                 TaskTracker.Track(correlationId, trackedTask);
 
-                                var responseMessage = HttpConverter.ToHttpResponseMessage(response.Result);
+                                var responseMessage = HttpConverter.FromHttpResponseMessage(response.Result);
                                 
                                 taskCompletionSource.SetResult(
                                     new Tuple<ResponseMessage, Task<ResponseMessage>>(
-                                        ,
+                                        responseMessage,
                                         innerTask.Task
                                     )
                                 );
@@ -146,8 +146,10 @@ namespace REDTransport.NET.RESTClient
                         //case ResponseActions.Normal:
                         default:
                         {
+                            var responseMessage = HttpConverter.FromHttpResponseMessage(response.Result);
+
                             taskCompletionSource.SetResult(
-                                new Tuple<ResponseMessage, Task<ResponseMessage>>(response.Result, null)
+                                new Tuple<ResponseMessage, Task<ResponseMessage>>(responseMessage, null)
                             );
 
                             break;
@@ -166,7 +168,9 @@ namespace REDTransport.NET.RESTClient
 
             cancellationToken.Register(() => taskCompletionSource.SetCanceled());
 
-            var task = HttpClient.SendAsync(message, cancellationToken)
+            var httpRequestMessage = HttpConverter.ToHttpRequestMessage(message);
+            
+            var task = HttpClient.SendAsync(httpRequestMessage, cancellationToken)
                 .ContinueWith(response =>
                 {
                     if (response.IsFaulted)

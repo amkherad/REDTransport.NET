@@ -36,7 +36,6 @@ nugetPack() {
 #!param $2 source path          (i.e. http://repo.com/)
 nugetAddToSource() {
 
-    rm -r "$1/.repo/*"
     PACK_PATH="$1/.pack/*"
     for nupkg in $PACK_PATH;do
         if [ "$2" != "" ];then
@@ -70,7 +69,11 @@ EOF
     done
 }
 
+
+rm -r "${tempPath}/.pack/"
+
 nugetRecursivePack ..
+
 nugetAddToSource "$tempPath" "$source" 
 
 exit 0

@@ -3,7 +3,7 @@ using REDTransport.NET.Message;
 
 namespace REDTransport.NET.Http
 {
-    public class HttpConverter
+    public class DefaultHttpConverter : IHttpConverter
     {
         public HttpRequestMessage ToHttpRequestMessage(RequestMessage requestMessage)
         {

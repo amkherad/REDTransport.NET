@@ -19,6 +19,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REDTransport.NET.Server.Asp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REDTransport.NET.SignalR.Server", "REDTransport.NET.SignalR.Server\REDTransport.NET.SignalR.Server.csproj", "{B62EF079-8CA1-4B65-8788-769B90802866}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REDTransport.NET.Server.AspNet.GraphQL", "REDTransport.NET.Server.AspNet.GraphQL\REDTransport.NET.Server.AspNet.GraphQL.csproj", "{0A87C937-9CD1-428C-A2AC-E01CB3F8C282}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REDTransport.NET.Server.AspNet.OData", "REDTransport.NET.Server.AspNet.OData\REDTransport.NET.Server.AspNet.OData.csproj", "{31AF991E-7B8A-461B-8465-F9DAF91EF47D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REDTransport.NET.Server.AspNet.Crud", "REDTransport.NET.Server.AspNet.Crud\REDTransport.NET.Server.AspNet.Crud.csproj", "{6F8D2BB6-14AC-41F2-8B4D-BF007E335C75}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,5 +55,17 @@ Global
 		{B62EF079-8CA1-4B65-8788-769B90802866}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B62EF079-8CA1-4B65-8788-769B90802866}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B62EF079-8CA1-4B65-8788-769B90802866}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A87C937-9CD1-428C-A2AC-E01CB3F8C282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A87C937-9CD1-428C-A2AC-E01CB3F8C282}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A87C937-9CD1-428C-A2AC-E01CB3F8C282}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A87C937-9CD1-428C-A2AC-E01CB3F8C282}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31AF991E-7B8A-461B-8465-F9DAF91EF47D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31AF991E-7B8A-461B-8465-F9DAF91EF47D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31AF991E-7B8A-461B-8465-F9DAF91EF47D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31AF991E-7B8A-461B-8465-F9DAF91EF47D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F8D2BB6-14AC-41F2-8B4D-BF007E335C75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F8D2BB6-14AC-41F2-8B4D-BF007E335C75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F8D2BB6-14AC-41F2-8B4D-BF007E335C75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F8D2BB6-14AC-41F2-8B4D-BF007E335C75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

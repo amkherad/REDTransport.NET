@@ -15,7 +15,8 @@
       <e p="REDTransport.NET" t="IncludeRecursive">
         <e p="EndPointDescriptor.cs" t="Include" />
         <e p="Http" t="Include">
-          <e p="HttpConverter.cs" t="Include" />
+          <e p="DefaultHttpConverter.cs" t="Include" />
+          <e p="IHttpConverter.cs" t="Include" />
         </e>
         <e p="Message" t="Include">
           <e p="RequestMessage.cs" t="Include" />
@@ -61,11 +62,55 @@
       <e p="REDTransport.NET.Server.AspNet" t="IncludeRecursive">
         <e p="REDTransport.NET.Server.AspNet.csproj" t="IncludeRecursive" />
         <e p="RedTransportMiddleware.cs" t="Include" />
+        <e p="RedTransportMiddlewareConfiguration.cs" t="Include" />
+        <e p="RedTransportMiddlewareExtensions.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.0" t="Include">
               <e p="REDTransport.NET.Server.AspNet.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="REDTransport.NET.Server.AspNet.Crud" t="IncludeRecursive">
+        <e p="Controllers" t="Include">
+          <e p="BaseCrudController.cs" t="Include" />
+        </e>
+        <e p="REDTransport.NET.Server.AspNet.Crud.csproj" t="IncludeRecursive" />
+        <e p="RedTransportCrudContext.cs" t="Include" />
+        <e p="RedTransportCrudExtensions.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="REDTransport.NET.Server.AspNet.Crud.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="REDTransport.NET.Server.AspNet.GraphQL" t="IncludeRecursive">
+        <e p="REDTransport.NET.Server.AspNet.GraphQL.csproj" t="IncludeRecursive" />
+        <e p="RedTransportGraphQLExtensions.cs" t="Include" />
+        <e p="RedTransportGraphQLMiddleware.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="REDTransport.NET.Server.AspNet.GraphQL.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="REDTransport.NET.Server.AspNet.OData" t="IncludeRecursive">
+        <e p="REDTransport.NET.Server.AspNet.OData.csproj" t="IncludeRecursive" />
+        <e p="RedTransportODataExtensions.cs" t="Include" />
+        <e p="RedTransportODataMiddleware.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="REDTransport.NET.Server.AspNet.OData.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
