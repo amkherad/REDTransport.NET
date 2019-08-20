@@ -11,7 +11,7 @@ namespace REDTransport.NET.Server.AspNet
             Action<RedTransportMiddlewareConfiguration> configBuilder
         )
         {
-            services.AddScoped(service =>
+            services.AddSingleton(service =>
             {
                 var config = new RedTransportMiddlewareConfiguration();
                 configBuilder(config);

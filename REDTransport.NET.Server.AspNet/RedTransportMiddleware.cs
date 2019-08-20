@@ -16,7 +16,7 @@ namespace REDTransport.NET.Server.AspNet
         
         public Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
-
+            
             return next(context);
         }
     }
