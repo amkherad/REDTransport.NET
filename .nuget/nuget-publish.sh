@@ -75,5 +75,3 @@ rm -r "${tempPath}/.pack/"
 nugetRecursivePack ..
 
 nugetAddToSource "$tempPath" "$source" 
-
-exit 0
