@@ -2,180 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8193df90-7ec6-40df-8b83-94ad027df817" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet.Crud/Controllers/BaseCrudController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet.Crud/RedTransportCrudContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet.GraphQL/RedTransportGraphQLExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet.OData/RedTransportODataExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddlewareConfiguration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddlewareExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/REDTransport.NET/Http/IHttpConverter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.REDTransport.NET/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.REDTransport.NET/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.REDTransport.NET/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.REDTransport.NET/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.nuget/.version" beforeDir="false" afterPath="$PROJECT_DIR$/.nuget/.version" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.nuget/nuget-publish.sh" beforeDir="false" afterPath="$PROJECT_DIR$/.nuget/nuget-publish.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET.RESTClient/HttpTransporter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.RESTClient/HttpTransporter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET.RESTClient/TransporterExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.RESTClient/TransporterExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/REDTransport.NET.Server.AspNet.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/REDTransport.NET.Server.AspNet.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddleware.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET.sln" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET/Http/HttpConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET/Http/DefaultHttpConverter.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/ITaskTrackerPersistentStorage.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-              <folding>
-                <marker date="1564289830705" expanded="true" signature="6:63" ph="..." />
-                <marker date="1564289830705" expanded="true" signature="97:278" ph="{...}" />
-                <marker date="1564289830705" expanded="true" signature="180:276" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/RandomGuidCorrelationIdGenerator.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-              <folding>
-                <marker date="1564308921264" expanded="true" signature="6:45" ph="..." />
-                <marker date="1564308921264" expanded="true" signature="79:300" ph="{...}" />
-                <marker date="1564308921264" expanded="true" signature="157:298" ph="{...}" />
-                <marker date="1564308921264" expanded="true" signature="223:292" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddlewareExtensions.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
-              <folding>
-                <marker date="1565288837776" expanded="true" signature="6:97" ph="..." />
-                <marker date="1565288837776" expanded="true" signature="139:851" ph="{...}" />
-                <marker date="1565288837776" expanded="true" signature="198:849" ph="{...}" />
-                <marker date="1565288837776" expanded="true" signature="374:670" ph="{...}" />
-                <marker date="1565288837776" expanded="true" signature="439:596" ph="{...}" />
-                <marker date="1565288837776" expanded="true" signature="766:843" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/TaskInfo.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
-              <folding>
-                <marker date="1564289821465" expanded="true" signature="6:43" ph="..." />
-                <marker date="1564289821465" expanded="true" signature="77:604" ph="{...}" />
-                <marker date="1564289821465" expanded="true" signature="108:602" ph="{...}" />
-                <marker date="1564289821465" expanded="true" signature="322:399" ph="{...}" />
-                <marker date="1564289821465" expanded="true" signature="488:596" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/TaskTracker.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="26" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="26" />
-              <folding>
-                <marker date="1564289874323" expanded="true" signature="67:867" ph="{...}" />
-                <marker date="1564289874323" expanded="true" signature="101:865" ph="{...}" />
-                <marker date="1564289874323" expanded="true" signature="382:520" ph="{...}" />
-                <marker date="1564289874323" expanded="true" signature="610:705" ph="{...}" />
-                <marker date="1564289874323" expanded="true" signature="780:859" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.Crud/RedTransportCrudExtensions.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-              <folding>
-                <marker date="1565290962432" expanded="true" signature="60:415" ph="{...}" />
-                <marker date="1565290962432" expanded="true" signature="113:413" ph="{...}" />
-                <marker date="1565290962432" expanded="true" signature="292:407" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.Crud/RedTransportCrudContext.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-              <folding>
-                <marker date="1565290890063" expanded="true" signature="45:211" ph="{...}" />
-                <marker date="1565290890063" expanded="true" signature="88:209" ph="{...}" />
-                <marker date="1565290890063" expanded="true" signature="170:203" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.Crud/Controllers/BaseCrudController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-              <folding>
-                <marker date="1565291300384" expanded="true" signature="57:118" ph="{...}" />
-                <marker date="1565291300384" expanded="true" signature="95:116" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.GraphQL/RedTransportGraphQLExtensions.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="9" selection-end-column="9" />
-              <folding>
-                <marker date="1565290789175" expanded="true" signature="48:347" ph="{...}" />
-                <marker date="1565290789175" expanded="true" signature="153:345" ph="{...}" />
-                <marker date="1565290789175" expanded="true" signature="306:339" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.OData/RedTransportODataExtensions.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-              <folding>
-                <marker date="1565290799985" expanded="true" signature="46:239" ph="{...}" />
-                <marker date="1565290799985" expanded="true" signature="100:237" ph="{...}" />
-                <marker date="1565290799985" expanded="true" signature="198:231" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -188,42 +24,35 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4934096A-08F5-4F40-9E9D-4A4C306EFBE3/c1/33e99b5b/TaskCompletionSource`1.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.OData/RedTransportODataExtensions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DB774B5C-53F5-40BA-85AB-2F6945DD38C1/0f/1a3cee6a/HttpHeaders.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET/EndPointDescriptor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.GraphQL/RedTransportGraphQLExtensions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.Crud/Controllers/BaseCrudController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/TaskInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET.SignalR/SignalRMessage.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET/PushNotification/IPushNotificationClient.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET.SignalR/AppTrackingInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/26F6817C-D478-4E99-8B28-DD63E468FBEF/19/82311fdc/Exception.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET/ProtocolException.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Message/ResponseActions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.OData/RedTransportODataMiddleware.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/RandomGuidCorrelationIdGenerator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/ITaskTrackerPersistentStorage.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET.RESTClient/TransporterExtensions.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/ICorrelationIdGenerator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET.RESTClient/HttpTransporter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/TaskTracker.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET.SignalR.Client/SignalRClient.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.GraphQL/RedTransportGraphQLMiddleware.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddleware.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/26F6817C-D478-4E99-8B28-DD63E468FBEF/a3/2dc99ca6/Uri.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DB774B5C-53F5-40BA-85AB-2F6945DD38C1/a9/db51a073/HttpMessageInvoker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Http/DefaultHttpConverter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DB774B5C-53F5-40BA-85AB-2F6945DD38C1/d6/698bfbaa/HttpClient.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Message/RequestMessage.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Protocol.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Message/ResponseMessage.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Http/IHttpConverter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.Crud/RedTransportCrudContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET.SignalR.Server/SignalRHub.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DB774B5C-53F5-40BA-85AB-2F6945DD38C1/98/95ff5f68/HttpHeaderValueCollection`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.Crud/Controllers/BaseCrudController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.OData/RedTransportODataExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.OData/RedTransportODataMiddleware.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.GraphQL/RedTransportGraphQLExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.GraphQL/RedTransportGraphQLMiddleware.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET/ProtocolException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Protocol.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET/EndPointDescriptor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Http/IHttpConverter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Http/DefaultHttpConverter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/ICorrelationIdGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/ITaskTrackerPersistentStorage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/RandomGuidCorrelationIdGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/TaskInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/TaskTracker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Message/ResponseMessage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Message/ResponseActions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET/Message/RequestMessage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET/PushNotification/IPushNotificationClient.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET.SignalR/SignalRMessage.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET.SignalR/AppTrackingInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET.RESTClient/TransporterExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET.RESTClient/HttpTransporter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddlewareExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddleware.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddlewareConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET.SignalR.Client/SignalRClient.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET.SignalR.Server/SignalRHub.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.Crud/RedTransportCrudExtensions.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -283,52 +112,9 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2468" />
-    <option name="y" value="412" />
-    <option name="width" value="1682" />
-    <option name="height" value="928" />
-  </component>
+  <component name="ProjectId" id="1Pd2CRbiV6qDtqeBtUyR0M10w3z" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
-  </component>
-  <component name="ProjectView">
-    <navigator currentView="SolutionExplorer" proportions="" version="1">
-      <autoscrollFromSource SolutionExplorer="false" />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="SolutionExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="REDTransport.NET" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="REDTransport.NET" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="REDTransport.NET.Server.AspNet" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="REDTransport.NET" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="REDTransport.NET.Server.AspNet.Crud" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="REDTransport.NET" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="REDTransport.NET.Server.AspNet.Crud" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Controllers" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <option name="show-all-files" value="false" />
-      </pane>
-      <pane id="FileSystemExplorer" />
-      <pane id="AssemblyExplorer" />
-    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -402,54 +188,29 @@
       <workItem from="1564215262429" duration="26716000" />
       <workItem from="1565039594380" duration="3478000" />
       <workItem from="1565287595692" duration="3508000" />
+      <workItem from="1566189526182" duration="1372000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56529000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="1362" y="0" width="2568" height="1414" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26671976" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="NuGet" order="7" weight="0.32847276" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Unit Tests" order="11" />
-      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.31082118" />
-      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Errors In Solution" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -459,525 +220,6 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/26F6817C-D478-4E99-8B28-DD63E468FBEF/a3/2dc99ca6/Uri.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/IUriEndPoint.cs" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DB774B5C-53F5-40BA-85AB-2F6945DD38C1/a9/db51a073/HttpMessageInvoker.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="12" column="47" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DB774B5C-53F5-40BA-85AB-2F6945DD38C1/d6/698bfbaa/HttpClient.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4934096A-08F5-4F40-9E9D-4A4C306EFBE3/c1/33e99b5b/TaskCompletionSource`1.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="68" column="26" selection-start-line="68" selection-start-column="26" selection-end-line="68" selection-end-column="26" />
-          <folding>
-            <marker date="1563966341252" expanded="true" signature="0:386" ph="/* Decompiled with JetBrains decompiler ... */" />
-            <marker date="1563966341252" expanded="true" signature="455:10345" ph="{...}" />
-            <marker date="1563966341252" expanded="true" signature="460:884" ph="///Represents the producer side of a &lt;see cref=&quot;T:System.Threading.Tasks.Task`1&quot;&gt;&lt;/see&gt; unbound to a delegate, pr ... " />
-            <marker date="1563966341252" expanded="true" signature="929:10343" ph="{...}" />
-            <marker date="1563966341252" expanded="true" signature="1079:1348" ph="///Creates a &lt;see cref=&quot;T:System.Threading.Tasks.TaskCompletionSource`1&quot;&gt;&lt;/see&gt; with the specified state. ... " />
-            <marker date="1563966341252" expanded="true" signature="1401:2074" ph="///Creates a &lt;see cref=&quot;T:System.Threading.Tasks.TaskCompletionSource`1&quot;&gt;&lt;/see&gt; with the specified state and opti ... " />
-            <marker date="1563966341252" expanded="true" signature="2164:2683" ph="///Creates a &lt;see cref=&quot;T:System.Threading.Tasks.TaskCompletionSource`1&quot;&gt;&lt;/see&gt; with the specified options. ... " />
-            <marker date="1563966341252" expanded="true" signature="2759:3099" ph="///Gets the &lt;see cref=&quot;T:System.Threading.Tasks.Task`1&quot;&gt;&lt;/see&gt; created by this &lt;see cref=&quot;T:System.Threading.Task ... " />
-            <marker date="1563966341252" expanded="true" signature="3167:3824" ph="///Transitions the underlying &lt;see cref=&quot;T:System.Threading.Tasks.Task`1&quot;&gt;&lt;/see&gt; into the &lt;see cref=&quot;F:System.Thr ... " />
-            <marker date="1563966341252" expanded="true" signature="3861:5063" ph="///Transitions the underlying &lt;see cref=&quot;T:System.Threading.Tasks.Task`1&quot;&gt;&lt;/see&gt; into the &lt;see cref=&quot;F:System.Thr ... " />
-            <marker date="1563966341252" expanded="true" signature="5134:6151" ph="///Transitions the underlying &lt;see cref=&quot;T:System.Threading.Tasks.Task`1&quot;&gt;&lt;/see&gt; into the &lt;see cref=&quot;F:System.Thr ... " />
-            <marker date="1563966341252" expanded="true" signature="6208:7056" ph="///Transitions the underlying &lt;see cref=&quot;T:System.Threading.Tasks.Task`1&quot;&gt;&lt;/see&gt; into the &lt;see cref=&quot;F:System.Thr ... " />
-            <marker date="1563966341252" expanded="true" signature="7105:7442" ph="///Attempts to transition the underlying &lt;see cref=&quot;T:System.Threading.Tasks.Task`1&quot;&gt;&lt;/see&gt; into the &lt;see cref=&quot;F ... " />
-            <marker date="1563966341252" expanded="true" signature="7482:7938" ph="///Attempts to transition the underlying &lt;see cref=&quot;T:System.Threading.Tasks.Task`1&quot;&gt;&lt;/see&gt; into the &lt;see cref=&quot;F ... " />
-            <marker date="1563966341252" expanded="true" signature="8013:9025" ph="///Attempts to transition the underlying &lt;see cref=&quot;T:System.Threading.Tasks.Task`1&quot;&gt;&lt;/see&gt; into the &lt;see cref=&quot;F ... " />
-            <marker date="1563966341252" expanded="true" signature="9099:9830" ph="///Attempts to transition the underlying &lt;see cref=&quot;T:System.Threading.Tasks.Task`1&quot;&gt;&lt;/see&gt; into the &lt;see cref=&quot;F ... " />
-            <marker date="1563966341252" expanded="true" signature="9890:10293" ph="///Attempts to transition the underlying &lt;see cref=&quot;T:System.Threading.Tasks.Task`1&quot;&gt;&lt;/see&gt; into the &lt;see cref=&quot;F ... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DB774B5C-53F5-40BA-85AB-2F6945DD38C1/98/95ff5f68/HttpHeaderValueCollection`1.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DB774B5C-53F5-40BA-85AB-2F6945DD38C1/0f/1a3cee6a/HttpHeaders.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="807">
-          <caret line="56" column="44" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="44" />
-          <folding>
-            <marker date="1564027847908" expanded="true" signature="0:362" ph="/* Decompiled with JetBrains decompiler ... */" />
-            <marker date="1564027847908" expanded="false" signature="370:423" ph="..." />
-            <marker date="1564027847908" expanded="true" signature="458:5250" ph="{...}" />
-            <marker date="1564027847908" expanded="true" signature="656:5248" ph="{...}" />
-            <marker date="1564027847908" expanded="true" signature="665:965" ph="///Adds the specified header and its values into the &lt;see cref=&quot;T:System.Net.Http.Headers.HttpHeaders&quot;&gt;&lt;/see&gt; col ... " />
-            <marker date="1564027847908" expanded="true" signature="1033:1308" ph="///Adds the specified header and its value into the &lt;see cref=&quot;T:System.Net.Http.Headers.HttpHeaders&quot;&gt;&lt;/see&gt; coll ... " />
-            <marker date="1564027847908" expanded="true" signature="1513:1849" ph="///Returns if  a specific header exists in the &lt;see cref=&quot;T:System.Net.Http.Headers.HttpHeaders&quot;&gt;&lt;/see&gt; collectio ... " />
-            <marker date="1564027847908" expanded="true" signature="1894:2141" ph="///Returns an enumerator that can iterate through the &lt;see cref=&quot;T:System.Net.Http.Headers.HttpHeaders&quot;&gt;&lt;/see&gt; in ... " />
-            <marker date="1564027847908" expanded="true" signature="2230:2618" ph="///Returns all header values for a specified header stored in the &lt;see cref=&quot;T:System.Net.Http.Headers.HttpHeader ... " />
-            <marker date="1564027847908" expanded="true" signature="2679:2969" ph="///Removes the specified header from the &lt;see cref=&quot;T:System.Net.Http.Headers.HttpHeaders&quot;&gt;&lt;/see&gt; collection. ... " />
-            <marker date="1564027847908" expanded="true" signature="3058:3262" ph="///Returns a string that represents the current &lt;see cref=&quot;T:System.Net.Http.Headers.HttpHeaders&quot;&gt;&lt;/see&gt; object. ... " />
-            <marker date="1564027847908" expanded="true" signature="3307:3907" ph="///Returns a value that indicates whether the specified header and its values were added to the &lt;see cref=&quot;T:Syst ... " />
-            <marker date="1564027847908" expanded="true" signature="3995:4592" ph="///Returns a value that indicates whether the specified header and its value were added to the &lt;see cref=&quot;T:Syste ... " />
-            <marker date="1564027847908" expanded="true" signature="4666:5169" ph="///Return if a specified header and specified values are stored in the &lt;see cref=&quot;T:System.Net.Http.Headers.HttpH ... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/Message.cs" />
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET.SignalR/Class1.cs" />
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/EndPointDescriptor.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
-          <folding>
-            <marker date="1564029906439" expanded="true" signature="41:888" ph="{...}" />
-            <marker date="1564029906439" expanded="true" signature="80:886" ph="{...}" />
-            <marker date="1564029906439" expanded="true" signature="279:345" ph="{...}" />
-            <marker date="1564029906439" expanded="true" signature="423:555" ph="{...}" />
-            <marker date="1564029906439" expanded="true" signature="488:544" ph="{...}" />
-            <marker date="1564029906439" expanded="true" signature="639:694" ph="{...}" />
-            <marker date="1564029906439" expanded="true" signature="763:880" ph="{...}" />
-            <marker date="1564029906439" expanded="true" signature="828:869" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/26F6817C-D478-4E99-8B28-DD63E468FBEF/19/82311fdc/Exception.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="34" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET.RESTClient/Class1.cs" />
-    <entry file="file://$PROJECT_DIR$/.nuget/.version">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.nuget/REDTransport.NET.partial.template.csproj" />
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/REDTransport.NET.csproj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="20" lean-forward="true" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Http/HttpClientWrapper.cs" />
-    <entry file="file://$PROJECT_DIR$/.nuget/nuget-publish.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="41" column="22" lean-forward="true" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.nuget/nuget-publish-dev.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Class1.cs" />
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET.SignalR.Client/SignalRClient.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <marker date="1564290088355" expanded="true" signature="6:173" ph="..." />
-            <marker date="1564290088355" expanded="true" signature="209:620" ph="{...}" />
-            <marker date="1564290088355" expanded="true" signature="271:618" ph="{...}" />
-            <marker date="1564290088355" expanded="true" signature="404:467" ph="{...}" />
-            <marker date="1564290088355" expanded="true" signature="567:612" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET.SignalR/AppTrackingInfo.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-          <folding>
-            <marker date="1564029644570" expanded="true" signature="34:92" ph="{...}" />
-            <marker date="1564029644570" expanded="true" signature="69:90" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET.SignalR/SignalRMessage.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-          <folding>
-            <marker date="1564029660489" expanded="true" signature="34:91" ph="{...}" />
-            <marker date="1564029660489" expanded="true" signature="68:89" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET.SignalR.Server/SignalRHub.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="27" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="27" />
-          <folding>
-            <marker date="1564298096612" expanded="true" signature="56:100" ph="{...}" />
-            <marker date="1564298096612" expanded="true" signature="86:98" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Protocol.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="53" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="53" />
-          <folding>
-            <marker date="1564224539028" expanded="true" signature="26:387" ph="{...}" />
-            <marker date="1564224539028" expanded="true" signature="54:385" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/ProtocolException.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="55" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="55" />
-          <folding>
-            <marker date="1564225479947" expanded="true" signature="6:49" ph="..." />
-            <marker date="1564225479947" expanded="true" signature="77:708" ph="{...}" />
-            <marker date="1564225479947" expanded="true" signature="126:706" ph="{...}" />
-            <marker date="1564225479947" expanded="true" signature="301:321" ph="{...}" />
-            <marker date="1564225479947" expanded="true" signature="442:462" ph="{...}" />
-            <marker date="1564225479947" expanded="true" signature="540:560" ph="{...}" />
-            <marker date="1564225479947" expanded="true" signature="680:700" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Message/ResponseMessage.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding>
-            <marker date="1564308739790" expanded="true" signature="34:171" ph="{...}" />
-            <marker date="1564308739790" expanded="true" signature="69:169" ph="{...}" />
-            <marker date="1564308739790" expanded="true" signature="112:163" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Http/DefaultHttpConverter.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-          <folding>
-            <marker date="1565039986834" expanded="false" signature="6:54" ph="..." />
-            <marker date="1565039986834" expanded="true" signature="87:730" ph="{...}" />
-            <marker date="1565039986834" expanded="true" signature="144:728" ph="{...}" />
-            <marker date="1565039986834" expanded="true" signature="236:281" ph="{...}" />
-            <marker date="1565039986834" expanded="true" signature="380:425" ph="{...}" />
-            <marker date="1565039986834" expanded="true" signature="531:576" ph="{...}" />
-            <marker date="1565039986834" expanded="true" signature="677:722" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Http/IHttpConverter.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="35" />
-          <folding>
-            <marker date="1565039959875" expanded="true" signature="6:54" ph="..." />
-            <marker date="1565039959875" expanded="true" signature="87:475" ph="{...}" />
-            <marker date="1565039959875" expanded="true" signature="125:473" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/PushNotification/IPushNotificationClient.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding>
-            <marker date="1564237164288" expanded="true" signature="6:89" ph="..." />
-            <marker date="1564237164288" expanded="true" signature="134:282" ph="{...}" />
-            <marker date="1564237164288" expanded="true" signature="181:280" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Message/RequestMessage.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1564308894895" expanded="true" signature="34:91" ph="{...}" />
-            <marker date="1564308894895" expanded="true" signature="68:89" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Message/ResponseActions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
-          <folding>
-            <marker date="1564224330687" expanded="true" signature="34:182" ph="{...}" />
-            <marker date="1564224330687" expanded="true" signature="76:180" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET.RESTClient/TransporterExtensions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="39" column="51" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
-          <folding>
-            <marker date="1565288560935" expanded="true" signature="0:2349" ph="/* using System; ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddleware.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <marker date="1565288837796" expanded="true" signature="6:62" ph="..." />
-            <marker date="1565288837796" expanded="true" signature="104:550" ph="{...}" />
-            <marker date="1565288837796" expanded="true" signature="160:548" ph="{...}" />
-            <marker date="1565288837796" expanded="true" signature="331:394" ph="{...}" />
-            <marker date="1565288837796" expanded="true" signature="487:542" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddlewareConfiguration.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <marker date="1565040782979" expanded="true" signature="6:42" ph="..." />
-            <marker date="1565040782979" expanded="true" signature="84:470" ph="{...}" />
-            <marker date="1565040782979" expanded="true" signature="139:468" ph="{...}" />
-            <marker date="1565040782979" expanded="true" signature="403:462" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.OData/RedTransportODataMiddleware.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-          <folding>
-            <marker date="1565288999321" expanded="true" signature="46:107" ph="{...}" />
-            <marker date="1565288999321" expanded="true" signature="93:105" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET.RESTClient/HttpTransporter.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding>
-            <marker date="1565040197222" expanded="false" signature="6:241" ph="..." />
-            <marker date="1565040197222" expanded="true" signature="280:9469" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="315:9467" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="840:1334" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="1550:1952" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="2023:2615" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="2125:2605" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="2234:2340" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="2361:2591" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="2400:2573" ph="/* TODO: Unknown/Custom message received in push notification client. ... */" />
-            <marker date="1565040197222" expanded="true" signature="2782:6478" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="3243:6378" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="3288:3443" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="3489:3625" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="3776:3894" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="3949:6360" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="4295:4463" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="4685:4904" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="4981:5796" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="6612:9461" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="7027:9361" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="7072:7227" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="7273:7409" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="7560:7678" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="7733:9343" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="8079:8247" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="8469:8688" ph="{...}" />
-            <marker date="1565040197222" expanded="true" signature="8874:9013" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/ICorrelationIdGenerator.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-          <folding>
-            <marker date="1564308909634" expanded="true" signature="65:180" ph="{...}" />
-            <marker date="1564308909634" expanded="true" signature="112:178" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/ITaskTrackerPersistentStorage.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-          <folding>
-            <marker date="1564289830705" expanded="true" signature="6:63" ph="..." />
-            <marker date="1564289830705" expanded="true" signature="97:278" ph="{...}" />
-            <marker date="1564289830705" expanded="true" signature="180:276" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/RandomGuidCorrelationIdGenerator.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-          <folding>
-            <marker date="1564308921264" expanded="true" signature="6:45" ph="..." />
-            <marker date="1564308921264" expanded="true" signature="79:300" ph="{...}" />
-            <marker date="1564308921264" expanded="true" signature="157:298" ph="{...}" />
-            <marker date="1564308921264" expanded="true" signature="223:292" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/TaskInfo.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
-          <folding>
-            <marker date="1564289821465" expanded="true" signature="6:43" ph="..." />
-            <marker date="1564289821465" expanded="true" signature="77:604" ph="{...}" />
-            <marker date="1564289821465" expanded="true" signature="108:602" ph="{...}" />
-            <marker date="1564289821465" expanded="true" signature="322:399" ph="{...}" />
-            <marker date="1564289821465" expanded="true" signature="488:596" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/TaskTracker.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="26" />
-          <folding>
-            <marker date="1564289874323" expanded="true" signature="67:867" ph="{...}" />
-            <marker date="1564289874323" expanded="true" signature="101:865" ph="{...}" />
-            <marker date="1564289874323" expanded="true" signature="382:520" ph="{...}" />
-            <marker date="1564289874323" expanded="true" signature="610:705" ph="{...}" />
-            <marker date="1564289874323" expanded="true" signature="780:859" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.OData/RedTransportODataExtensions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-          <folding>
-            <marker date="1565290799985" expanded="true" signature="46:239" ph="{...}" />
-            <marker date="1565290799985" expanded="true" signature="100:237" ph="{...}" />
-            <marker date="1565290799985" expanded="true" signature="198:231" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.Crud/RedTransportCrudExtensions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <marker date="1565290962432" expanded="true" signature="60:415" ph="{...}" />
-            <marker date="1565290962432" expanded="true" signature="113:413" ph="{...}" />
-            <marker date="1565290962432" expanded="true" signature="292:407" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.GraphQL/RedTransportGraphQLExtensions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="9" selection-end-column="9" />
-          <folding>
-            <marker date="1565290789175" expanded="true" signature="48:347" ph="{...}" />
-            <marker date="1565290789175" expanded="true" signature="153:345" ph="{...}" />
-            <marker date="1565290789175" expanded="true" signature="306:339" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.GraphQL/RedTransportGraphQLMiddleware.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-          <folding>
-            <marker date="1565290789195" expanded="true" signature="48:111" ph="{...}" />
-            <marker date="1565290789195" expanded="true" signature="97:109" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.Crud/RedTransportCrudContext.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-          <folding>
-            <marker date="1565290890063" expanded="true" signature="45:211" ph="{...}" />
-            <marker date="1565290890063" expanded="true" signature="88:209" ph="{...}" />
-            <marker date="1565290890063" expanded="true" signature="170:203" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet.Crud/Controllers/BaseCrudController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-          <folding>
-            <marker date="1565291300384" expanded="true" signature="57:118" ph="{...}" />
-            <marker date="1565291300384" expanded="true" signature="95:116" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddlewareExtensions.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
-          <folding>
-            <marker date="1565288837776" expanded="true" signature="6:97" ph="..." />
-            <marker date="1565288837776" expanded="true" signature="139:851" ph="{...}" />
-            <marker date="1565288837776" expanded="true" signature="198:849" ph="{...}" />
-            <marker date="1565288837776" expanded="true" signature="374:670" ph="{...}" />
-            <marker date="1565288837776" expanded="true" signature="439:596" ph="{...}" />
-            <marker date="1565288837776" expanded="true" signature="766:843" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
   <component name="masterDetails">
     <states>
