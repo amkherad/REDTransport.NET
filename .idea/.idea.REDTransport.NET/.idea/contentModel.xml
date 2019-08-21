@@ -12,18 +12,32 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="REDTransport.NET" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Collections" t="Include">
+          <e p="KeyValuesCollection.cs" t="Include" />
+          <e p="KeyValuesCollection.Entry.cs" t="Include" />
+          <e p="KeyValuesCollection.Enumerator.cs" t="Include" />
+          <e p="NameStringsCollection.cs" t="Include" />
+          <e p="NameValuesCollection.cs" t="Include" />
+        </e>
         <e p="EndPointDescriptor.cs" t="Include" />
         <e p="Exceptions" t="Include">
           <e p="RedTransportException.cs" t="Include" />
+          <e p="RedTransportProtocolException.cs" t="Include" />
           <e p="YieldTaskException.cs" t="Include" />
         </e>
         <e p="Http" t="Include">
+          <e p="CookieCollection.cs" t="Include" />
           <e p="DefaultHttpConverter.cs" t="Include" />
+          <e p="HeaderCollection.cs" t="Include" />
+          <e p="HeaderCookieCollection.cs" t="Include" />
+          <e p="HttpCookie.cs" t="Include" />
           <e p="IHttpConverter.cs" t="Include" />
         </e>
         <e p="Message" t="Include">
+          <e p="RequestAggregationMessage.cs" t="Include" />
           <e p="RequestMessage.cs" t="Include" />
           <e p="ResponseActions.cs" t="Include" />
+          <e p="ResponseAggregationMessage.cs" t="Include" />
           <e p="ResponseMessage.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -39,7 +53,6 @@
           <e p="IPushNotificationClient.cs" t="Include" />
         </e>
         <e p="REDTransport.NET.csproj" t="IncludeRecursive" />
-        <e p="Server" t="Include" />
         <e p="Tasks" t="Include">
           <e p="ICorrelationIdGenerator.cs" t="Include" />
           <e p="ITaskTrackerPersistentStorage.cs" t="Include" />
@@ -74,6 +87,7 @@
         <e p="RedTransportMiddleware.cs" t="Include" />
         <e p="RedTransportMiddlewareConfiguration.cs" t="Include" />
         <e p="RedTransportMiddlewareExtensions.cs" t="Include" />
+        <e p="RedTransportRequestDispatcher.cs" t="Include" />
       </e>
       <e p="REDTransport.NET.Server.AspNet.Crud" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />

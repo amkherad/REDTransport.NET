@@ -5,17 +5,18 @@ namespace REDTransport.NET.Exceptions
 {
     public class YieldTaskException : RedTransportException
     {
-        public YieldTaskException()
+        public YieldTaskException(string messageId)
+            : base(messageId)
         {
         }
 
-        public YieldTaskException(string message)
-            : base(message)
+        public YieldTaskException(string messageId, string message)
+            : base(messageId, message)
         {
         }
 
-        public YieldTaskException(string message, Exception innerException)
-            : base(message, innerException)
+        public YieldTaskException(string messageId, string message, Exception innerException)
+            : base(messageId, message, innerException)
         {
         }
 
