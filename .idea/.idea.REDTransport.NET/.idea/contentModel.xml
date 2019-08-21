@@ -13,6 +13,10 @@
       <e p="REDTransport.NET" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="EndPointDescriptor.cs" t="Include" />
+        <e p="Exceptions" t="Include">
+          <e p="RedTransportException.cs" t="Include" />
+          <e p="YieldTaskException.cs" t="Include" />
+        </e>
         <e p="Http" t="Include">
           <e p="DefaultHttpConverter.cs" t="Include" />
           <e p="IHttpConverter.cs" t="Include" />
