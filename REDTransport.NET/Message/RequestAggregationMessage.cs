@@ -10,7 +10,7 @@ namespace REDTransport.NET.Message
 {
     public class RequestAggregationMessage : RequestMessage
     {
-        IAsyncEnumerable<RequestMessage> UnpackAsync(IServiceProvider serviceProvider, CancellationToken cancellationToken)
+        public IAsyncEnumerable<RequestMessage> UnpackAsync(IServiceProvider serviceProvider, CancellationToken cancellationToken)
         {
             if (serviceProvider == null) throw new ArgumentNullException(nameof(serviceProvider));
             

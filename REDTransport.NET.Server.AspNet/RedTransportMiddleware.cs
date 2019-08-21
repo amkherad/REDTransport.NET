@@ -16,6 +16,11 @@ namespace REDTransport.NET.Server.AspNet
         
         public Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
+            var dispatcher = new RedTransportRequestDispatcher();
+            
+            //context.Request
+            
+            //dispatcher.DispatchRedRequest()
             
             return next(context);
         }
