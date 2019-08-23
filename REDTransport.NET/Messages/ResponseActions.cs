@@ -1,4 +1,4 @@
-namespace REDTransport.NET.Message
+namespace REDTransport.NET.Messages
 {
     public static class ResponseActions
     {

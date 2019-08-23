@@ -3,17 +3,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 using System.Threading;
+using System.Threading.Tasks;
 using REDTransport.NET.Exceptions;
 using REDTransport.NET.Http;
 
-namespace REDTransport.NET.Message
+namespace REDTransport.NET.Messages
 {
     public class RequestAggregationMessage : RequestMessage
     {
-        public IAsyncEnumerable<RequestMessage> UnpackAsync(IServiceProvider serviceProvider, CancellationToken cancellationToken)
+        internal protected RequestAggregationMessage()
         {
-            if (serviceProvider == null) throw new ArgumentNullException(nameof(serviceProvider));
-            
+        }
+
+
+        public static Task<RequestAggregationMessage> PackAsync(IEnumerable<RequestMessage> subMessages,
+            CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IAsyncEnumerable<RequestMessage> UnpackAsync( /*IServiceProvider serviceProvider, */
+            CancellationToken cancellationToken)
+        {
+            //if (serviceProvider == null) throw new ArgumentNullException(nameof(serviceProvider));
+
             if (Headers == null)
             {
                 throw new RedTransportProtocolException("HeaderIsNull", "Header is required.");
@@ -28,41 +41,34 @@ namespace REDTransport.NET.Message
 
             if (contentType.StartsWith("multipart/"))
             {
-                return UnpackMultipartRequestBodyAsync(serviceProvider, Body, contentType, cancellationToken);
+                return UnpackMultipartRequestBodyAsync(Body, contentType, cancellationToken);
             }
             else if (contentType == "application/json" || contentType == "text/json")
             {
-                return UnpackJsonRequestBodyAsync(serviceProvider, Body, cancellationToken);
+                return UnpackJsonRequestBodyAsync(Body, cancellationToken);
             }
             else
             {
-                throw new RedTransportProtocolException("UnknownContentType", "Unknown content type.");
+                throw new RedTransportUnknownContentTypeException();
             }
         }
 
-        public static async IAsyncEnumerable<RequestMessage> UnpackMultipartRequestBodyAsync(
-            IServiceProvider serviceProvider,
+        public static IAsyncEnumerable<RequestMessage> UnpackMultipartRequestBodyAsync(
+            /*IServiceProvider serviceProvider, */
             Stream body,
             string contentType,
             CancellationToken cancellationToken
         )
         {
-
-            yield break;
+            throw new NotImplementedException();
         }
-        
+
         public static async IAsyncEnumerable<RequestMessage> UnpackJsonRequestBodyAsync(
-            IServiceProvider serviceProvider,
+            /*IServiceProvider serviceProvider, */
             Stream body,
             CancellationToken cancellationToken
         )
         {
-            var jsonSerializerOptions = serviceProvider.GetService(typeof(JsonSerializerOptions)) as JsonSerializerOptions;
-            if (jsonSerializerOptions == null)
-            {
-                throw new RedTransportException("JsonConverterIsNull", "JsonConverter is null.");
-            }
-
             var document = JsonDocument.Parse(body, new JsonDocumentOptions
             {
                 AllowTrailingCommas = true,
@@ -76,35 +82,46 @@ namespace REDTransport.NET.Message
             {
                 var requestObject = request.EnumerateObject();
 
+                string requestProtocol = "HTTP/1.1";
                 string requestMethod = null;
                 string requestUri = null;
                 HeaderCollection requestHeaders = null;
                 Stream requestBody = null;
-                
+
                 foreach (var objProperty in requestObject)
                 {
                     switch (objProperty.Name.ToLower())
                     {
+                        case "protocol":
+                        {
+                            requestProtocol = objProperty.Value.GetString();
+                            break;
+                        }
+
                         case "method":
                         {
                             requestMethod = objProperty.Value.GetString();
                             break;
                         }
+
                         case "uri":
                         {
                             requestUri = objProperty.Value.GetString();
                             break;
                         }
+
                         case "headers":
                         {
                             //requestMethod = objProperty.Value.GetString();
                             break;
                         }
+
                         case "body":
                         {
                             //requestMethod = objProperty.Value.GetString();
                             break;
                         }
+
                         default:
                         {
                             throw new RedTransportException("UnknownJsonRequestKey");
@@ -122,12 +139,13 @@ namespace REDTransport.NET.Message
                     throw new RedTransportException("UnknownJsonRequestUri");
                 }
 
-                yield return new RequestMessage
-                {
-                    Uri = new Uri(requestUri),
-                    Headers = requestHeaders,
-                    Body = requestBody
-                };
+                yield return new RequestMessage(
+                    requestProtocol,
+                    new Uri(requestUri),
+                    requestMethod,
+                    requestHeaders,
+                    requestBody
+                );
             }
         }
     }

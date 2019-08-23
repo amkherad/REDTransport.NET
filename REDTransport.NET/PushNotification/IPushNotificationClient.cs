@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading;
-using REDTransport.NET.Message;
+using REDTransport.NET.Messages;
 
 namespace REDTransport.NET.PushNotification
 {

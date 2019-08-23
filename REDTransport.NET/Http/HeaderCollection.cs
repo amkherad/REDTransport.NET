@@ -126,9 +126,8 @@ namespace REDTransport.NET.Http
 
         protected DateTime? GetDateTimeAsRfc7231(string key)
         {
-            DateTime result;
             var dateStr = SingleOrDefault(key);
-            return DateTime.TryParseExact(dateStr, Rfc7231DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out result)
+            return DateTime.TryParseExact(dateStr, Rfc7231DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out var result)
                 ? (DateTime?)result
                 : null;
         }
@@ -159,9 +158,8 @@ namespace REDTransport.NET.Http
 
         protected long? GetLong(string key)
         {
-            long result;
             var longStr = SingleOrDefault(key);
-            return longStr == null || !long.TryParse(longStr, out result)
+            return longStr == null || !long.TryParse(longStr, out var result)
                 ? null
                 : (long?)result;
         }
@@ -180,9 +178,8 @@ namespace REDTransport.NET.Http
 
         protected int? GetInt(string key)
         {
-            int result;
             var intStr = SingleOrDefault(key);
-            return intStr == null || !int.TryParse(intStr, out result)
+            return intStr == null || !int.TryParse(intStr, out var result)
                 ? null
                 : (int?)result;
         }
@@ -205,92 +202,92 @@ namespace REDTransport.NET.Http
         #region Properties
         public string Accept
         {
-            get { return SingleOrDefault(AcceptHeaderName); }
-            set { SetStringOrRemoveOnNull(AcceptHeaderName, value); }
+            get => SingleOrDefault(AcceptHeaderName);
+            set => SetStringOrRemoveOnNull(AcceptHeaderName, value);
         }
 
         public string AcceptCharset
         {
-            get { return SingleOrDefault(AcceptCharsetHeaderName); }
-            set { SetStringOrRemoveOnNull(AcceptCharsetHeaderName, value); }
+            get => SingleOrDefault(AcceptCharsetHeaderName);
+            set => SetStringOrRemoveOnNull(AcceptCharsetHeaderName, value);
         }
 
         public string AcceptEncoding
         {
-            get { return SingleOrDefault(AcceptEncodingHeaderName); }
-            set { SetStringOrRemoveOnNull(AcceptEncodingHeaderName, value); }
+            get => SingleOrDefault(AcceptEncodingHeaderName);
+            set => SetStringOrRemoveOnNull(AcceptEncodingHeaderName, value);
         }
 
         public string AcceptLanguage
         {
-            get { return SingleOrDefault(AcceptLanguageHeaderName); }
-            set { SetStringOrRemoveOnNull(AcceptLanguageHeaderName, value); }
+            get => SingleOrDefault(AcceptLanguageHeaderName);
+            set => SetStringOrRemoveOnNull(AcceptLanguageHeaderName, value);
         }
 
         public DateTime? AcceptDateTime
         {
-            get { return GetDateTimeAsRfc7231(AcceptDateTimeHeaderName); }
-            set { SetDateTimeAsRfc7231OrRemoveOnNull(AcceptDateTimeHeaderName, value); }
+            get => GetDateTimeAsRfc7231(AcceptDateTimeHeaderName);
+            set => SetDateTimeAsRfc7231OrRemoveOnNull(AcceptDateTimeHeaderName, value);
         }
 
         public string AcceptControlRequestMethod
         {
-            get { return SingleOrDefault(AcceptControlRequestMethodHeaderName); }
-            set { SetStringOrRemoveOnNull(AcceptControlRequestMethodHeaderName, value); }
+            get => SingleOrDefault(AcceptControlRequestMethodHeaderName);
+            set => SetStringOrRemoveOnNull(AcceptControlRequestMethodHeaderName, value);
         }
 
         public string AcceptControlRequestHeaders
         {
-            get { return SingleOrDefault(AcceptControlRequestHeadersHeaderName); }
-            set { SetStringOrRemoveOnNull(AcceptControlRequestHeadersHeaderName, value); }
+            get => SingleOrDefault(AcceptControlRequestHeadersHeaderName);
+            set => SetStringOrRemoveOnNull(AcceptControlRequestHeadersHeaderName, value);
         }
 
         public string AcceptRanges
         {
-            get { return SingleOrDefault(AcceptRangesHeaderName); }
-            set { SetStringOrRemoveOnNull(AcceptRangesHeaderName, value); }
+            get => SingleOrDefault(AcceptRangesHeaderName);
+            set => SetStringOrRemoveOnNull(AcceptRangesHeaderName, value);
         }
 
         public string Authorization
         {
-            get { return SingleOrDefault(AuthorizationHeaderName); }
-            set { SetStringOrRemoveOnNull(AuthorizationHeaderName, value); }
+            get => SingleOrDefault(AuthorizationHeaderName);
+            set => SetStringOrRemoveOnNull(AuthorizationHeaderName, value);
         }
         
         public string CacheControl
         {
-            get { return SingleOrDefault(CacheControlHeaderName); }
-            set { SetStringOrRemoveOnNull(CacheControlHeaderName, value); }
+            get => SingleOrDefault(CacheControlHeaderName);
+            set => SetStringOrRemoveOnNull(CacheControlHeaderName, value);
         }
         
         public string Connection
         {
-            get { return SingleOrDefault(ConnectionHeaderName); }
-            set { SetStringOrRemoveOnNull(ConnectionHeaderName, value); }
+            get => SingleOrDefault(ConnectionHeaderName);
+            set => SetStringOrRemoveOnNull(ConnectionHeaderName, value);
         }
         
         public IEnumerable<string> Cookies
         {
-            get { return this[CookieHeaderName]; }
-            set { this[CookieHeaderName] = value; }
+            get => this[CookieHeaderName];
+            set => this[CookieHeaderName] = value;
         }
 
         public long? ContentLength
         {
-            get { return GetLong(ContentLengthHeaderName); }
-            set { SetLong(ContentLengthHeaderName, value); }
+            get => GetLong(ContentLengthHeaderName);
+            set => SetLong(ContentLengthHeaderName, value);
         }
 
         public string ContentMd5
         {
-            get { return SingleOrDefault(ContentMd5HeaderName); }
-            set { SetStringOrRemoveOnNull(ContentMd5HeaderName, value); }
+            get => SingleOrDefault(ContentMd5HeaderName);
+            set => SetStringOrRemoveOnNull(ContentMd5HeaderName, value);
         }
 
         public string ContentRange
         {
-            get { return SingleOrDefault(ContentRangeHeaderName); }
-            set { SetStringOrRemoveOnNull(ContentRangeHeaderName, value); }
+            get => SingleOrDefault(ContentRangeHeaderName);
+            set => SetStringOrRemoveOnNull(ContentRangeHeaderName, value);
         }
 
         public string Encoding
@@ -315,134 +312,134 @@ namespace REDTransport.NET.Http
 
         public string ContentType
         {
-            get { return SingleOrDefault(ContentTypeHeaderName); }
-            set { SetStringOrRemoveOnNull(ContentTypeHeaderName, value); }
+            get => SingleOrDefault(ContentTypeHeaderName);
+            set => SetStringOrRemoveOnNull(ContentTypeHeaderName, value);
         }
 
         public DateTime? Date
         {
-            get { return GetDateTimeAsRfc7231(DateHeaderName); }
-            set { SetDateTimeAsRfc7231OrRemoveOnNull(DateHeaderName, value); }
+            get => GetDateTimeAsRfc7231(DateHeaderName);
+            set => SetDateTimeAsRfc7231OrRemoveOnNull(DateHeaderName, value);
         }
 
         public string Expect
         {
-            get { return SingleOrDefault(ExpectHeaderName); }
-            set { SetStringOrRemoveOnNull(ExpectHeaderName, value); }
+            get => SingleOrDefault(ExpectHeaderName);
+            set => SetStringOrRemoveOnNull(ExpectHeaderName, value);
         }
 
         public string Forwarded
         {
-            get { return SingleOrDefault(ForwardedHeaderName); }
-            set { SetStringOrRemoveOnNull(ForwardedHeaderName, value); }
+            get => SingleOrDefault(ForwardedHeaderName);
+            set => SetStringOrRemoveOnNull(ForwardedHeaderName, value);
         }
 
         public string From
         {
-            get { return SingleOrDefault(FromHeaderName); }
-            set { SetStringOrRemoveOnNull(FromHeaderName, value); }
+            get => SingleOrDefault(FromHeaderName);
+            set => SetStringOrRemoveOnNull(FromHeaderName, value);
         }
 
         public string Host
         {
-            get { return SingleOrDefault(HostHeaderName); }
-            set { SetStringOrRemoveOnNull(HostHeaderName, value); }
+            get => SingleOrDefault(HostHeaderName);
+            set => SetStringOrRemoveOnNull(HostHeaderName, value);
         }
 
         public string IfMatch
         {
-            get { return SingleOrDefault(IfMatchHeaderName); }
-            set { SetStringOrRemoveOnNull(IfMatchHeaderName, value); }
+            get => SingleOrDefault(IfMatchHeaderName);
+            set => SetStringOrRemoveOnNull(IfMatchHeaderName, value);
         }
 
         public string IfModifiedSince
         {
-            get { return SingleOrDefault(IfModifiedSinceHeaderName); }
-            set { SetStringOrRemoveOnNull(IfModifiedSinceHeaderName, value); }
+            get => SingleOrDefault(IfModifiedSinceHeaderName);
+            set => SetStringOrRemoveOnNull(IfModifiedSinceHeaderName, value);
         }
 
         public string IfNoneMatch
         {
-            get { return SingleOrDefault(IfNoneMatchHeaderName); }
-            set { SetStringOrRemoveOnNull(IfNoneMatchHeaderName, value); }
+            get => SingleOrDefault(IfNoneMatchHeaderName);
+            set => SetStringOrRemoveOnNull(IfNoneMatchHeaderName, value);
         }
 
         public string IfRange
         {
-            get { return SingleOrDefault(IfRangeHeaderName); }
-            set { SetStringOrRemoveOnNull(IfRangeHeaderName, value); }
+            get => SingleOrDefault(IfRangeHeaderName);
+            set => SetStringOrRemoveOnNull(IfRangeHeaderName, value);
         }
 
         public string IfUnmodifiedSince
         {
-            get { return SingleOrDefault(IfUnmodifiedSinceHeaderName); }
-            set { SetStringOrRemoveOnNull(IfUnmodifiedSinceHeaderName, value); }
+            get => SingleOrDefault(IfUnmodifiedSinceHeaderName);
+            set => SetStringOrRemoveOnNull(IfUnmodifiedSinceHeaderName, value);
         }
 
         public string MaxForwards
         {
-            get { return SingleOrDefault(MaxForwardsHeaderName); }
-            set { SetStringOrRemoveOnNull(MaxForwardsHeaderName, value); }
+            get => SingleOrDefault(MaxForwardsHeaderName);
+            set => SetStringOrRemoveOnNull(MaxForwardsHeaderName, value);
         }
 
         public string Origin
         {
-            get { return SingleOrDefault(OriginHeaderName); }
-            set { SetStringOrRemoveOnNull(OriginHeaderName, value); }
+            get => SingleOrDefault(OriginHeaderName);
+            set => SetStringOrRemoveOnNull(OriginHeaderName, value);
         }
 
         public string Pragma
         {
-            get { return SingleOrDefault(PragmaHeaderName); }
-            set { SetStringOrRemoveOnNull(PragmaHeaderName, value); }
+            get => SingleOrDefault(PragmaHeaderName);
+            set => SetStringOrRemoveOnNull(PragmaHeaderName, value);
         }
 
         public string ProxyAuthorization
         {
-            get { return SingleOrDefault(ProxyAuthorizationHeaderName); }
-            set { SetStringOrRemoveOnNull(ProxyAuthorizationHeaderName, value); }
+            get => SingleOrDefault(ProxyAuthorizationHeaderName);
+            set => SetStringOrRemoveOnNull(ProxyAuthorizationHeaderName, value);
         }
 
         public string  Range
         {
-            get { return SingleOrDefault(RangeHeaderName); }
-            set { SetStringOrRemoveOnNull(RangeHeaderName, value); }
+            get => SingleOrDefault(RangeHeaderName);
+            set => SetStringOrRemoveOnNull(RangeHeaderName, value);
         }
 
         public string  Referer
         {
-            get { return SingleOrDefault(RefererHeaderName); }
-            set { SetStringOrRemoveOnNull(RefererHeaderName, value); }
+            get => SingleOrDefault(RefererHeaderName);
+            set => SetStringOrRemoveOnNull(RefererHeaderName, value);
         }
 
         public string  TE
         {
-            get { return SingleOrDefault(TeHeaderName); }
-            set { SetStringOrRemoveOnNull(TeHeaderName, value); }
+            get => SingleOrDefault(TeHeaderName);
+            set => SetStringOrRemoveOnNull(TeHeaderName, value);
         }
 
         public string  UserAgent
         {
-            get { return SingleOrDefault(UserAgentHeaderName); }
-            set { SetStringOrRemoveOnNull(UserAgentHeaderName, value); }
+            get => SingleOrDefault(UserAgentHeaderName);
+            set => SetStringOrRemoveOnNull(UserAgentHeaderName, value);
         }
 
         public string  Upgrade
         {
-            get { return SingleOrDefault(UpgradeHeaderName); }
-            set { SetStringOrRemoveOnNull(UpgradeHeaderName, value); }
+            get => SingleOrDefault(UpgradeHeaderName);
+            set => SetStringOrRemoveOnNull(UpgradeHeaderName, value);
         }
 
         public string  Via
         {
-            get { return SingleOrDefault(ViaHeaderName); }
-            set { SetStringOrRemoveOnNull(ViaHeaderName, value); }
+            get => SingleOrDefault(ViaHeaderName);
+            set => SetStringOrRemoveOnNull(ViaHeaderName, value);
         }
 
         public string  Warning
         {
-            get { return SingleOrDefault(WarningHeaderName); }
-            set { SetStringOrRemoveOnNull(WarningHeaderName, value); }
+            get => SingleOrDefault(WarningHeaderName);
+            set => SetStringOrRemoveOnNull(WarningHeaderName, value);
         }
         #endregion
     }

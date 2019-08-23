@@ -1,53 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Afshin\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Afshin\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_REDTransport.NET.-338392524.00" t="ExcludeRecursive" />
-    <e p="D:\Projects\REDTransport.NET" t="IncludeFlat">
+    <e p="$APPLICATION_CONFIG_DIR$/consoles/db" t="IncludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/extensions" t="IncludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/scratches" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2019.1/system/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2019.1/system/resharper-host/local/Transient/ReSharperHost/v191/SolutionCaches/_REDTransport.NET.-76557525.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/.nuget/packages/microsoft.net.test.sdk/16.2.0/build/netcoreapp1.0" t="Include">
+      <e p="Microsoft.NET.Test.Sdk.Program.cs" t="Include" />
+    </e>
+    <e p="$USER_HOME$/.nuget/packages/nunit3testadapter/3.13.0/build/netcoreapp1.0/NUnit3.TestAdapter.dll" t="Include" />
+    <e p="$USER_HOME$/.nuget/packages/nunit3testadapter/3.13.0/build/netcoreapp1.0/NUnit3.TestAdapter.pdb" t="Include" />
+    <e p="$USER_HOME$/.nuget/packages/nunit3testadapter/3.13.0/build/netcoreapp1.0/nunit.engine.netstandard.dll" t="Include" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p=".nuget" t="Include">
         <e p=".version" t="Include" />
         <e p="nuget-publish-dev.sh" t="Include" />
         <e p="nuget-publish.sh" t="Include" />
       </e>
-      <e p="packages" t="ExcludeRecursive" />
       <e p="REDTransport.NET" t="IncludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
         <e p="Collections" t="Include">
-          <e p="KeyValuesCollection.cs" t="Include" />
+          <e p="AsyncEnumerableAdapter.cs" t="Include" />
           <e p="KeyValuesCollection.Entry.cs" t="Include" />
           <e p="KeyValuesCollection.Enumerator.cs" t="Include" />
+          <e p="KeyValuesCollection.cs" t="Include" />
           <e p="NameStringsCollection.cs" t="Include" />
           <e p="NameValuesCollection.cs" t="Include" />
         </e>
         <e p="EndPointDescriptor.cs" t="Include" />
         <e p="Exceptions" t="Include">
           <e p="RedTransportException.cs" t="Include" />
+          <e p="RedTransportFlowControlException.cs" t="Include" />
           <e p="RedTransportProtocolException.cs" t="Include" />
+          <e p="RedTransportUnknownContentTypeException.cs" t="Include" />
           <e p="YieldTaskException.cs" t="Include" />
         </e>
         <e p="Http" t="Include">
           <e p="CookieCollection.cs" t="Include" />
-          <e p="DefaultHttpConverter.cs" t="Include" />
+          <e p="DefaultMessage2NetHttpConverter.cs" t="Include" />
           <e p="HeaderCollection.cs" t="Include" />
           <e p="HeaderCookieCollection.cs" t="Include" />
           <e p="HttpCookie.cs" t="Include" />
-          <e p="IHttpConverter.cs" t="Include" />
+          <e p="IRedTransportMessageConverter.cs" t="Include" />
+          <e p="NetHttpHeadersExtensions.cs" t="Include" />
         </e>
-        <e p="Message" t="Include">
+        <e p="Messages" t="Include">
           <e p="RequestAggregationMessage.cs" t="Include" />
           <e p="RequestMessage.cs" t="Include" />
           <e p="ResponseActions.cs" t="Include" />
           <e p="ResponseAggregationMessage.cs" t="Include" />
           <e p="ResponseMessage.cs" t="Include" />
         </e>
-        <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
-            <e p="netcoreapp3.0" t="Include">
-              <e p="REDTransport.NET.AssemblyInfo.cs" t="Include" />
-            </e>
-          </e>
-        </e>
-        <e p="Protocol.cs" t="Include" />
+        <e p="ProtocolConstants.cs" t="Include" />
         <e p="ProtocolException.cs" t="Include" />
         <e p="PushNotification" t="Include">
           <e p="IPushNotificationClient.cs" t="Include" />
@@ -56,14 +60,24 @@
         <e p="Tasks" t="Include">
           <e p="ICorrelationIdGenerator.cs" t="Include" />
           <e p="ITaskTrackerPersistentStorage.cs" t="Include" />
+          <e p="InMemoryTaskTracker.cs" t="Include" />
           <e p="RandomGuidCorrelationIdGenerator.cs" t="Include" />
           <e p="TaskInfo.cs" t="Include" />
-          <e p="TaskTracker.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="REDTransport.NET.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
         </e>
       </e>
       <e p="REDTransport.NET.RESTClient" t="IncludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
         <e p="HttpTransporter.cs" t="Include" />
+        <e p="HttpTransporterExtensions.cs" t="Include" />
+        <e p="REDTransport.NET.RESTClient.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.0" t="Include">
@@ -71,10 +85,30 @@
             </e>
           </e>
         </e>
-        <e p="REDTransport.NET.RESTClient.csproj" t="IncludeRecursive" />
-        <e p="TransporterExtensions.cs" t="Include" />
       </e>
       <e p="REDTransport.NET.Server.AspNet" t="IncludeRecursive">
+        <e p="Helpers" t="Include">
+          <e p="HttpHeaderExtensions.cs" t="Include" />
+          <e p="REDTransportHelperExtensions.cs" t="Include" />
+        </e>
+        <e p="Message" t="Include">
+          <e p="DefaultMessage2AspNetCoreHttpConverter.cs" t="Include" />
+          <e p="IMessageReaderWriter.cs" t="Include" />
+          <e p="JsonMessageReaderWriter.cs" t="Include" />
+          <e p="MultipartMessageReaderWriter.cs" t="Include" />
+        </e>
+        <e p="Pipeline" t="Include">
+          <e p="IRedTransportRequestDispatcher.cs" t="Include" />
+          <e p="RedTransportHttpChannelRequestDispatcher.cs" t="Include" />
+          <e p="RedTransportInProcessRequestDispatcher.cs" t="Include" />
+          <e p="RedTransportInProcessScopeMode.cs" t="Include" />
+          <e p="RequestDispatcherStrategy.cs" t="Include" />
+        </e>
+        <e p="REDTransport.NET.Server.AspNet.csproj" t="IncludeRecursive" />
+        <e p="RedTransportEndpointConfiguration.cs" t="Include" />
+        <e p="RedTransportMiddleware.cs" t="Include" />
+        <e p="RedTransportMiddlewareConfiguration.cs" t="Include" />
+        <e p="RedTransportMiddlewareExtensions.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -83,17 +117,15 @@
             </e>
           </e>
         </e>
-        <e p="REDTransport.NET.Server.AspNet.csproj" t="IncludeRecursive" />
-        <e p="RedTransportMiddleware.cs" t="Include" />
-        <e p="RedTransportMiddlewareConfiguration.cs" t="Include" />
-        <e p="RedTransportMiddlewareExtensions.cs" t="Include" />
-        <e p="RedTransportRequestDispatcher.cs" t="Include" />
       </e>
       <e p="REDTransport.NET.Server.AspNet.Crud" t="IncludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
           <e p="BaseCrudController.cs" t="Include" />
         </e>
+        <e p="REDTransport.NET.Server.AspNet.Crud.csproj" t="IncludeRecursive" />
+        <e p="RedTransportCrudContext.cs" t="Include" />
+        <e p="RedTransportCrudExtensions.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.0" t="Include">
@@ -101,11 +133,11 @@
             </e>
           </e>
         </e>
-        <e p="REDTransport.NET.Server.AspNet.Crud.csproj" t="IncludeRecursive" />
-        <e p="RedTransportCrudContext.cs" t="Include" />
-        <e p="RedTransportCrudExtensions.cs" t="Include" />
       </e>
       <e p="REDTransport.NET.Server.AspNet.GraphQL" t="IncludeRecursive">
+        <e p="REDTransport.NET.Server.AspNet.GraphQL.csproj" t="IncludeRecursive" />
+        <e p="RedTransportGraphQLExtensions.cs" t="Include" />
+        <e p="RedTransportGraphQLMiddleware.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -114,11 +146,11 @@
             </e>
           </e>
         </e>
-        <e p="REDTransport.NET.Server.AspNet.GraphQL.csproj" t="IncludeRecursive" />
-        <e p="RedTransportGraphQLExtensions.cs" t="Include" />
-        <e p="RedTransportGraphQLMiddleware.cs" t="Include" />
       </e>
       <e p="REDTransport.NET.Server.AspNet.OData" t="IncludeRecursive">
+        <e p="REDTransport.NET.Server.AspNet.OData.csproj" t="IncludeRecursive" />
+        <e p="RedTransportODataExtensions.cs" t="Include" />
+        <e p="RedTransportODataMiddleware.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -127,12 +159,11 @@
             </e>
           </e>
         </e>
-        <e p="REDTransport.NET.Server.AspNet.OData.csproj" t="IncludeRecursive" />
-        <e p="RedTransportODataExtensions.cs" t="Include" />
-        <e p="RedTransportODataMiddleware.cs" t="Include" />
       </e>
       <e p="REDTransport.NET.SignalR" t="IncludeRecursive">
         <e p="AppTrackingInfo.cs" t="Include" />
+        <e p="REDTransport.NET.SignalR.csproj" t="IncludeRecursive" />
+        <e p="SignalRMessage.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -141,10 +172,10 @@
             </e>
           </e>
         </e>
-        <e p="REDTransport.NET.SignalR.csproj" t="IncludeRecursive" />
-        <e p="SignalRMessage.cs" t="Include" />
       </e>
       <e p="REDTransport.NET.SignalR.Client" t="IncludeRecursive">
+        <e p="REDTransport.NET.SignalR.Client.csproj" t="IncludeRecursive" />
+        <e p="SignalRClient.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -153,10 +184,10 @@
             </e>
           </e>
         </e>
-        <e p="REDTransport.NET.SignalR.Client.csproj" t="IncludeRecursive" />
-        <e p="SignalRClient.cs" t="Include" />
       </e>
       <e p="REDTransport.NET.SignalR.Server" t="IncludeRecursive">
+        <e p="REDTransport.NET.SignalR.Server.csproj" t="IncludeRecursive" />
+        <e p="SignalRHub.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -165,10 +196,36 @@
             </e>
           </e>
         </e>
-        <e p="REDTransport.NET.SignalR.Server.csproj" t="IncludeRecursive" />
-        <e p="SignalRHub.cs" t="Include" />
+      </e>
+      <e p="REDTransport.NET.Tests" t="IncludeRecursive">
+        <e p="Extensions.cs" t="Include" />
+        <e p="REDTransport.NET.Tests.csproj" t="IncludeRecursive" />
+        <e p="Server" t="Include">
+          <e p="Controllers" t="Include">
+            <e p="TestController.cs" t="Include" />
+          </e>
+          <e p="DefaultStartup.cs" t="Include" />
+          <e p="DefaultTestServer.cs" t="Include" />
+          <e p="TestServerFixture.cs" t="Include" />
+        </e>
+        <e p="Setup.cs" t="Include" />
+        <e p="Tests" t="Include">
+          <e p="00-BasicTests" t="Include">
+            <e p="BasicTest.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Utils.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="REDTransport.NET.Tests.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
       </e>
       <e p="REDTransport.NET.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
     </e>
   </component>
 </project>

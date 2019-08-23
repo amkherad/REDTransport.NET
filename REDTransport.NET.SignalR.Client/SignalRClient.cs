@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using Microsoft.AspNetCore.SignalR.Client;
-using REDTransport.NET.Message;
+using REDTransport.NET.Messages;
 using REDTransport.NET.PushNotification;
 
 namespace REDTransport.NET.SignalR

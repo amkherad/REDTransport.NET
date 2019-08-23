@@ -1,5 +1,5 @@
 using System;
-using REDTransport.NET.Message;
+using REDTransport.NET.Messages;
 
 namespace REDTransport.NET.Tasks
 {

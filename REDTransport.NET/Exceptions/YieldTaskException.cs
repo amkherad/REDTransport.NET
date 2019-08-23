@@ -1,27 +1,13 @@
-using System;
-using System.Runtime.Serialization;
-
 namespace REDTransport.NET.Exceptions
 {
-    public class YieldTaskException : RedTransportException
+    /// <summary>
+    /// A flow-control exception to yield current task.
+    /// It's best to use other flow-control mechanisms and only use this exception when other options are not available. (because exceptions are slow in dotnet)  
+    /// </summary>
+    public class YieldTaskException : RedTransportFlowControlException
     {
-        public YieldTaskException(string messageId)
-            : base(messageId)
-        {
-        }
-
-        public YieldTaskException(string messageId, string message)
-            : base(messageId, message)
-        {
-        }
-
-        public YieldTaskException(string messageId, string message, Exception innerException)
-            : base(messageId, message, innerException)
-        {
-        }
-
-        protected YieldTaskException(SerializationInfo info, StreamingContext context)
-            : base(info, context)
+        public YieldTaskException()
+            : base()
         {
         }
     }

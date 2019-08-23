@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace REDTransport.NET.Tasks
 {
-    public class TaskTracker<T>
+    public class InMemoryTaskTracker<T>
     {
         public ITaskTrackerPersistentStorage<T> PersistentStorage { get; protected set; }
 
@@ -10,7 +10,12 @@ namespace REDTransport.NET.Tasks
         private readonly Dictionary<string, TaskInfo<T>> _taskMappings;
 
 
-        public TaskTracker(
+        public InMemoryTaskTracker()
+        {
+            _taskMappings = new Dictionary<string, TaskInfo<T>>();
+        }
+
+        public InMemoryTaskTracker(
             ITaskTrackerPersistentStorage<T> persistentStorage
         )
         {
