@@ -73,6 +73,7 @@ namespace REDTransport.NET.Tests.Server
                     opt.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
                     opt.JsonSerializerOptions.IgnoreNullValues = true;
                     opt.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+
                 });
             
             

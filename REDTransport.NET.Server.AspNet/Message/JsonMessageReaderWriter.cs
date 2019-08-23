@@ -17,6 +17,11 @@ namespace REDTransport.NET.Server.AspNet.Message
         {
             JsonSerializerOptions = jsonSerializerOptions;
         }
+        
+        public JsonMessageReaderWriter()
+        {
+            JsonSerializerOptions = new JsonSerializerOptions();
+        }
 
 
         public async Task WriteResponseMessageToStream(
@@ -71,13 +76,19 @@ namespace REDTransport.NET.Server.AspNet.Message
             writer.Write(message.StatusMessage);
             writer.Write("\",");
 
-            writer.Write("\"Headers\":");
-            await JsonSerializer.SerializeAsync(stream, message.Headers, JsonSerializerOptions, cancellationToken);
-            writer.Write(',');
+            if (message.Headers != null)
+            {
+                writer.Write("\"Headers\":");
+                await JsonSerializer.SerializeAsync(stream, message.Headers, JsonSerializerOptions, cancellationToken);
+                writer.Write(',');
+            }
 
-            writer.Write("\"Body\":");
-            await JsonSerializer.SerializeAsync(stream, message.Body, JsonSerializerOptions, cancellationToken);
-            //writer.Write(',');
+            if (message.Body != null)
+            {
+                writer.Write("\"Body\":");
+                await JsonSerializer.SerializeAsync(stream, message.Body, JsonSerializerOptions, cancellationToken);
+                //writer.Write(',');
+            }
 
             writer.Write('}');
         }

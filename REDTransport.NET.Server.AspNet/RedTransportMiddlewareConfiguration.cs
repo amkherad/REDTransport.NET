@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Concurrent;
+using System.Diagnostics;
 using REDTransport.NET.Exceptions;
 using REDTransport.NET.Server.AspNet.Pipeline;
 
 namespace REDTransport.NET.Server.AspNet
 {
+    [DebuggerDisplay("{RequestDispatcherStrategy}:{InProcessScopeMode}")]
     public class RedTransportMiddlewareConfiguration
     {
         internal ConcurrentDictionary<string, RedTransportEndpointConfiguration> Endpoints { get; }

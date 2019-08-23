@@ -20,6 +20,20 @@ namespace REDTransport.NET.Server.AspNet.Helpers
             return hc;
         }
 
+        public static IHeaderDictionary ToHeaderDictionary(this HeaderCollection headers)
+        {
+            if (headers == null) throw new ArgumentNullException(nameof(headers));
+
+            var result = new HeaderDictionary();
+            
+            foreach (var kv in headers)
+            {
+                result.Add(kv.Key, kv.Value);
+            }
+
+            return result;
+        }
+
         public static void FillFromHeaderCollection(this IHeaderDictionary headers, HeaderCollection targetHeaders)
         {
             if (headers == null) throw new ArgumentNullException(nameof(headers));

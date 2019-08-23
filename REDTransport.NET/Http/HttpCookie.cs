@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Globalization;
 
 namespace REDTransport.NET.Http
 {
+    [DebuggerDisplay("{Name}: {Value} {Path}")]
     public class HttpCookie
     {
         public virtual string Name { get; }

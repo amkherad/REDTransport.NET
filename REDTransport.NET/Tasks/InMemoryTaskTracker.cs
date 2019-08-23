@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace REDTransport.NET.Tasks
 {
+    [DebuggerDisplay("Tasks={_taskMappings.Count}")]
     public class InMemoryTaskTracker<T>
     {
         public ITaskTrackerPersistentStorage<T> PersistentStorage { get; protected set; }

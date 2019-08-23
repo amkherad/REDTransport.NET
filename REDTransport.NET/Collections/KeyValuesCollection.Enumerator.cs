@@ -28,7 +28,7 @@ namespace REDTransport.NET.Collections
 
             public bool MoveNext()
             {
-                if (_parent.Count == 0 || _parent.Count <= _currentIndex)
+                if (_parent.KeyCount == 0 || _parent.KeyCount <= _currentIndex)
                 {
                     return false;
                 }
@@ -40,7 +40,7 @@ namespace REDTransport.NET.Collections
                 {
                     _currentSubIndex = 0;
                     ++_currentIndex;
-                    if (_parent.Count <= _currentIndex)
+                    if (_parent.KeyCount <= _currentIndex)
                     {
                         return false;
                     }

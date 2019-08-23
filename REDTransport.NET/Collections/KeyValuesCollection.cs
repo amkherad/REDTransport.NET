@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace REDTransport.NET.Collections
@@ -10,6 +11,7 @@ namespace REDTransport.NET.Collections
     /// </summary>
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
+    [DebuggerDisplay("KeyCount={KeyCount}, EntryCount={Count}")]
     public partial class KeyValuesCollection<TKey, TValue> : ICollection<KeyValuePair<TKey, TValue>>, IEnumerable<KeyValuePair<TKey, TValue>>,
         IDictionary<TKey, TValue>, IDictionary<TKey, IEnumerable<TValue>>
     {
@@ -782,7 +784,8 @@ namespace REDTransport.NET.Collections
             }
         }
 
-        public virtual int Count => _entries.Count;
+        public virtual int KeyCount => _entries.Count;
+        public virtual int Count => _entries.Sum(e => e.Value.Count);
         public bool IsReadOnly { get; }
 
         public virtual bool IsSynchronized => ((ICollection) _entries).IsSynchronized;

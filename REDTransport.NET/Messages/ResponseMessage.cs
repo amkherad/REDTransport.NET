@@ -1,15 +1,18 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using REDTransport.NET.Http;
 
 namespace REDTransport.NET.Messages
 {
+    [DebuggerDisplay("{StatusCode} \"{StatusMessage}\" {ProtocolVersion}, Headers={Headers.Count}")]
     public class ResponseMessage
     {
         public int StatusCode { get; set; }
         
         public string StatusMessage { get; set; }
         
+        public string ProtocolVersion { get; set; }
         
         public HeaderCollection Headers { get; set; }
         

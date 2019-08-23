@@ -1,21 +1,20 @@
 using System;
-using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting.Internal;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Features;
 using REDTransport.NET.Collections;
-using REDTransport.NET.Exceptions;
 using REDTransport.NET.Http;
 using REDTransport.NET.Messages;
 using REDTransport.NET.Server.AspNet.Message;
 
 namespace REDTransport.NET.Server.AspNet.Pipeline
 {
-    public class RedTransportInProcessRequestDispatcher : IRedTransportRequestDispatcher
+    public partial class RedTransportInProcessRequestDispatcher : IRedTransportRequestDispatcher
     {
-        public IHttpApplication<HostingApplication.Context> Application { get; }
+        //public IHttpApplication<> Application { get; }
 
         public RedTransportMiddlewareConfiguration Configuration { get; }
 
@@ -28,14 +27,14 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
 
 
         public RedTransportInProcessRequestDispatcher(
-            IHttpApplication<HostingApplication.Context> application,
+            //IHttpApplication<HostingApplication.Context> application,
             RedTransportMiddlewareConfiguration configuration,
             IRedTransportMessageConverter<HttpRequest, HttpResponse> messageConverter,
             MultipartMessageReaderWriter multipartMessageReaderWriter,
             JsonMessageReaderWriter jsonMessageReaderWriter
         )
         {
-            Application = application;
+            //Application = application;
             Configuration = configuration;
             MessageConverter = messageConverter;
             MultipartMessageReaderWriter = multipartMessageReaderWriter ??
@@ -53,18 +52,16 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
         {
             var contentType = message.Headers.ContentType;
 
+            GC.KeepAlive(context.Features);
+
             IMessageReaderWriter readerWriter;
-            if (contentType.StartsWith("multipart/"))
+            if (contentType != null && contentType.StartsWith("multipart/"))
             {
                 readerWriter = MultipartMessageReaderWriter;
             }
-            else if (contentType == "application/json" || contentType == "text/json")
+            else //if (contentType == "application/json" || contentType == "text/json")
             {
                 readerWriter = JsonMessageReaderWriter;
-            }
-            else
-            {
-                throw new RedTransportUnknownContentTypeException();
             }
 
             var pipeline = Configuration.InProcessScopeMode == RedTransportInProcessScopeMode.UseRootScope
@@ -97,44 +94,50 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
         private async ValueTask<ResponseMessage> ProgressPipelinePerScope(
             HttpContext context,
             RequestDelegate next,
-            RequestMessage msg,
+            RequestMessage requestMessage,
             CancellationToken cancellationToken
         )
         {
-            var nCtx = Application.CreateContext(context.Features);
+            var requestFeature = new RequestFeature(requestMessage);
+            var responseFeature = new ResponseFeature();
 
-            var request = nCtx.HttpContext.Request;
-
-            request.Protocol = msg.ProtocolVersion;
-            request.Method = msg.RequestMethod;
-
-
-            await Application.ProcessRequestAsync(nCtx);
+            var requestLifetimeFeature = new HttpRequestLifetimeFeature
+            {
+                RequestAborted = cancellationToken
+            };
 
 
-            return await MessageConverter.FromResponseAsync(nCtx.HttpContext.Response, cancellationToken);
+            var features = new FeatureCollection();
+
+            features.Set<IHttpRequestFeature>(requestFeature);
+            features.Set<IHttpResponseFeature>(responseFeature);
+            features.Set<IHttpRequestLifetimeFeature>(requestLifetimeFeature);
+
+
+            var ctx = new DefaultHttpContext(features);
+            ctx.Initialize(features);
+
+
+            await next(ctx);
+
+
+            return await MessageConverter.FromResponseAsync(ctx.Response, cancellationToken);
         }
 
 
         private async ValueTask<ResponseMessage> ProgressPipeline(
             HttpContext context,
             RequestDelegate next,
-            RequestMessage msg,
+            RequestMessage requestMessage,
             CancellationToken cancellationToken
         )
         {
-            var nCtx = Application.CreateContext(context.Features);
-
-            var request = nCtx.HttpContext.Request;
-
-            request.Protocol = msg.ProtocolVersion;
-            request.Method = msg.RequestMethod;
-
-
-            await Application.ProcessRequestAsync(nCtx);
-
-
-            return await MessageConverter.FromResponseAsync(nCtx.HttpContext.Response, cancellationToken);
+            return await ProgressPipelinePerScope(
+                context,
+                next,
+                requestMessage,
+                cancellationToken
+            );
         }
 
 

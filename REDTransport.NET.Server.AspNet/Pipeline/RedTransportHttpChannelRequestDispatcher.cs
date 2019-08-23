@@ -77,18 +77,18 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
             var contentType = message.Headers.ContentType;
 
             IMessageReaderWriter readerWriter;
-            if (contentType.StartsWith("multipart/"))
+            if (contentType != null && contentType.StartsWith("multipart/"))
             {
                 readerWriter = MultipartMessageReaderWriter;
             }
-            else if (contentType == "application/json" || contentType == "text/json")
+            else //if (contentType == "application/json" || contentType == "text/json")
             {
                 readerWriter = JsonMessageReaderWriter;
             }
-            else
-            {
-                throw new RedTransportUnknownContentTypeException();
-            }
+//            else
+//            {
+//                throw new RedTransportUnknownContentTypeException();
+//            }
 
             var responseStream = context.Response.Body;
 

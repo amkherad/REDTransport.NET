@@ -19,29 +19,26 @@ namespace REDTransport.NET.Server.AspNet
             if (services == null) throw new ArgumentNullException(nameof(services));
             if (configBuilder == null) throw new ArgumentNullException(nameof(configBuilder));
 
-            services.AddSingleton(service =>
+            var config = new RedTransportMiddlewareConfiguration();
+
+            configBuilder(config);
+
+            switch (config.RequestDispatcherStrategy)
             {
-                var config = new RedTransportMiddlewareConfiguration();
+                case RequestDispatcherStrategy.InProcess:
+                    services.AddTransient<IRedTransportRequestDispatcher, RedTransportInProcessRequestDispatcher>();
+                    break;
+                case RequestDispatcherStrategy.HttpChannel:
+                    services
+                        .AddTransient<IRedTransportRequestDispatcher, RedTransportHttpChannelRequestDispatcher>();
+                    break;
+                case RequestDispatcherStrategy.Custom:
+                    break;
+                default:
+                    throw new IndexOutOfRangeException(nameof(config.RequestDispatcherStrategy));
+            }
 
-                configBuilder(config);
-
-                switch (config.RequestDispatcherStrategy)
-                {
-                    case RequestDispatcherStrategy.InProcess:
-                        services.AddTransient<IRedTransportRequestDispatcher, RedTransportInProcessRequestDispatcher>();
-                        break;
-                    case RequestDispatcherStrategy.HttpChannel:
-                        services
-                            .AddTransient<IRedTransportRequestDispatcher, RedTransportHttpChannelRequestDispatcher>();
-                        break;
-                    case RequestDispatcherStrategy.Custom:
-                        break;
-                    default:
-                        throw new IndexOutOfRangeException(nameof(config.RequestDispatcherStrategy));
-                }
-
-                return config;
-            });
+            services.AddSingleton(config);
 
             services.AddSingleton<RedTransportMiddleware>();
 

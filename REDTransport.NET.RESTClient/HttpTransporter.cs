@@ -14,7 +14,7 @@ namespace REDTransport.NET.RESTClient
     public class HttpTransporter
     {
         public const string REDProtocolVersion = "1.00";
-        
+
         public HttpClient HttpClient { get; protected set; }
 
         public InMemoryTaskTracker<ResponseMessage> InMemoryTaskTracker { get; protected set; }
@@ -25,7 +25,7 @@ namespace REDTransport.NET.RESTClient
 
 
         public string HttpProtocol { get; } = "HTTP/1.1";
-        
+
 
         public HttpTransporter(
             HttpClient httpClient,
@@ -34,10 +34,10 @@ namespace REDTransport.NET.RESTClient
         {
             HttpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
             HttpConverter = httpConverter ?? throw new ArgumentNullException(nameof(httpConverter));
-            
+
             InMemoryTaskTracker = new InMemoryTaskTracker<ResponseMessage>();
         }
-        
+
         public HttpTransporter(
             HttpClient httpClient,
             InMemoryTaskTracker<ResponseMessage> taskTracker,
@@ -47,7 +47,8 @@ namespace REDTransport.NET.RESTClient
         {
             HttpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
             InMemoryTaskTracker = taskTracker ?? throw new ArgumentNullException(nameof(taskTracker));
-            PushNotificationClient = pushNotificationClient ?? throw new ArgumentNullException(nameof(pushNotificationClient));
+            PushNotificationClient =
+                pushNotificationClient ?? throw new ArgumentNullException(nameof(pushNotificationClient));
             HttpConverter = httpConverter ?? throw new ArgumentNullException(nameof(httpConverter));
         }
 
@@ -59,7 +60,8 @@ namespace REDTransport.NET.RESTClient
         {
             if (persistentStorage == null) throw new ArgumentNullException(nameof(persistentStorage));
 
-            PushNotificationClient = pushNotificationClient ?? throw new ArgumentNullException(nameof(pushNotificationClient));
+            PushNotificationClient =
+                pushNotificationClient ?? throw new ArgumentNullException(nameof(pushNotificationClient));
             HttpClient = new HttpClient();
             InMemoryTaskTracker = new InMemoryTaskTracker<ResponseMessage>(persistentStorage);
             HttpConverter = httpConverter;
@@ -72,7 +74,7 @@ namespace REDTransport.NET.RESTClient
             {
                 throw new RedTransportException("PushNotificationClientIsNull");
             }
-            
+
             await foreach (var message in PushNotificationClient.Listen(cancellationToken))
             {
                 if (InMemoryTaskTracker.TryGetTaskByUniqueId(message.CorrelationId, out var taskInfo))
@@ -98,9 +100,9 @@ namespace REDTransport.NET.RESTClient
             cancellationToken.Register(() => taskCompletionSource.SetCanceled());
 
             var httpRequestMessage = await HttpConverter.ToRequestAsync(message, cancellationToken);
-            
+
             httpRequestMessage.Headers.Add(ProtocolConstants.REDProtocolVersionHeaderName, REDProtocolVersion);
-            
+
             var task = HttpClient.SendAsync(httpRequestMessage, cancellationToken)
                 .ContinueWith(async response =>
                 {
@@ -126,7 +128,8 @@ namespace REDTransport.NET.RESTClient
                     {
                         case ResponseActions.Yield:
                         {
-                            var correlationId = response.Result.Headers.GetValues(ProtocolConstants.REDCorrelationIdHeaderName)
+                            var correlationId = response.Result.Headers
+                                .GetValues(ProtocolConstants.REDCorrelationIdHeaderName)
                                 .SingleOrDefault();
 
                             if (string.IsNullOrWhiteSpace(correlationId))
@@ -151,8 +154,9 @@ namespace REDTransport.NET.RESTClient
 
                                 InMemoryTaskTracker.Track(correlationId, trackedTask);
 
-                                var responseMessage = await HttpConverter.FromResponseAsync(response.Result, cancellationToken);
-                                
+                                var responseMessage =
+                                    await HttpConverter.FromResponseAsync(response.Result, cancellationToken);
+
                                 taskCompletionSource.SetResult(
                                     new Tuple<ResponseMessage, Task<ResponseMessage>>(
                                         responseMessage,
@@ -167,7 +171,8 @@ namespace REDTransport.NET.RESTClient
                         //case ResponseActions.Normal:
                         default:
                         {
-                            var responseMessage = await HttpConverter.FromResponseAsync(response.Result, cancellationToken);
+                            var responseMessage =
+                                await HttpConverter.FromResponseAsync(response.Result, cancellationToken);
 
                             taskCompletionSource.SetResult(
                                 new Tuple<ResponseMessage, Task<ResponseMessage>>(responseMessage, null)
@@ -190,7 +195,7 @@ namespace REDTransport.NET.RESTClient
             cancellationToken.Register(() => taskCompletionSource.SetCanceled());
 
             var httpRequestMessage = await HttpConverter.ToRequestAsync(message, cancellationToken);
-            
+
             httpRequestMessage.Headers.Add(ProtocolConstants.REDProtocolVersionHeaderName, REDProtocolVersion);
 
             var task = HttpClient.SendAsync(httpRequestMessage, cancellationToken)
@@ -218,7 +223,8 @@ namespace REDTransport.NET.RESTClient
                     {
                         case ResponseActions.Yield:
                         {
-                            var correlationId = response.Result.Headers.GetValues(ProtocolConstants.REDCorrelationIdHeaderName)
+                            var correlationId = response.Result.Headers
+                                .GetValues(ProtocolConstants.REDCorrelationIdHeaderName)
                                 .SingleOrDefault();
 
                             if (string.IsNullOrWhiteSpace(correlationId))
@@ -248,7 +254,9 @@ namespace REDTransport.NET.RESTClient
                         //case ResponseActions.Normal:
                         default:
                         {
-                            taskCompletionSource.SetResult(default);
+                            taskCompletionSource.SetResult(
+                                await HttpConverter.FromResponseAsync(response.Result, cancellationToken)
+                            );
 
                             break;
                         }
