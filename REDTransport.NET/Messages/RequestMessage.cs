@@ -6,7 +6,7 @@ using REDTransport.NET.Http;
 
 namespace REDTransport.NET.Messages
 {
-    [DebuggerDisplay("{RequestMethod} \"{Uri}\" {Protocol}, Headers={Headers.Count}")]
+    [DebuggerDisplay("{RequestMethod} \"{Uri}\" {ProtocolVersion}, Headers={Headers.Count}")]
     public class RequestMessage
     {
         private string _scheme;
@@ -54,7 +54,7 @@ namespace REDTransport.NET.Messages
             Stream body
         )
         {
-            ProtocolVersion = protocolVersion ?? throw new ArgumentNullException(nameof(protocolVersion));
+            Version = protocolVersion ?? throw new ArgumentNullException(nameof(protocolVersion));
 
             _scheme = scheme ?? throw new ArgumentNullException(nameof(scheme));
             _host = host ?? throw new ArgumentNullException(nameof(host));
@@ -62,7 +62,7 @@ namespace REDTransport.NET.Messages
             _path = path ?? throw new ArgumentNullException(nameof(path));
             _queryString = queryString ?? throw new ArgumentNullException(nameof(queryString));
             _rawTarget = rawTarget ?? throw new ArgumentNullException(nameof(rawTarget));
-
+            
             RequestMethod = requestMethod ?? throw new ArgumentNullException(nameof(requestMethod));
             Headers = headers ?? throw new ArgumentNullException(nameof(headers));
             Body = body;
@@ -129,7 +129,7 @@ namespace REDTransport.NET.Messages
             }
         }
 
-        public string ProtocolVersion { get; set; }
+        public string Version { get; set; }
 
         public string RequestMethod { get; set; }
 
@@ -138,9 +138,9 @@ namespace REDTransport.NET.Messages
         public Stream Body { get; set; }
 
 
-        public string Protocol
+        public string ProtocolVersion
         {
-            get => $"{_scheme}/{ProtocolVersion}";
+            get => $"HTTP/{Version}";
             set
             {
                 if (value == null) throw new ArgumentNullException(nameof(value));
@@ -152,8 +152,8 @@ namespace REDTransport.NET.Messages
                     throw new InvalidOperationException();
                 }
 
-                _scheme = parts[0];
-                ProtocolVersion = parts[1];
+                //_scheme = parts[0];
+                Version = parts[1];
             }
         }
 
@@ -168,7 +168,7 @@ namespace REDTransport.NET.Messages
 
                 var path = string.IsNullOrWhiteSpace(_pathBase) ? _path : $"{_pathBase}/{_path}";
                 var query = _queryString;
-                if (query != null && !query.StartsWith('?'))
+                if (!string.IsNullOrWhiteSpace(query) && !query.StartsWith('?'))
                 {
                     query = '?' + query;
                 }

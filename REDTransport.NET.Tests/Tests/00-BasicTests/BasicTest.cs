@@ -21,6 +21,9 @@ namespace REDTransport.NET.Tests
                 var res = await client.GetAsync(server.Client.Route("api/v1/test/testdata"), CancellationToken.None);
                 
                 var response = await client.HttpConverter.ToResponseAsync(res, CancellationToken.None);
+                var responseText = await response.GetContentString();
+                
+                Console.WriteLine(responseText);
                 
                 if (response.StatusCode != HttpStatusCode.OK)
                 {

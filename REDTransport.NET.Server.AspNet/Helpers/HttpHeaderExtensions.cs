@@ -10,7 +10,17 @@ namespace REDTransport.NET.Server.AspNet.Helpers
         {
             if (headers == null) throw new ArgumentNullException(nameof(headers));
 
-            var hc = new HeaderCollection();
+            HttpHeaderType headerType;
+            if (headers.ContainsKey(HeaderCollection.ResponseCookieHeaderName))
+            {
+                headerType = HttpHeaderType.ResponseHeader;
+            }
+            else
+            {
+                headerType = HttpHeaderType.RequestHeader;
+            }
+            
+            var hc = new HeaderCollection(headerType);
 
             foreach (var kv in headers)
             {

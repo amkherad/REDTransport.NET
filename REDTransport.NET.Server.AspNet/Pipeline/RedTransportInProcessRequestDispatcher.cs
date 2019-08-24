@@ -1,10 +1,14 @@
 using System;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting.Internal;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Http.Features.Authentication;
+using Microsoft.AspNetCore.Http.Internal;
+using Microsoft.Extensions.DependencyInjection;
 using REDTransport.NET.Collections;
 using REDTransport.NET.Http;
 using REDTransport.NET.Messages;
@@ -64,11 +68,6 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
                 readerWriter = JsonMessageReaderWriter;
             }
 
-            var pipeline = Configuration.InProcessScopeMode == RedTransportInProcessScopeMode.UseRootScope
-                ? (Func<HttpContext, RequestDelegate, RequestMessage, CancellationToken, ValueTask<ResponseMessage>>)
-                ProgressPipeline
-                : ProgressPipelinePerScope;
-
 
             var responseStream = context.Response.Body;
 
@@ -76,7 +75,7 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
             {
                 var requestToResponseAdapter = new AsyncEnumerableAdapter<RequestMessage, ResponseMessage>(
                     aggregationMessage.UnpackAsync(cancellationToken),
-                    request => pipeline(context, next, request, cancellationToken)
+                    request => ProgressPipeline(context, next, request, cancellationToken)
                 );
 
                 await readerWriter.WriteResponseMessageToStream(responseStream, requestToResponseAdapter,
@@ -84,14 +83,14 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
             }
             else
             {
-                var response = await pipeline(context, next, message, cancellationToken);
+                var response = await ProgressPipeline(context, next, message, cancellationToken);
 
                 await readerWriter.WriteResponseMessageToStream(responseStream, response, cancellationToken);
             }
         }
 
 
-        private async ValueTask<ResponseMessage> ProgressPipelinePerScope(
+        private async ValueTask<ResponseMessage> ProgressPipeline(
             HttpContext context,
             RequestDelegate next,
             RequestMessage requestMessage,
@@ -106,38 +105,44 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
                 RequestAborted = cancellationToken
             };
 
+            var serviceProviderFeature = context.Features.Get<IServiceProvidersFeature>();
+            var requestAuthenticationFeature = context.Features.Get<IHttpAuthenticationFeature>();
+            var formFeature = context.Features.Get<IFormFeature>();
+            var responseTrailersFeature = context.Features.Get<IHttpResponseTrailersFeature>();
+            var httpBodyControlFeature = context.Features.Get<IHttpBodyControlFeature>();
+
+            GC.KeepAlive(context.Features);
 
             var features = new FeatureCollection();
 
             features.Set<IHttpRequestFeature>(requestFeature);
             features.Set<IHttpResponseFeature>(responseFeature);
             features.Set<IHttpRequestLifetimeFeature>(requestLifetimeFeature);
+            features.Set<IHttpAuthenticationFeature>(requestAuthenticationFeature);
+            features.Set<IServiceProvidersFeature>(serviceProviderFeature);
+            features.Set<IFormFeature>(formFeature);
+            features.Set<IHttpResponseTrailersFeature>(responseTrailersFeature);
+            features.Set<IHttpBodyControlFeature>(httpBodyControlFeature);
+//            features.Set<IHttpBodyControlFeature>(httpBodyControlFeature);
 
+            var ctx = new RedHttpContext(features, new RequestMessage());
 
-            var ctx = new DefaultHttpContext(features);
-            ctx.Initialize(features);
-
+            if (Configuration.InProcessScopeMode != RedTransportInProcessScopeMode.UseRootScope)
+            {
+                //creating a new scope for IServiceProvider.
+                
+                var factory = serviceProviderFeature.RequestServices.GetRequiredService<IServiceScopeFactory>();
+                serviceProviderFeature = new ServiceProvidersFeature
+                {
+                    RequestServices = factory.CreateScope().ServiceProvider
+                };
+                features.Set<IServiceProvidersFeature>(serviceProviderFeature);
+            }
 
             await next(ctx);
 
 
             return await MessageConverter.FromResponseAsync(ctx.Response, cancellationToken);
-        }
-
-
-        private async ValueTask<ResponseMessage> ProgressPipeline(
-            HttpContext context,
-            RequestDelegate next,
-            RequestMessage requestMessage,
-            CancellationToken cancellationToken
-        )
-        {
-            return await ProgressPipelinePerScope(
-                context,
-                next,
-                requestMessage,
-                cancellationToken
-            );
         }
 
 

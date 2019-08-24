@@ -17,7 +17,7 @@ namespace REDTransport.NET.Http
         {
             if (headers == null) throw new ArgumentNullException(nameof(headers));
 
-            var hc = new HeaderCollection();
+            var hc = new HeaderCollection(HttpHeaderType.RequestHeader);
             
             hc.AddRange(headers.ToList());
 
@@ -28,7 +28,7 @@ namespace REDTransport.NET.Http
         {
             if (headers == null) throw new ArgumentNullException(nameof(headers));
 
-            var hc = new HeaderCollection();
+            var hc = new HeaderCollection(HttpHeaderType.ResponseHeader);
             
             hc.AddRange(headers.ToList());
 

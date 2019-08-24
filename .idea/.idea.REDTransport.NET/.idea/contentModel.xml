@@ -38,11 +38,12 @@
           <e p="YieldTaskException.cs" t="Include" />
         </e>
         <e p="Http" t="Include">
-          <e p="CookieCollection.cs" t="Include" />
           <e p="DefaultMessage2NetHttpConverter.cs" t="Include" />
           <e p="HeaderCollection.cs" t="Include" />
           <e p="HeaderCookieCollection.cs" t="Include" />
           <e p="HttpCookie.cs" t="Include" />
+          <e p="HttpCookieSameSiteMode.cs" t="Include" />
+          <e p="HttpHeaderType.cs" t="Include" />
           <e p="IRedTransportMessageConverter.cs" t="Include" />
           <e p="NetHttpHeadersExtensions.cs" t="Include" />
         </e>
@@ -93,6 +94,9 @@
           <e p="HttpHeaderExtensions.cs" t="Include" />
           <e p="REDTransportHelperExtensions.cs" t="Include" />
         </e>
+        <e p="Http" t="Include">
+          <e p="RequestCookieCollectionWrapper.cs" t="Include" />
+        </e>
         <e p="Message" t="Include">
           <e p="DefaultMessage2AspNetCoreHttpConverter.cs" t="Include" />
           <e p="IMessageReaderWriter.cs" t="Include" />
@@ -110,6 +114,9 @@
           <e p="IRedTransportRequestDispatcher.cs" t="Include" />
           <e p="RedTransportHttpChannelRequestDispatcher.cs" t="Include" />
           <e p="RedTransportInProcessRequestDispatcher.cs" t="Include" />
+          <e p="RedTransportInProcessRequestDispatcher.RedHttpContext.cs" t="Include" />
+          <e p="RedTransportInProcessRequestDispatcher.RedHttpRequest.cs" t="Include" />
+          <e p="RedTransportInProcessRequestDispatcher.RedHttpResponse.cs" t="Include" />
           <e p="RedTransportInProcessRequestDispatcher.RequestFeature.cs" t="Include" />
           <e p="RedTransportInProcessRequestDispatcher.ResponseFeature.cs" t="Include" />
           <e p="RedTransportInProcessScopeMode.cs" t="Include" />

@@ -94,7 +94,12 @@ namespace REDTransport.NET.Server.AspNet.Message
 
             target.Method = requestMessage.RequestMethod;
 
-            
+            target.Path = new PathString(requestMessage.Path);
+            target.PathBase = new PathString(requestMessage.PathBase);
+            target.Host = new HostString(requestMessage.Host);
+            target.Scheme = requestMessage.Scheme;
+            target.QueryString = new QueryString(requestMessage.QueryString);
+
             return Task.CompletedTask;
         }
 
@@ -111,7 +116,6 @@ namespace REDTransport.NET.Server.AspNet.Message
             }
 
             target.StatusCode = responseMessage.StatusCode;
-
             
             return Task.CompletedTask;
         }
@@ -127,12 +131,16 @@ namespace REDTransport.NET.Server.AspNet.Message
                 requestMessage.Headers = target.Headers.ToHeaderCollection();
             }
 
-            requestMessage.ProtocolVersion = "HTTP/1.1";
+            requestMessage.ProtocolVersion = target.Protocol;
 
             requestMessage.RequestMethod = target.Method;
             
-            requestMessage.Uri = new Uri($"{target.Scheme}://{target.Host}{target.PathBase}{target.QueryString}");
-
+            requestMessage.Host = target.Host.ToString();
+            requestMessage.Scheme = target.Scheme;
+            requestMessage.PathBase = target.PathBase;
+            requestMessage.Path = target.Path;
+            requestMessage.QueryString = target.QueryString.ToUriComponent();
+            
             return Task.CompletedTask;
         }
 

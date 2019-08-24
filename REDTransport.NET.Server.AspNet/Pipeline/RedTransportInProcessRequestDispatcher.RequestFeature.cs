@@ -33,7 +33,7 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
 
             public string Protocol
             {
-                get => _protocol ??= RequestMessage.Protocol;
+                get => _protocol ??= RequestMessage.ProtocolVersion;
                 set => _protocol = value;
             }
 

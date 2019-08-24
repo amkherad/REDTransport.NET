@@ -24,7 +24,7 @@ namespace REDTransport.NET.RESTClient
         public IRedTransportMessageConverter<HttpRequestMessage, HttpResponseMessage> HttpConverter { get; }
 
 
-        public string HttpProtocol { get; } = "HTTP/1.1";
+        public string ProtocolVersion { get; } = "HTTP/1.1";
 
 
         public HttpTransporter(

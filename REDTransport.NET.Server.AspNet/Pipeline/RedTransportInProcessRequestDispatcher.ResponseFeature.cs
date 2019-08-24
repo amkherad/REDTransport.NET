@@ -10,7 +10,6 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
     {
         public class ResponseFeature : IHttpResponseFeature
         {
-
             public ResponseFeature()
             {
                 StatusCode = 200;
@@ -34,12 +33,12 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
             
             public void OnStarting(Func<object, Task> callback, object state)
             {
-                
+                HasStarted = true;
             }
 
             public void OnCompleted(Func<object, Task> callback, object state)
             {
-                
+                HasStarted = true;
             }
         }
     }

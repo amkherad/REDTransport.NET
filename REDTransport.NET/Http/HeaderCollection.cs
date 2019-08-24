@@ -28,7 +28,8 @@ namespace REDTransport.NET.Http
 
         public const string ConnectionHeaderName = "Connection";
 
-        public const string CookieHeaderName = "Cookie";
+        public const string RequestCookieHeaderName = "Cookie";
+        public const string ResponseCookieHeaderName = "Set-Cookie";
 
         public const string ContentLengthHeaderName = "Content-Length";
         public const string ContentMd5HeaderName = "Content-MD5";
@@ -75,8 +76,15 @@ namespace REDTransport.NET.Http
 
         #endregion
 
-        public HeaderCollection()
+        private readonly string _cookieHeaderName;
+        private readonly HeaderCookieCollection _cookies;
+        
+        public HeaderCollection(HttpHeaderType httpHeaderType)
         {
+            _cookies = new HeaderCookieCollection(this);
+            _cookieHeaderName = httpHeaderType == HttpHeaderType.ResponseHeader
+                ? ResponseCookieHeaderName
+                : RequestCookieHeaderName;
         }
 
         #region Helper Methods
@@ -267,11 +275,13 @@ namespace REDTransport.NET.Http
             set => SetStringOrRemoveOnNull(ConnectionHeaderName, value);
         }
         
-        public IEnumerable<string> Cookies
+        public IEnumerable<string> CookieStrings
         {
-            get => this[CookieHeaderName];
-            set => this[CookieHeaderName] = value;
+            get => this[_cookieHeaderName];
+            set => this[_cookieHeaderName] = value;
         }
+
+        public HeaderCookieCollection Cookies => _cookies;
 
         public long? ContentLength
         {

@@ -88,7 +88,12 @@ namespace REDTransport.NET.Http
             target.Method = new HttpMethod(requestMessage.RequestMethod);
 
             target.RequestUri = requestMessage.Uri;
-            
+
+            if (requestMessage.Version != null)
+            {
+                target.Version = Version.Parse(requestMessage.Version);
+            }
+
             if (requestMessage.Headers != null)
             {
                 target.Headers.FillFromHeaderCollection(requestMessage.Headers);
@@ -148,6 +153,8 @@ namespace REDTransport.NET.Http
             responseMessage.StatusCode = (int)target.StatusCode;
 
             responseMessage.StatusMessage = target.ReasonPhrase;
+
+            responseMessage.Version = target.Version.ToString(2);
 
             if (target.Headers != null)
             {

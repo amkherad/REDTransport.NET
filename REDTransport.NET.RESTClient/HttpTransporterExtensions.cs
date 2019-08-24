@@ -21,7 +21,7 @@ namespace REDTransport.NET.RESTClient
             if (httpTransporter == null) throw new ArgumentNullException(nameof(httpTransporter));
 
             var message = new RequestMessage(
-                httpTransporter.HttpProtocol,
+                httpTransporter.ProtocolVersion,
                 requestUri,
                 method.ToString(),
                 headers.ToHeaderCollection(),
@@ -39,10 +39,10 @@ namespace REDTransport.NET.RESTClient
             if (httpTransporter == null) throw new ArgumentNullException(nameof(httpTransporter));
 
             var message = new RequestMessage(
-                httpTransporter.HttpProtocol,
+                httpTransporter.ProtocolVersion,
                 requestUri,
                 HttpMethod.Get.ToString(),
-                new HeaderCollection(),
+                new HeaderCollection(HttpHeaderType.RequestHeader),
                 null
             );
 

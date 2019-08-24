@@ -10,33 +10,37 @@ namespace REDTransport.NET.Collections
         {
             private readonly KeyValuesCollection<TKey, TValue> _parent;
 
-            private int _entriesCount = 0;
-            private int _currentIndex = 0;
-            private int _currentSubIndex = -1;
+            private int _entriesCount;
+            private int _currentIndex;
+            private int _currentSubIndex;
             //private TKey _currentKey;
 
 
             public Enumerator(KeyValuesCollection<TKey, TValue> collection)
             {
                 _parent = collection;
+
+                _entriesCount = _parent._entries.Count;
+                _currentIndex = 0;
+                _currentSubIndex = -1;
             }
 
             public void Dispose()
             {
                 //_parent = null;
-                _entriesCount = 0;
+                _entriesCount = _parent._entries.Count;
                 _currentIndex = 0;
-                _currentSubIndex = 0;
+                _currentSubIndex = -1;
             }
 
             public bool MoveNext()
             {
-                if (_parent.KeyCount != _entriesCount)
+                if (_parent._entries.Count != _entriesCount)
                 {
                     throw new System.Exception("A key was added to collection while enumerating.");
                 }
                 
-                if (_parent.KeyCount == 0 || _parent.KeyCount <= _currentIndex)
+                if (_parent._entries.Count == 0 || _parent._entries.Count <= _currentIndex)
                 {
                     return false;
                 }
@@ -49,7 +53,7 @@ namespace REDTransport.NET.Collections
                 {
                     _currentSubIndex = 0;
                     ++_currentIndex;
-                    if (_parent.KeyCount <= _currentIndex)
+                    if (_parent._entries.Count <= _currentIndex)
                     {
                         return false;
                     }

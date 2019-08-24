@@ -1,44 +1,110 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 
 namespace REDTransport.NET.Http
 {
-    [DebuggerDisplay("{Name}: {Value} {Path}")]
-    public class HttpCookie
+    [DebuggerDisplay("{ToString()}")]
+    public struct HttpCookie
     {
-        public virtual string Name { get; }
-        public virtual string Value { get; set; }
-        public virtual string Path { get; set; }
-        public virtual string Domain { get; set; }
-        public virtual DateTime? Expires { get; set; }
-        public virtual Uri Uri { get; set; }
-        public virtual bool Secure { get; set; }
-        public virtual bool HttpOnly { get; set; }
-        //public string
+        public string Name { get; }
+        public string Value { get; set; }
+        
+        public string StringValues { get; set; }
+        
+        public string Path { get; set; }
+        public string Domain { get; set; }
+
+        public HttpCookieSameSiteMode? SameSite { get; set; }
+
+        public DateTime? Expires { get; set; }
         
         
-        protected HttpCookie() { }
-        public HttpCookie(string name)
+        /// <summary>
+        /// A secure cookie is only sent to the server with an encrypted request over the HTTPS protocol. Even with Secure, sensitive information should never be stored in cookies, as they are inherently insecure and this flag can't offer real protection. Starting with Chrome 52 and Firefox 52, insecure sites (http:) can't set cookies with the Secure directive.
+        /// </summary>
+        public bool Secure { get; set; }
+
+        /// <summary>
+        /// To help mitigate cross-site scripting (XSS) attacks, HttpOnly cookies are inaccessible to JavaScript's Document.cookie API; they are only sent to the server. For example, cookies that persist server-side sessions don't need to be available to JavaScript, and the HttpOnly flag should be set.
+        /// </summary>
+        public bool HttpOnly { get; set; }
+
+
+        public bool IsSecureOnlyCookie => Name.StartsWith("__Secure-");
+        public bool IsHostOnlyCookie => Name.StartsWith("__Host-");
+
+
+        public HttpCookie(string name, string value)
         {
             Name = name;
+            Value = value;
+            Secure = false;
+            HttpOnly = false;
+
+            StringValues = null;
+            Expires = null;
+            Domain = null;
+            Path = null;
+            SameSite = null;
         }
 
-        public virtual string[] Values
+        public string[] Values
         {
-            get { return Value.Split(';'); }
-            set { Value = string.Join(";", value); }
+            get { return StringValues.Split(';'); }
+            set { StringValues = string.Join(";", value); }
         }
 
-        public virtual void FillFromString(string cookieString)
+        public override string ToString()
+        {
+            var attributes = new List<string>();
+
+            if (Secure)
+            {
+                attributes.Add("Secure");
+            }
+
+            if (HttpOnly)
+            {
+                attributes.Add("HttpOnly");
+            }
+
+            if (Domain != null)
+            {
+                attributes.Add($"Domain={Domain}");
+            }
+
+            if (Expires != null)
+            {
+                attributes.Add($"Expires={Expires.Value.ToString(HeaderCollection.Rfc7231DateFormatToString)}");
+            }
+
+            if (SameSite != null)
+            {
+                attributes.Add($"SameSite={SameSite}");
+            }
+
+            if (attributes.Count > 0)
+            {
+                return $"{Name}={Value}; {string.Join("; ", attributes)}";
+            }
+
+            return $"{Name}={Value}";
+        }
+
+        public void FillFromString(string cookieString)
         {
             if (cookieString == null) throw new ArgumentNullException(nameof(cookieString));
 
+            const string Cookie = "cookie:";
             const string SetCookie = "set-cookie:";
-            
+
             cookieString = cookieString.Trim();
-            var lower = cookieString.ToLower();
-            if (lower.StartsWith(SetCookie))
+            if (
+                cookieString.StartsWith(Cookie, StringComparison.OrdinalIgnoreCase) ||
+                cookieString.StartsWith(SetCookie, StringComparison.OrdinalIgnoreCase)
+            )
             {
                 cookieString = cookieString.Substring(SetCookie.Length);
             }
@@ -80,6 +146,7 @@ namespace REDTransport.NET.Http
                             {
                                 Expires = expiration;
                             }
+
                             break;
                         }
                         case "path":

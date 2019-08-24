@@ -12,7 +12,9 @@ namespace REDTransport.NET.Messages
         
         public string StatusMessage { get; set; }
         
-        public string ProtocolVersion { get; set; }
+        public string Version { get; set; }
+        
+        //public string ProtocolVersion { get; set; }
         
         public HeaderCollection Headers { get; set; }
         
