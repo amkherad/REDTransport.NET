@@ -15,9 +15,11 @@ namespace REDTransport.NET.Messages
         private string _path;
         private string _queryString;
         private string _rawTarget;
+#nullable enable
         private Uri? _uri;
+#nullable disable
 
-        
+
         public RequestMessage()
         {
         }
@@ -170,17 +172,17 @@ namespace REDTransport.NET.Messages
                 {
                     query = '?' + query;
                 }
-                
+
                 var uri = new Uri($"{_scheme}://{_host}/{path}{query}");
 
                 _uri = uri;
-                
+
                 return _uri;
             }
             set
             {
                 _uri = value;
-                
+
                 _scheme = value.Scheme;
                 _host = value.Host;
                 _path = value.AbsolutePath;

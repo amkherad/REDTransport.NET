@@ -17,13 +17,13 @@ namespace REDTransport.NET.Server.AspNet.Message
         {
             throw new NotImplementedException();
             
-            if (stream == null) throw new ArgumentNullException(nameof(stream));
-            if (message == null) throw new ArgumentNullException(nameof(message));
-
-            using (var writer = new StreamWriter(stream))
-            {
-                await writer.WriteLineAsync("");
-            }
+//            if (stream == null) throw new ArgumentNullException(nameof(stream));
+//            if (message == null) throw new ArgumentNullException(nameof(message));
+//
+//            using (var writer = new StreamWriter(stream))
+//            {
+//                await writer.WriteLineAsync("");
+//            }
         }
 
         public Task WriteResponseMessageToStream(Stream stream, IAsyncEnumerable<ResponseMessage> messages, CancellationToken cancellationToken)

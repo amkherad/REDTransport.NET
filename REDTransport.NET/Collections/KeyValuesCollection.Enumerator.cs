@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace REDTransport.NET.Collections
 {
@@ -8,8 +9,9 @@ namespace REDTransport.NET.Collections
         protected class Enumerator : IEnumerator<KeyValuePair<TKey, TValue>>
         {
             private readonly KeyValuesCollection<TKey, TValue> _parent;
-            private int _currentIndex = 0;
 
+            private int _entriesCount = 0;
+            private int _currentIndex = 0;
             private int _currentSubIndex = -1;
             //private TKey _currentKey;
 
@@ -22,12 +24,18 @@ namespace REDTransport.NET.Collections
             public void Dispose()
             {
                 //_parent = null;
+                _entriesCount = 0;
                 _currentIndex = 0;
                 _currentSubIndex = 0;
             }
 
             public bool MoveNext()
             {
+                if (_parent.KeyCount != _entriesCount)
+                {
+                    throw new System.Exception("A key was added to collection while enumerating.");
+                }
+                
                 if (_parent.KeyCount == 0 || _parent.KeyCount <= _currentIndex)
                 {
                     return false;
@@ -36,7 +44,8 @@ namespace REDTransport.NET.Collections
                 ++_currentSubIndex;
 
                 var col = _parent.GetEntryByIndex(_currentIndex);
-                while (col.Count == 0 || col.Count <= _currentSubIndex)
+                var count = col.Count;
+                while (count == 0 || count <= _currentSubIndex)
                 {
                     _currentSubIndex = 0;
                     ++_currentIndex;
@@ -51,6 +60,7 @@ namespace REDTransport.NET.Collections
 
             public void Reset()
             {
+                _entriesCount = _parent._entries.Count;
                 _currentIndex = 0;
                 _currentSubIndex = -1;
             }

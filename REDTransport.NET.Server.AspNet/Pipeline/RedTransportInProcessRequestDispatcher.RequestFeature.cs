@@ -12,7 +12,7 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
         {
             public RequestMessage RequestMessage { get; }
 
-
+#nullable enable
             private string? _protocol;
             private string? _scheme;
             private string? _method;
@@ -22,6 +22,7 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
             private string? _rawTarget;
             private IHeaderDictionary? _headers;
             private Stream? _body;
+#nullable disable
 
 
             public RequestFeature(RequestMessage requestMessage)

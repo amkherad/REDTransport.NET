@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -12,16 +13,16 @@ namespace REDTransport.NET.Messages
             
         }
         
-        public static async Task<ResponseAggregationMessage> PackAsync(
+        public static Task<ResponseAggregationMessage> PackAsync(
             Uri uri,
             IEnumerable<ResponseMessage> responseMessages,
             CancellationToken cancellationToken
         )
         {
-            return new ResponseAggregationMessage
+            return Task.FromResult(new ResponseAggregationMessage
             {
                 //Uri = uri,
-            };
+            });
         }
 
         public async IAsyncEnumerable<ResponseMessage> UnPackAsync(CancellationToken cancellationToken)

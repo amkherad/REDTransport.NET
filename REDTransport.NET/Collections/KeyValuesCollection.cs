@@ -12,18 +12,20 @@ namespace REDTransport.NET.Collections
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
     [DebuggerDisplay("KeyCount={KeyCount}, EntryCount={Count}")]
-    public partial class KeyValuesCollection<TKey, TValue> : ICollection<KeyValuePair<TKey, TValue>>, IEnumerable<KeyValuePair<TKey, TValue>>,
+    public partial class KeyValuesCollection<TKey, TValue> : ICollection<KeyValuePair<TKey, TValue>>,
+        IEnumerable<KeyValuePair<TKey, TValue>>,
         IDictionary<TKey, TValue>, IDictionary<TKey, IEnumerable<TValue>>
     {
         private Dictionary<TKey, Entry> _entries;
         private List<TKey> _orderedKeys;
         private readonly IEqualityComparer<TKey> _keyComparer;
         private readonly IEqualityComparer<TValue> _valueComparer;
+
         private bool _removeEmptyKeys = true;
-        private ICollection<TKey> _keys;
-        private ICollection<TValue> _values;
-        private ICollection<TKey> _keys1;
-        private ICollection<IEnumerable<TValue>> _values1;
+        //private ICollection<TKey> _keys;
+        //private ICollection<TValue> _values;
+        //private ICollection<TKey> _keys1;
+        //private ICollection<IEnumerable<TValue>> _values1;
 
         public KeyValuesCollection()
         {
@@ -195,6 +197,23 @@ namespace REDTransport.NET.Collections
         public bool Contains(KeyValuePair<TKey, TValue> item)
         {
             return ContainsKeyValue(item.Key, item.Value, null);
+        }
+
+        public bool Contains(IEnumerable<TValue> items)
+        {
+            var iterations = 0;
+
+            foreach (var item in items)
+            {
+                if (!_entries.Any(e => e.Value.Contains(item)))
+                {
+                    return false;
+                }
+
+                iterations++;
+            }
+
+            return iterations > 0;
         }
 
 
@@ -389,8 +408,8 @@ namespace REDTransport.NET.Collections
         /// </summary>
         public virtual void Clear()
         {
-            _entries = new Dictionary<TKey, Entry>();
-            _orderedKeys = new List<TKey>();
+            _entries.Clear();
+            _orderedKeys.Clear();
         }
 
         /// <summary>
@@ -664,13 +683,14 @@ namespace REDTransport.NET.Collections
         /// </summary>
         public virtual IEnumerable<TKey> Keys => _entries.Keys;
 
-        ICollection<IEnumerable<TValue>> IDictionary<TKey, IEnumerable<TValue>>.Values => _values1;
+        ICollection<IEnumerable<TValue>> IDictionary<TKey, IEnumerable<TValue>>.Values =>
+            new EnumerableValueCollection(this);
 
-        ICollection<TKey> IDictionary<TKey, IEnumerable<TValue>>.Keys => _keys1;
+        ICollection<TKey> IDictionary<TKey, IEnumerable<TValue>>.Keys => new KeyCollection(this);
 
-        ICollection<TValue> IDictionary<TKey, TValue>.Values => _values;
+        ICollection<TValue> IDictionary<TKey, TValue>.Values => new ValueCollection(this);
 
-        ICollection<TKey> IDictionary<TKey, TValue>.Keys => _keys;
+        ICollection<TKey> IDictionary<TKey, TValue>.Keys => new KeyCollection(this);
 
         /// <summary>
         /// Gets all values.
@@ -805,7 +825,7 @@ namespace REDTransport.NET.Collections
             new Enumerator(this);
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-        
+
         public virtual IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator() => new Enumerator(this);
     }
 }
