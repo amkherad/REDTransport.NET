@@ -26,11 +26,11 @@ namespace REDTransport.NET.Server.AspNet
             switch (config.RequestDispatcherStrategy)
             {
                 case RequestDispatcherStrategy.InProcess:
-                    services.AddTransient<IRedTransportRequestDispatcher, RedTransportInProcessRequestDispatcher>();
+                    services.AddSingleton<IRedTransportRequestDispatcher, RedTransportInProcessRequestDispatcher>();
                     break;
                 case RequestDispatcherStrategy.HttpChannel:
                     services
-                        .AddTransient<IRedTransportRequestDispatcher, RedTransportHttpChannelRequestDispatcher>();
+                        .AddSingleton<IRedTransportRequestDispatcher, RedTransportHttpChannelRequestDispatcher>();
                     break;
                 case RequestDispatcherStrategy.Custom:
                     break;

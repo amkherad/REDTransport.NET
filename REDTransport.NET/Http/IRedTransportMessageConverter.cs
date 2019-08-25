@@ -27,6 +27,19 @@ namespace REDTransport.NET.Http
         /// <returns></returns>
         bool IsRedResponse(TResponse request);
 
+//        /// <summary>
+//        /// Determines whether a request message is aggregated.
+//        /// </summary>
+//        /// <param name="requestMessage"></param>
+//        /// <returns></returns>
+//        bool IsAggregatedRequest(RequestMessage requestMessage);
+//
+//        /// <summary>
+//        /// Determines whether a response message is aggregated.
+//        /// </summary>
+//        /// <param name="responseMessage"></param>
+//        /// <returns></returns>
+//        bool IsAggregatedResponse(ResponseMessage responseMessage);
 
         /// <summary>
         /// Converts a <see cref="RequestMessage"/> to <see cref="TRequest"/>.

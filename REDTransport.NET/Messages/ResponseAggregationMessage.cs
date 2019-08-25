@@ -8,7 +8,7 @@ namespace REDTransport.NET.Messages
 {
     public class ResponseAggregationMessage : ResponseMessage
     {
-        internal protected ResponseAggregationMessage()
+        public ResponseAggregationMessage()
         {
             
         }

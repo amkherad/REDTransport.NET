@@ -30,7 +30,7 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
             HttpContext = httpContext ?? throw new ArgumentNullException(nameof(httpContext));
             RequestMessage = requestMessage ?? throw new ArgumentNullException(nameof(requestMessage));
             _headers = requestMessage.Headers ??= new HeaderCollection(HttpHeaderType.RequestHeader);
-            _cookies = new RequestCookieCollectionWrapper(_headers.Cookies);
+            _cookies = new CookieCollectionWrapper(_headers.Cookies);
             _formFeature = httpContext.Features.Get<IFormFeature>();
         }
 

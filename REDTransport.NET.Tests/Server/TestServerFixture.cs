@@ -1,4 +1,5 @@
 using System;
+using System.Net;
 using System.Net.Http;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
@@ -14,9 +15,13 @@ namespace REDTransport.NET.Tests.Server
         {
             var builder = new WebHostBuilder()
                 .UseEnvironment("Development")
+                .UseKestrel(options => options.Listen(IPAddress.Any, 8080))
                 .UseStartup<DefaultStartup>();
 
-            _testServer = new TestServer(builder);
+            _testServer = new TestServer(builder)
+            {
+            };
+            
             Client = _testServer.CreateClient();
         }
 

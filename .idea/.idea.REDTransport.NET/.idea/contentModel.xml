@@ -48,6 +48,7 @@
           <e p="NetHttpHeadersExtensions.cs" t="Include" />
         </e>
         <e p="Messages" t="Include">
+          <e p="RequestActions.cs" t="Include" />
           <e p="RequestAggregationMessage.cs" t="Include" />
           <e p="RequestMessage.cs" t="Include" />
           <e p="ResponseActions.cs" t="Include" />
@@ -95,7 +96,8 @@
           <e p="REDTransportHelperExtensions.cs" t="Include" />
         </e>
         <e p="Http" t="Include">
-          <e p="RequestCookieCollectionWrapper.cs" t="Include" />
+          <e p="CookieCollectionWrapper.cs" t="Include" />
+          <e p="HeaderCollectionWrapper.cs" t="Include" />
         </e>
         <e p="Message" t="Include">
           <e p="DefaultMessage2AspNetCoreHttpConverter.cs" t="Include" />
@@ -112,11 +114,11 @@
         </e>
         <e p="Pipeline" t="Include">
           <e p="IRedTransportRequestDispatcher.cs" t="Include" />
+          <e p="RedHttpRequest.cs" t="Include" />
+          <e p="RedHttpResponse.cs" t="Include" />
           <e p="RedTransportHttpChannelRequestDispatcher.cs" t="Include" />
           <e p="RedTransportInProcessRequestDispatcher.cs" t="Include" />
           <e p="RedTransportInProcessRequestDispatcher.RedHttpContext.cs" t="Include" />
-          <e p="RedTransportInProcessRequestDispatcher.RedHttpRequest.cs" t="Include" />
-          <e p="RedTransportInProcessRequestDispatcher.RedHttpResponse.cs" t="Include" />
           <e p="RedTransportInProcessRequestDispatcher.RequestFeature.cs" t="Include" />
           <e p="RedTransportInProcessRequestDispatcher.ResponseFeature.cs" t="Include" />
           <e p="RedTransportInProcessScopeMode.cs" t="Include" />
@@ -234,6 +236,23 @@
           </e>
         </e>
         <e p="Utils.cs" t="Include" />
+      </e>
+      <e p="Sample" t="Include" />
+      <e p="Samples\REDTransport.NET.Sample0" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="ValuesController.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="REDTransport.NET.Sample0.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="REDTransport.NET.Sample0.csproj" t="IncludeRecursive" />
+        <e p="Startup.cs" t="Include" />
       </e>
     </e>
   </component>

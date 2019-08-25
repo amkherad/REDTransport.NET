@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REDTransport.NET.Server.Asp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REDTransport.NET.Tests", "REDTransport.NET.Tests\REDTransport.NET.Tests.csproj", "{F0352E74-E1A6-46BF-9A48-A73DC4850CF8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample", "Sample", "{3C54D418-E5F4-48F8-9645-6BFB4637AC0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "REDTransport.NET.Sample0", "Samples\REDTransport.NET.Sample0\REDTransport.NET.Sample0.csproj", "{18F9C51F-746D-47E5-B7DB-765934D27891}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,5 +77,12 @@ Global
 		{F0352E74-E1A6-46BF-9A48-A73DC4850CF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0352E74-E1A6-46BF-9A48-A73DC4850CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0352E74-E1A6-46BF-9A48-A73DC4850CF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18F9C51F-746D-47E5-B7DB-765934D27891}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18F9C51F-746D-47E5-B7DB-765934D27891}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18F9C51F-746D-47E5-B7DB-765934D27891}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18F9C51F-746D-47E5-B7DB-765934D27891}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{18F9C51F-746D-47E5-B7DB-765934D27891} = {3C54D418-E5F4-48F8-9645-6BFB4637AC0A}
 	EndGlobalSection
 EndGlobal

@@ -5,9 +5,11 @@ using REDTransport.NET.Http;
 
 namespace REDTransport.NET.Messages
 {
-    [DebuggerDisplay("{StatusCode} \"{StatusMessage}\" {ProtocolVersion}, Headers={Headers.Count}")]
+    [DebuggerDisplay("{StatusCode} \"{StatusMessage}\" HTTP/{Version}, Headers={Headers.Count}")]
     public class ResponseMessage
     {
+        private HeaderCollection _headers;
+        
         public int StatusCode { get; set; }
         
         public string StatusMessage { get; set; }
@@ -15,15 +17,23 @@ namespace REDTransport.NET.Messages
         public string Version { get; set; }
         
         //public string ProtocolVersion { get; set; }
-        
-        public HeaderCollection Headers { get; set; }
+
+        public HeaderCollection Headers
+        {
+            get => _headers;
+            set => _headers = value ?? throw new ArgumentNullException(nameof(value));
+        }
         
         public Stream Body { get; set; }
 
 
         public ResponseMessage()
         {
-            
+            Headers = new HeaderCollection(HttpHeaderType.ResponseHeader);
+            StatusCode = 200;
+            StatusMessage = "OK";
+            Body = Stream.Null;
+            Version = "1.1";
         }
         
         public ResponseMessage(

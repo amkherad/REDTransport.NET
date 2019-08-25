@@ -1,6 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Primitives;
@@ -45,7 +45,16 @@ namespace REDTransport.NET.Server.AspNet.Http
 
         public void CopyTo(KeyValuePair<string, StringValues>[] array, int arrayIndex)
         {
-            throw new NotImplementedException();
+            var dI = arrayIndex;
+            foreach (var header in Headers)
+            {
+                if (dI >= array.Length)
+                {
+                    return;
+                }
+
+                array[dI] = new KeyValuePair<string, StringValues>(header.Key, header.Value);
+            }
         }
 
         public bool Remove(KeyValuePair<string, StringValues> item)
@@ -53,36 +62,44 @@ namespace REDTransport.NET.Server.AspNet.Http
             return Headers.Remove(item.Key, item.Value.ToList()) > 0;
         }
 
-        public int Count { get; }
-        public bool IsReadOnly { get; }
-        public void Add(string key, StringValues value)
+        public int Count => Headers.Count;
+        public bool IsReadOnly => Headers.IsReadOnly;
+        public void Add(string key, StringValues values)
         {
-            throw new System.NotImplementedException();
+            Headers.Add(key, (IEnumerable<string>) values);
         }
 
-        public bool ContainsKey(string key)
-        {
-            throw new System.NotImplementedException();
-        }
+        public bool ContainsKey(string key) => Headers.ContainsKey(key);
 
-        public bool Remove(string key)
-        {
-            throw new System.NotImplementedException();
-        }
+        public bool Remove(string key) => Headers.Remove(key);
 
         public bool TryGetValue(string key, out StringValues value)
         {
-            throw new System.NotImplementedException();
+            var result = Headers.TryGetValues(key, out var values);
+
+            if (result)
+            {
+                value = new StringValues(values.ToArray());                
+            }
+            
+            return result;
         }
 
         public StringValues this[string key]
         {
-            get => throw new System.NotImplementedException();
-            set => throw new System.NotImplementedException();
+            get => new StringValues(Headers[key].ToArray());
+            set => Headers[key] = value.ToArray();
         }
 
-        public long? ContentLength { get; set; }
-        public ICollection<string> Keys { get; }
-        public ICollection<StringValues> Values { get; }
+        public long? ContentLength
+        {
+            get => Headers.ContentLength;
+            set => Headers.ContentLength = value;
+        }
+
+        public ICollection<string> Keys => new ReadOnlyCollection<string>(Headers.Keys.ToArray());
+
+        public ICollection<StringValues> Values =>
+            new ReadOnlyCollection<StringValues>(Headers.Values.Select(e => new StringValues(e.ToArray())).ToList());
     }
 }

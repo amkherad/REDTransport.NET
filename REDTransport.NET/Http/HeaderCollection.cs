@@ -52,6 +52,8 @@ namespace REDTransport.NET.Http
         public const string IfRangeHeaderName = "If-Range";
         public const string IfUnmodifiedSinceHeaderName = "If-Unmodified-Since";
 
+        public const string LocationHeaderName = "Location";
+        
         public const string MaxForwardsHeaderName = "Max-Forwards";
 
         public const string OriginHeaderName = "Origin";
@@ -385,6 +387,12 @@ namespace REDTransport.NET.Http
         {
             get => SingleOrDefault(IfUnmodifiedSinceHeaderName);
             set => SetStringOrRemoveOnNull(IfUnmodifiedSinceHeaderName, value);
+        }
+
+        public string Location
+        {
+            get => SingleOrDefault(LocationHeaderName);
+            set => SetStringOrRemoveOnNull(LocationHeaderName, value);
         }
 
         public string MaxForwards

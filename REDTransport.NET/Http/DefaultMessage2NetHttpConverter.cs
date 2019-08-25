@@ -34,6 +34,11 @@ namespace REDTransport.NET.Http
             return false;
         }
 
+        public bool IsAggregatedResponse(ResponseMessage responseMessage)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<HttpRequestMessage> ToRequestAsync(RequestMessage requestMessage,
             CancellationToken cancellationToken)
         {

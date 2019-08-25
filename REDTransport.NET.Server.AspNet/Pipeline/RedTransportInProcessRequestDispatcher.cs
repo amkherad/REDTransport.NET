@@ -2,12 +2,9 @@ using System;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting.Internal;
-using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Http.Features.Authentication;
-using Microsoft.AspNetCore.Http.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using REDTransport.NET.Collections;
 using REDTransport.NET.Http;
@@ -41,10 +38,10 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
             //Application = application;
             Configuration = configuration;
             MessageConverter = messageConverter;
-            MultipartMessageReaderWriter = multipartMessageReaderWriter ??
-                                           throw new ArgumentNullException(nameof(multipartMessageReaderWriter));
-            JsonMessageReaderWriter = jsonMessageReaderWriter ??
-                                      throw new ArgumentNullException(nameof(jsonMessageReaderWriter));
+            MultipartMessageReaderWriter =
+                multipartMessageReaderWriter ?? throw new ArgumentNullException(nameof(multipartMessageReaderWriter));
+            JsonMessageReaderWriter =
+                jsonMessageReaderWriter ?? throw new ArgumentNullException(nameof(jsonMessageReaderWriter));
         }
 
         public async Task DispatchRedRequest(
@@ -125,22 +122,36 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
             features.Set<IHttpBodyControlFeature>(httpBodyControlFeature);
 //            features.Set<IHttpBodyControlFeature>(httpBodyControlFeature);
 
-            var ctx = new RedHttpContext(features, new RequestMessage());
+            var ctx = new RedHttpContext(features, requestMessage);
+
+            IServiceProvider serviceProvider;
 
             if (Configuration.InProcessScopeMode != RedTransportInProcessScopeMode.UseRootScope)
             {
                 //creating a new scope for IServiceProvider.
-                
+
                 var factory = serviceProviderFeature.RequestServices.GetRequiredService<IServiceScopeFactory>();
+
+                serviceProvider = factory.CreateScope().ServiceProvider;
+
                 serviceProviderFeature = new ServiceProvidersFeature
                 {
-                    RequestServices = factory.CreateScope().ServiceProvider
+                    RequestServices = serviceProvider
                 };
                 features.Set<IServiceProvidersFeature>(serviceProviderFeature);
             }
+            else
+            {
+                serviceProvider = serviceProviderFeature.RequestServices;
+            }
+
+            var memStream = new MemoryStream();
+
+            ctx.Response.Body = memStream;
+            
+            ctx.Response.RegisterForDispose(memStream);
 
             await next(ctx);
-
 
             return await MessageConverter.FromResponseAsync(ctx.Response, cancellationToken);
         }

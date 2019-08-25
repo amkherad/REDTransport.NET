@@ -45,14 +45,22 @@ namespace REDTransport.NET.Server.AspNet.Message
             CancellationToken cancellationToken
         )
         {
-            using (var writer = new StreamWriter(stream))
+            await using (var writer = new StreamWriter(stream))
             {
-                writer.Write('[');
-                await foreach (var message in messages)
+                await writer.WriteAsync('[');
+                try
                 {
-                    await WriteSingleResponseMessageToStream(stream, writer, message, cancellationToken);
+                    await foreach (var message in messages)
+                    {
+                        await WriteSingleResponseMessageToStream(stream, writer, message, cancellationToken);
+                    }
                 }
-                writer.Write(']');
+                catch (Exception ex)
+                {
+                    GC.KeepAlive(ex);
+                }
+
+                await writer.WriteAsync(']');
             }
         }
 
@@ -66,31 +74,31 @@ namespace REDTransport.NET.Server.AspNet.Message
         {
             if (message == null) throw new ArgumentNullException(nameof(message));
 
-            writer.Write('{');
+            await writer.WriteAsync('{');
 
-            writer.Write("\"StatusCode\":");
-            writer.Write(message.StatusCode);
-            writer.Write(',');
+            await writer.WriteAsync("\"StatusCode\":");
+            await writer.WriteAsync(message.StatusCode.ToString());
+            await writer.WriteAsync(',');
 
-            writer.Write("\"StatusMessage\":\"");
-            writer.Write(message.StatusMessage);
-            writer.Write("\",");
+            await writer.WriteAsync("\"StatusMessage\":\"");
+            await writer.WriteAsync(message.StatusMessage);
+            await writer.WriteAsync("\",");
 
             if (message.Headers != null)
             {
-                writer.Write("\"Headers\":");
-                await JsonSerializer.SerializeAsync(stream, message.Headers, JsonSerializerOptions, cancellationToken);
-                writer.Write(',');
+                await writer.WriteAsync("\"Headers\":");
+                //await JsonSerializer.SerializeAsync(stream, message.Headers, JsonSerializerOptions, cancellationToken);
+                await writer.WriteAsync(',');
             }
 
             if (message.Body != null)
             {
-                writer.Write("\"Body\":");
-                await JsonSerializer.SerializeAsync(stream, message.Body, JsonSerializerOptions, cancellationToken);
+                await writer.WriteAsync("\"Body\":");
+                //await JsonSerializer.SerializeAsync(stream, message.Body, JsonSerializerOptions, cancellationToken);
                 //writer.Write(',');
             }
 
-            writer.Write('}');
+            await writer.WriteAsync('}');
         }
     }
 }

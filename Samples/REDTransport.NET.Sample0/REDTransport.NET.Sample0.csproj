@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\REDTransport.NET.Server.AspNet.Crud\REDTransport.NET.Server.AspNet.Crud.csproj" />
+      <ProjectReference Include="..\..\REDTransport.NET.Server.AspNet.GraphQL\REDTransport.NET.Server.AspNet.GraphQL.csproj" />
+      <ProjectReference Include="..\..\REDTransport.NET.Server.AspNet.OData\REDTransport.NET.Server.AspNet.OData.csproj" />
+      <ProjectReference Include="..\..\REDTransport.NET.Server.AspNet\REDTransport.NET.Server.AspNet.csproj" />
+    </ItemGroup>
+</Project>

@@ -33,36 +33,95 @@ namespace REDTransport.NET.Http
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
 
+        public int IndexOf(string key) => IndexOf(key, out _, out _);
+
+        public int IndexOf(string key, out string cookieString)
+        {
+            if (Headers.CookieStrings == null)
+            {
+                cookieString = default;
+                return -1;
+            }
+
+            var hash = key.GetHashCode();
+            if (_indexHash.TryGetValue(hash, out var index))
+            {
+                var str = Headers.CookieStrings.ElementAt(index);
+                _parseCookieEntry(str, out var name, out _, out _);
+                if (name == key)
+                {
+                    cookieString = str;
+                    return index;
+                }
+            }
+
+            index = 0;
+            foreach (var str in Headers.CookieStrings)
+            {
+                _parseCookieEntry(str, out var name, out _, out _);
+                if (name == key)
+                {
+                    cookieString = str;
+                    return index;
+                }
+
+                index++;
+            }
+
+            cookieString = default;
+            return -1;
+        }
+
+        public int IndexOf(string key, out string value, out string remaining)
+        {
+            if (Headers.CookieStrings == null)
+            {
+                value = default;
+                remaining = default;
+                return -1;
+            }
+
+            var hash = key.GetHashCode();
+            if (_indexHash.TryGetValue(hash, out var index))
+            {
+                var str = Headers.CookieStrings.ElementAt(index);
+                _parseCookieEntry(str, out var name, out value, out remaining);
+                if (name == key)
+                {
+                    return index;
+                }
+            }
+
+            index = 0;
+            foreach (var str in Headers.CookieStrings)
+            {
+                _parseCookieEntry(str, out var name, out value, out remaining);
+                if (name == key)
+                {
+                    return index;
+                }
+
+                index++;
+            }
+
+            value = default;
+            remaining = default;
+            return -1;
+        }
+
+
         public HttpCookie this[string key]
         {
             get
             {
-                if (Headers.CookieStrings == null)
+                var index = IndexOf(key, out var cookieString);
+
+                if (index < 0)
                 {
                     throw new KeyNotFoundException();
                 }
 
-                var hash = key.GetHashCode();
-                if (_indexHash.TryGetValue(hash, out var index))
-                {
-                    var str = Headers.CookieStrings.ElementAt(index);
-                    _parseCookieEntry(str, out var name, out _);
-                    if (name == key)
-                    {
-                        return HttpCookie.Parse(str);
-                    }
-                }
-
-                foreach (var str in Headers.CookieStrings)
-                {
-                    _parseCookieEntry(str, out var name, out _);
-                    if (name == key)
-                    {
-                        return HttpCookie.Parse(str);
-                    }
-                }
-
-                throw new KeyNotFoundException();
+                return HttpCookie.Parse(cookieString);
             }
             set
             {
@@ -71,38 +130,18 @@ namespace REDTransport.NET.Http
                     throw new KeyNotFoundException();
                 }
 
-                var hash = key.GetHashCode();
-                if (_indexHash.TryGetValue(hash, out var index))
-                {
-                    var str = Headers.CookieStrings.ElementAt(index);
-                    _parseCookieEntry(str, out var name, out _);
-                    if (name == key)
-                    {
-                        var cookies = Headers.CookieStrings.ToArray();
-                        cookies[index] = value.ToString();
-                        Headers.CookieStrings = cookies;
-                        return;
-                    }
-                }
+                var index = IndexOf(key, out _, out _);
 
-                index = 0;
-                foreach (var str in Headers.CookieStrings)
-                {
-                    _parseCookieEntry(str, out var name, out _);
-                    if (name == key)
-                    {
-                        var cookies = Headers.CookieStrings.ToArray();
-                        cookies[index] = value.ToString();
-                        Headers.CookieStrings = cookies;
-                        return;
-                    }
-
-                    index++;
-                }
-
+                if (index < 0)
                 {
                     var cookies = Headers.CookieStrings.ToList();
                     cookies.Add(value.ToString());
+                    Headers.CookieStrings = cookies;
+                }
+                else
+                {
+                    var cookies = Headers.CookieStrings.ToArray();
+                    cookies[index] = value.ToString();
                     Headers.CookieStrings = cookies;
                 }
             }
@@ -134,7 +173,12 @@ namespace REDTransport.NET.Http
             }
         }
 
-        private void _parseCookieEntry(string cookieString, out string name, out string value)
+        private void _parseCookieEntry(
+            string cookieString,
+            out string name,
+            out string value,
+            out string remaining
+        )
         {
             var equalSign = cookieString.IndexOf('=');
             var semicolon = cookieString.IndexOf(';');
@@ -146,6 +190,15 @@ namespace REDTransport.NET.Http
 
             name = cookieString.Substring(0, equalSign);
             value = cookieString.Substring(equalSign + 1, semicolon - equalSign);
+
+            if (semicolon < cookieString.Length)
+            {
+                remaining = cookieString.Substring(semicolon + 1);
+            }
+            else
+            {
+                remaining = default;
+            }
         }
 
         public IEnumerable<string> Keys
@@ -159,7 +212,7 @@ namespace REDTransport.NET.Http
 
                 foreach (var cookie in Headers.CookieStrings)
                 {
-                    _parseCookieEntry(cookie, out var name, out _);
+                    _parseCookieEntry(cookie, out var name, out _, out _);
                     yield return name;
                 }
             }
@@ -170,6 +223,27 @@ namespace REDTransport.NET.Http
             var cookies = Headers.CookieStrings?.ToList() ?? new List<string>();
             cookies.Add(cookie.ToString());
             Headers.CookieStrings = cookies;
+        }
+
+        public void Add(string name, string value)
+        {
+            var cookies = Headers.CookieStrings?.ToList() ?? new List<string>();
+            cookies.Add($"{name}={value}");
+            Headers.CookieStrings = cookies;
+        }
+
+        public bool AddOrUpdate(HttpCookie cookie)
+        {
+            var index = IndexOf(cookie.Name);
+
+            if (index < 0)
+            {
+                Add(cookie);
+                return true;
+            }
+
+            this[index] = cookie;
+            return false;
         }
 
         public void AddRange(IEnumerable<HttpCookie> newCookies)
@@ -188,41 +262,12 @@ namespace REDTransport.NET.Http
             Headers.CookieStrings = null;
         }
 
-        public bool Contains(HttpCookie item) => TryGetValue(item.Name, out _);
+        public bool Contains(HttpCookie item) => TryGetValue(item.Name, out _, out _);
 
-        public bool ContainsKey(string key) => TryGetValue(key, out _);
+        public bool ContainsKey(string key) => TryGetValue(key, out _, out _);
 
-        public bool TryGetValue(string key, out string value)
-        {
-            if (Headers.CookieStrings == null)
-            {
-                value = default;
-                return false;
-            }
-
-            var hash = key.GetHashCode();
-            if (_indexHash.TryGetValue(hash, out var index))
-            {
-                var str = Headers.CookieStrings.ElementAt(index);
-                _parseCookieEntry(str, out var name, out value);
-                if (name == key)
-                {
-                    return true;
-                }
-            }
-
-            foreach (var str in Headers.CookieStrings)
-            {
-                _parseCookieEntry(str, out var name, out value);
-                if (name == key)
-                {
-                    return true;
-                }
-            }
-
-            value = default;
-            return false;
-        }
+        public bool TryGetValue(string key, out string value, out string remaining) =>
+            IndexOf(key, out value, out remaining) >= 0;
 
         public void CopyTo(HttpCookie[] array, int arrayIndex)
         {
@@ -238,43 +283,26 @@ namespace REDTransport.NET.Http
             }
         }
 
-        public bool Remove(HttpCookie item)
+        public bool Remove(HttpCookie item) => Remove(item.Name);
+
+        public bool Remove(string key)
         {
             if (Headers.CookieStrings == null)
             {
                 throw new KeyNotFoundException();
             }
 
-            var hash = item.Name.GetHashCode();
-            if (_indexHash.TryGetValue(hash, out var index))
+            var index = IndexOf(key);
+
+            if (index < 0)
             {
-                var str = Headers.CookieStrings.ElementAt(index);
-                _parseCookieEntry(str, out var name, out _);
-                if (name == item.Name)
-                {
-                    var cookies = Headers.CookieStrings.ToList();
-                    cookies.RemoveAt(index);
-                    Headers.CookieStrings = cookies;
-                    return true;
-                }
+                return false;
             }
 
-            index = 0;
-            foreach (var str in Headers.CookieStrings)
-            {
-                _parseCookieEntry(str, out var name, out _);
-                if (name == item.Name)
-                {
-                    var cookies = Headers.CookieStrings.ToList();
-                    cookies.RemoveAt(index);
-                    Headers.CookieStrings = cookies;
-                    return true;
-                }
-
-                index++;
-            }
-
-            return false;
+            var cookies = Headers.CookieStrings.ToList();
+            cookies.RemoveAt(index);
+            Headers.CookieStrings = cookies;
+            return true;
         }
 
         public int Count => Headers.CookieStrings?.Count() ?? 0;

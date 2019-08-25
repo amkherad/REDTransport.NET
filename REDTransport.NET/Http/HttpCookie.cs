@@ -11,14 +11,14 @@ namespace REDTransport.NET.Http
         public string Name { get; }
         public string Value { get; set; }
         
-        public string StringValues { get; set; }
+        public string StringValue { get; set; }
         
         public string Path { get; set; }
         public string Domain { get; set; }
 
         public HttpCookieSameSiteMode? SameSite { get; set; }
 
-        public DateTime? Expires { get; set; }
+        public DateTimeOffset? Expires { get; set; }
         
         
         /// <summary>
@@ -43,7 +43,7 @@ namespace REDTransport.NET.Http
             Secure = false;
             HttpOnly = false;
 
-            StringValues = null;
+            StringValue = null;
             Expires = null;
             Domain = null;
             Path = null;
@@ -52,8 +52,8 @@ namespace REDTransport.NET.Http
 
         public string[] Values
         {
-            get { return StringValues.Split(';'); }
-            set { StringValues = string.Join(";", value); }
+            get { return StringValue.Split(';'); }
+            set { StringValue = string.Join(";", value); }
         }
 
         public override string ToString()

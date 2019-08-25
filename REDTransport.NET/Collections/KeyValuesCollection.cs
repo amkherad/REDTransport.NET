@@ -20,6 +20,8 @@ namespace REDTransport.NET.Collections
         private List<TKey> _orderedKeys;
         private readonly IEqualityComparer<TKey> _keyComparer;
         private readonly IEqualityComparer<TValue> _valueComparer;
+        private KeyCollection _keyCollection;
+        private EnumerableValueCollection _valuesCollection;
 
         private bool _removeEmptyKeys = true;
         //private ICollection<TKey> _keys;
@@ -681,21 +683,24 @@ namespace REDTransport.NET.Collections
         /// <summary>
         /// Gets all keys.
         /// </summary>
-        public virtual IEnumerable<TKey> Keys => _entries.Keys;
-
-        ICollection<IEnumerable<TValue>> IDictionary<TKey, IEnumerable<TValue>>.Values =>
-            new EnumerableValueCollection(this);
-
-        ICollection<TKey> IDictionary<TKey, IEnumerable<TValue>>.Keys => new KeyCollection(this);
-
-        ICollection<TValue> IDictionary<TKey, TValue>.Values => new ValueCollection(this);
-
-        ICollection<TKey> IDictionary<TKey, TValue>.Keys => new KeyCollection(this);
+        public virtual ICollection<TKey> Keys => _keyCollection ??= new KeyCollection(this);
 
         /// <summary>
         /// Gets all values.
         /// </summary>
-        public virtual IEnumerable<TValue> Values => _entries.SelectMany(entry => entry.Value);
+        public virtual ICollection<IEnumerable<TValue>> Values =>
+            _valuesCollection ??= new EnumerableValueCollection(this);
+
+        //public virtual IEnumerable<TValue> Values => _entries.SelectMany(entry => entry.Value);
+
+        ICollection<IEnumerable<TValue>> IDictionary<TKey, IEnumerable<TValue>>.Values =>
+            _valuesCollection ??= new EnumerableValueCollection(this);
+
+        ICollection<TKey> IDictionary<TKey, IEnumerable<TValue>>.Keys => _keyCollection ??= new KeyCollection(this);
+
+        ICollection<TValue> IDictionary<TKey, TValue>.Values => new ValueCollection(this);
+
+        ICollection<TKey> IDictionary<TKey, TValue>.Keys => _keyCollection ??= new KeyCollection(this);
 
         /// <summary>
         /// Returns all entries as enumerable of KeyValuePairs.

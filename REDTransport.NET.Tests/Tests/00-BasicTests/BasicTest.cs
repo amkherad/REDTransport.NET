@@ -17,7 +17,7 @@ namespace REDTransport.NET.Tests
             using (var server = new TestServerFixture())
             {
                 var client = server.Client.ToTransporter();
-                
+
                 var res = await client.GetAsync(server.Client.Route("api/v1/test/testdata"), CancellationToken.None);
                 
                 var response = await client.HttpConverter.ToResponseAsync(res, CancellationToken.None);

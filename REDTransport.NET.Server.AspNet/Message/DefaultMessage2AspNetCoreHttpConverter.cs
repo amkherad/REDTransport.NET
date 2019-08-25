@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -35,36 +36,57 @@ namespace REDTransport.NET.Server.AspNet.Message
             return false;
         }
 
-        public async Task<HttpRequest> ToRequestAsync(RequestMessage requestMessage, CancellationToken cancellationToken)
+        public async Task<HttpRequest> ToRequestAsync(RequestMessage requestMessage,
+            CancellationToken cancellationToken)
         {
             if (requestMessage == null) throw new ArgumentNullException(nameof(requestMessage));
 
             var result = new DefaultHttpRequest(null);
 
             await CopyRequestMessageToTarget(result, requestMessage, cancellationToken);
-            
+
             return result;
         }
 
-        public async Task<HttpResponse> ToResponseAsync(ResponseMessage responseMessage, CancellationToken cancellationToken)
+        public async Task<HttpResponse> ToResponseAsync(ResponseMessage responseMessage,
+            CancellationToken cancellationToken)
         {
             if (responseMessage == null) throw new ArgumentNullException(nameof(responseMessage));
 
             var result = new DefaultHttpResponse(null);
 
             await CopyResponseMessageToTarget(result, responseMessage, cancellationToken);
-            
+
             return result;
         }
 
-        public async Task<RequestMessage> FromRequestAsync(HttpRequest requestMessage, CancellationToken cancellationToken)
+        public async Task<RequestMessage> FromRequestAsync(HttpRequest requestMessage,
+            CancellationToken cancellationToken)
         {
             if (requestMessage == null) throw new ArgumentNullException(nameof(requestMessage));
-            
-            var result = new RequestMessage();
+
+            RequestMessage result = null;
+
+            if (requestMessage.Headers.TryGetValue(ProtocolConstants.REDRequestActionHeaderName,
+                out var requestAction))
+            {
+                var parts = requestAction.ToString().Split(';');
+
+                if (parts.Any(p =>
+                    string.Equals(RequestActions.Aggregated, p.Trim(), StringComparison.OrdinalIgnoreCase))
+                )
+                {
+                    result = new RequestAggregationMessage();
+                }
+            }
+
+            if (result == null)
+            {
+                result = new RequestMessage();
+            }
 
             await CopyTargetToRequestMessage(result, requestMessage, cancellationToken);
-            
+
             return result;
         }
 
@@ -73,15 +95,34 @@ namespace REDTransport.NET.Server.AspNet.Message
         {
             if (responseMessage == null) throw new ArgumentNullException(nameof(responseMessage));
 
-            var result = new ResponseMessage();
+            ResponseMessage result = null;
+
+            if (responseMessage.Headers.TryGetValue(ProtocolConstants.REDRequestActionHeaderName,
+                out var responseAction))
+            {
+                var parts = responseAction.ToString().Split(';');
+
+                if (parts.Any(p =>
+                    string.Equals(ResponseActions.Aggregated, p.Trim(), StringComparison.OrdinalIgnoreCase))
+                )
+                {
+                    result = new ResponseAggregationMessage();
+                }
+            }
+
+            if (result == null)
+            {
+                result = new ResponseMessage();;
+            }
 
             await CopyTargetToResponseMessage(result, responseMessage, cancellationToken);
-            
+
             return result;
         }
 
-        
-        public Task CopyRequestMessageToTarget(HttpRequest target, RequestMessage requestMessage, CancellationToken cancellationToken)
+
+        public Task CopyRequestMessageToTarget(HttpRequest target, RequestMessage requestMessage,
+            CancellationToken cancellationToken)
         {
             if (requestMessage == null) throw new ArgumentNullException(nameof(requestMessage));
 
@@ -116,11 +157,12 @@ namespace REDTransport.NET.Server.AspNet.Message
             }
 
             target.StatusCode = responseMessage.StatusCode;
-            
+
             return Task.CompletedTask;
         }
 
-        public Task CopyTargetToRequestMessage(RequestMessage requestMessage, HttpRequest target, CancellationToken cancellationToken)
+        public Task CopyTargetToRequestMessage(RequestMessage requestMessage, HttpRequest target,
+            CancellationToken cancellationToken)
         {
             if (requestMessage == null) throw new ArgumentNullException(nameof(requestMessage));
 
@@ -134,13 +176,13 @@ namespace REDTransport.NET.Server.AspNet.Message
             requestMessage.ProtocolVersion = target.Protocol;
 
             requestMessage.RequestMethod = target.Method;
-            
+
             requestMessage.Host = target.Host.ToString();
             requestMessage.Scheme = target.Scheme;
             requestMessage.PathBase = target.PathBase;
             requestMessage.Path = target.Path;
             requestMessage.QueryString = target.QueryString.ToUriComponent();
-            
+
             return Task.CompletedTask;
         }
 

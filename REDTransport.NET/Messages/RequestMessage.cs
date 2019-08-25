@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using REDTransport.NET.Http;
 
 namespace REDTransport.NET.Messages
@@ -62,9 +63,9 @@ namespace REDTransport.NET.Messages
             _path = path ?? throw new ArgumentNullException(nameof(path));
             _queryString = queryString ?? throw new ArgumentNullException(nameof(queryString));
             _rawTarget = rawTarget ?? throw new ArgumentNullException(nameof(rawTarget));
-            
+
             RequestMethod = requestMethod ?? throw new ArgumentNullException(nameof(requestMethod));
-            Headers = headers ?? throw new ArgumentNullException(nameof(headers));
+            Headers = headers ?? new HeaderCollection(HttpHeaderType.RequestHeader);
             Body = body;
         }
 
@@ -173,7 +174,17 @@ namespace REDTransport.NET.Messages
                     query = '?' + query;
                 }
 
-                var uri = new Uri($"{_scheme}://{_host}/{path}{query}");
+                string hostPath;
+                if (_host.EndsWith('/') || path.StartsWith('/'))
+                {
+                    hostPath = _host + path;
+                }
+                else
+                {
+                    hostPath = $"{_host}/{path}";
+                }
+
+                var uri = new Uri($"{_scheme}://{hostPath}{query}");
 
                 _uri = uri;
 

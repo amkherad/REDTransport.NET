@@ -1,9 +1,8 @@
 namespace REDTransport.NET.Messages
 {
-    public static class ResponseActions
+    public static class RequestActions
     {
         public const string Normal = "normal";
-        public const string Yield = "yield";
         public const string Aggregated = "aggregation";
     }
 }
