@@ -2,37 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b6fb53d-de2c-4adf-a678-87b26080f187" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Http/CookieCollectionWrapper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/REDTransport.NET/Messages/RequestActions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Samples/REDTransport.NET.Sample0/Controllers/ValuesController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Samples/REDTransport.NET.Sample0/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Samples/REDTransport.NET.Sample0/Startup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/REDTransport.NET.Tests/Tests/00-BasicTests/KeyValuesCollectionTests.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/REDTransport.NET/AggregationErrorStrategy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.REDTransport.NET/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.REDTransport.NET/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.REDTransport.NET/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.REDTransport.NET/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Http/HeaderCollectionWrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Http/HeaderCollectionWrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Http/RequestCookieCollectionWrapper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/DefaultMessage2AspNetCoreHttpConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/DefaultMessage2AspNetCoreHttpConverter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/JsonMessageReaderWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/JsonMessageReaderWriter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedHttpRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedHttpRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedHttpResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedHttpResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Helpers/HttpHeaderExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Helpers/HttpHeaderExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/IMessageReaderWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/IMessageReaderWriter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/JsonMessageReaderWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/SystemTextJsonMessageReaderWriter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/MultipartMessageReaderWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/MultipartMessageReaderWriter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportHttpChannelRequestDispatcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportHttpChannelRequestDispatcher.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.RedHttpContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.RedHttpContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.ResponseFeature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.ResponseFeature.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddlewareConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddlewareConfiguration.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddlewareExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddlewareExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET.Tests/Server/TestServerFixture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.Tests/Server/TestServerFixture.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET.Tests/Tests/00-BasicTests/BasicTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.Tests/Tests/00-BasicTests/BasicTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET.sln" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/REDTransport.NET/Collections/KeyValuesCollection.Enumerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET/Collections/KeyValuesCollection.Enumerator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/REDTransport.NET/Collections/KeyValuesCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET/Collections/KeyValuesCollection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET/Http/DefaultMessage2NetHttpConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET/Http/DefaultMessage2NetHttpConverter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/REDTransport.NET/Http/HeaderCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET/Http/HeaderCollection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET/Http/HeaderCookieCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET/Http/HeaderCookieCollection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET/Http/HttpCookie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET/Http/HttpCookie.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET/Http/IRedTransportMessageConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET/Http/IRedTransportMessageConverter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET/Messages/RequestAggregationMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET/Messages/RequestAggregationMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET/Messages/RequestMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET/Messages/RequestMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET/Messages/ResponseActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET/Messages/ResponseActions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET/Messages/ResponseAggregationMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET/Messages/ResponseAggregationMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET/Messages/ResponseMessage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET/Messages/ResponseMessage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/REDTransport.NET/ProtocolConstants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/REDTransport.NET/ProtocolConstants.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,28 +30,52 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET/Collections/KeyValuesCollection.ValueCollection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET/Messages/RequestActions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC6BA39C-9214-489E-B47C-4DE1F4F2F8FE/a2/9de3f986/CancellationTokenSource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET/Collections/KeyValuesCollection.KeyCollection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DB2F35C2-301E-4FCB-893B-41512CEC93DF/a3/ed6ae33f/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Samples/REDTransport.NET.Sample0/Controllers/ValuesController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Samples/REDTransport.NET.Sample0/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Samples/REDTransport.NET.Sample0/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F4BAD1BC-FBCE-402E-8980-ED4A7609CCB0/fa/12894406/WriteStack.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET/Exceptions/RedTransportFlowControlException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET/Exceptions/RedTransportUnknownContentTypeException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC6BA39C-9214-489E-B47C-4DE1F4F2F8FE/bc/5aabe87b/IDictionaryEnumerator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET/Http/IRedTransportMessageConverter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET/Http/NetHttpHeadersExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Tests/Server/Controllers/TestController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET/Http/DefaultMessage2NetHttpConverter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Tests/Server/TestServerFixture.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Tests/Tests/00-BasicTests/BasicTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Tests/Server/DefaultStartup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Tests/Server/DefaultTestServer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F4BAD1BC-FBCE-402E-8980-ED4A7609CCB0/91/3d29fda9/JsonPropertyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F4BAD1BC-FBCE-402E-8980-ED4A7609CCB0/0e/20bcf070/JsonPropertyInfoNotNullable`4.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Tests/Utils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/945D1EF4-BA62-48BD-AD12-A83B9F82AB0C/ce/e219bd82/StreamWriter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Tests/Setup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Tests/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET/Messages/ResponseAggregationMessage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/863B81D8-9327-499B-9618-D9BE52F0AC42/9d/146d1156/FeatureCollection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET/Messages/ResponseMessage.cs" root0="FORCE_HIGHLIGHTING" />
@@ -80,8 +90,10 @@
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.RESTClient/HttpTransporterExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessScopeMode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/863B81D8-9327-499B-9618-D9BE52F0AC42/eb/e8cac35a/IRequestCookieCollection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RequestDispatcherStrategy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.RequestFeature.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.ResponseFeature.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportHttpChannelRequestDispatcher.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.cs" root0="FORCE_HIGHLIGHTING" />
@@ -90,14 +102,17 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F0E94C77-1034-4038-A253-68FFB4247542/35/561e3893/HttpResponseFeature.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/IMessageReaderWriter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/TaskInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/JsonMessageReaderWriter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/SystemTextJsonMessageReaderWriter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Helpers/REDTransportHelperExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DD7BBB1E-B6CB-4178-A82C-D5136B2606B8/28/34a7ea69/HttpResponse.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/DefaultMessage2AspNetCoreHttpConverter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Helpers/HttpHeaderExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportEndpointConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET/Tasks/InMemoryTaskTracker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/D6CF25BF-3684-4899-A5F6-EAA5E3E712AF/45/68c41b9b/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.RESTClient/HttpTransporter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET/Collections/AsyncEnumerableAdapter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddlewareExtensions.cs" root0="FORCE_HIGHLIGHTING" />
@@ -108,21 +123,33 @@
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.SignalR.Client/SignalRClient.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC6BA39C-9214-489E-B47C-4DE1F4F2F8FE/d8/f185df92/AsyncValueTaskMethodBuilder`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.SignalR.Server/SignalRHub.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B5ACB5B1-0989-4188-A0DB-4AF45D6D6AE6/51/b819da03/LoggerMessage.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/53EC7F0F-FC36-47D9-91F3-628EA1FD5744/76/f22c785c/ActionEndpointFactory.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1AF316D3-C55E-43C3-A074-E04E3FBC411E/28/0050ef3a/EndpointMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC6BA39C-9214-489E-B47C-4DE1F4F2F8FE/46/3b333155/Task.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET.Tests/Tests/00-BasicTests/KeyValuesCollectionTests.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F0E94C77-1034-4038-A253-68FFB4247542/03/a7afb1d3/DefaultHttpContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A26E0C80-BEC8-47A2-B7E5-7BD516D9F0B8/c1/1e9ef673/FeatureCollection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F4BAD1BC-FBCE-402E-8980-ED4A7609CCB0/17/f028647c/PooledByteBufferWriter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/637C182F-C65F-480F-AC0D-1A33039BB4C8/0e/642a9080/EndpointHttpContextExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F0E94C77-1034-4038-A253-68FFB4247542/c8/e5e17cdc/DefaultHttpResponse.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/863B81D8-9327-499B-9618-D9BE52F0AC42/64/fb86c529/IResponseCookies.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1AF316D3-C55E-43C3-A074-E04E3FBC411E/7e/36778dc9/EndpointRoutingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F4BAD1BC-FBCE-402E-8980-ED4A7609CCB0/28/d05c5562/Utf8JsonWriter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/637C182F-C65F-480F-AC0D-1A33039BB4C8/a4/870f8df8/HttpResponse.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F4BAD1BC-FBCE-402E-8980-ED4A7609CCB0/cc/f6cbe2b1/WriteStackFrame.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC6BA39C-9214-489E-B47C-4DE1F4F2F8FE/80/f37c25a8/ValueTask`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Http/CookieCollectionWrapper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F4BAD1BC-FBCE-402E-8980-ED4A7609CCB0/5b/bef87a55/JsonSerializer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET/Http/HeaderCookieCollection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.RedHttpContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET/Http/HeaderCollection.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET/Exceptions/RedTransportProtocolException.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedHttpRequest.cs" root0="FORCE_HIGHLIGHTING" />
@@ -131,37 +158,39 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/298B1E10-86F0-4686-9486-E3DC04D2ECEF/02/236b4aec/StringValues.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedHttpResponse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC6BA39C-9214-489E-B47C-4DE1F4F2F8FE/21/f99ef9cb/Environment.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/REDTransport.NET/AggregationErrorStrategy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET/Http/HttpHeaderType.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET/Http/HttpCookieSameSiteMode.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/24184B69-86D5-4ABE-9EFE-631495CD637A/20/25d1c651/FromBase64Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DD7BBB1E-B6CB-4178-A82C-D5136B2606B8/69/a2bfd2e2/HttpContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/53EC7F0F-FC36-47D9-91F3-628EA1FD5744/48/01636f24/ResourceInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F0E94C77-1034-4038-A253-68FFB4247542/28/2a5ec049/DefaultHttpRequest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F0E94C77-1034-4038-A253-68FFB4247542/d4/ccb018c3/DefaultAuthenticationManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F0E94C77-1034-4038-A253-68FFB4247542/2e/78402189/DefaultConnectionInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/863B81D8-9327-499B-9618-D9BE52F0AC42/b5/8b1b3c13/IFormFeature.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DD7BBB1E-B6CB-4178-A82C-D5136B2606B8/c7/7d554bcb/HttpRequest.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A26E0C80-BEC8-47A2-B7E5-7BD516D9F0B8/22/5e9cc108/IHttpResponseFeature.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/863B81D8-9327-499B-9618-D9BE52F0AC42/ea/82cd786e/IHttpBodyControlFeature.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/863B81D8-9327-499B-9618-D9BE52F0AC42/2e/99a9c6d4/IHttpResponseTrailersFeature.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/32C7DA0B-DE3E-4433-B1FA-3A6000248638/41/7f6ed53c/ServiceProviderServiceExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/A26E0C80-BEC8-47A2-B7E5-7BD516D9F0B8/a8/09e5bf0b/FeatureReferences`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0AD8718A-C003-42EC-B7F8-12F312751E2D/35/39f6ea8a/DefaultHttpContext.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Http/HeaderCollectionWrapper.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/REDTransport.NET/Tasks/InMemoryTaskTracker.cs" />
-        <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddlewareConfiguration.cs" />
-        <option value="$PROJECT_DIR$/REDTransport.NET.Tests/Server/DefaultStartup.cs" />
-        <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportHttpChannelRequestDispatcher.cs" />
-        <option value="$PROJECT_DIR$/REDTransport.NET/Collections/KeyValuesCollection.KeyCollection.cs" />
-        <option value="$PROJECT_DIR$/REDTransport.NET/Collections/KeyValuesCollection.ValueCollection.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET.SignalR.Client/SignalRClient.cs" />
-        <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/MultipartMessageReaderWriter.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.RequestFeature.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET.RESTClient/HttpTransporter.cs" />
-        <option value="$PROJECT_DIR$/REDTransport.NET/Collections/KeyValuesCollection.Enumerator.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.HttpContext.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET/Http/CookieCollection.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET/Http/HttpHeaderType.cs" />
@@ -169,20 +198,14 @@
         <option value="$PROJECT_DIR$/REDTransport.NET/Http/HttpCookieSameSiteMode.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Http/RequestCookieCollectionWrapper.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET.RESTClient/HttpTransporterExtensions.cs" />
-        <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Helpers/HttpHeaderExtensions.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.RedHttpResponse.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.RedHttpRequest.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET/Http/HttpCookie.cs" />
-        <option value="$PROJECT_DIR$/REDTransport.NET/Http/HeaderCookieCollection.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Http/CookieCollectionWrapper.cs" />
-        <option value="$PROJECT_DIR$/REDTransport.NET/Http/HeaderCollection.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedHttpRequest.cs" />
-        <option value="$PROJECT_DIR$/REDTransport.NET/Collections/KeyValuesCollection.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Http/HeaderCollectionWrapper.cs" />
         <option value="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1AF316D3-C55E-43C3-A074-E04E3FBC411E/7e/36778dc9/EndpointRoutingMiddleware.cs" />
-        <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.RedHttpContext.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddlewareExtensions.cs" />
-        <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.ResponseFeature.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedHttpResponse.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET/Messages/ResponseMessage.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET.Tests/Server/TestServerFixture.cs" />
@@ -195,13 +218,27 @@
         <option value="$PROJECT_DIR$/REDTransport.NET/Http/IRedTransportMessageConverter.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET/ProtocolConstants.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET/Messages/RequestActions.cs" />
-        <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET/Messages/ResponseAggregationMessage.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET/Messages/ResponseActions.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/DefaultMessage2AspNetCoreHttpConverter.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET/Messages/RequestMessage.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET/Messages/RequestAggregationMessage.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET/ErrorStrategy.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET/AggregationErrorStrategy.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/RedTransportMiddlewareConfiguration.cs" />
         <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/JsonMessageReaderWriter.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET/Http/HeaderCookieCollection.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET/Http/HeaderCollection.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET/Collections/KeyValuesCollection.Enumerator.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET.Tests/Tests/00-BasicTests/KeyValuesCollectionTests.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Helpers/HttpHeaderExtensions.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET/Collections/KeyValuesCollection.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/IMessageReaderWriter.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/MultipartMessageReaderWriter.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.ResponseFeature.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.RedHttpContext.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Pipeline/RedTransportInProcessRequestDispatcher.cs" />
+        <option value="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/SystemTextJsonMessageReaderWriter.cs" />
       </list>
     </option>
   </component>
@@ -217,7 +254,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="CodeLensConfigurable" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -275,7 +312,11 @@
       <workItem from="1566473701109" duration="2923000" />
       <workItem from="1566481165492" duration="34301000" />
       <workItem from="1566553774016" duration="15125000" />
-      <workItem from="1566707281820" duration="27519000" />
+      <workItem from="1566707281820" duration="28164000" />
+      <workItem from="1566791390299" duration="1889000" />
+      <workItem from="1566812848512" duration="604000" />
+      <workItem from="1566817628128" duration="813000" />
+      <workItem from="1566878401201" duration="13995000" />
     </task>
     <servers />
   </component>
@@ -308,52 +349,56 @@
     <state width="869" height="533" key="DebuggerActiveHint/1920.1080" />
     <state x="549" y="167" key="FileChooserDialogImpl" />
     <state x="549" y="167" key="FileChooserDialogImpl/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.0.bottom" />
-    <state width="1493" height="130" key="GridCell.Tab.0.bottom/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.0.center" />
-    <state width="1493" height="130" key="GridCell.Tab.0.center/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.0.left" />
-    <state width="1493" height="130" key="GridCell.Tab.0.left/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.0.right" />
-    <state width="1493" height="130" key="GridCell.Tab.0.right/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.1.bottom" />
-    <state width="1493" height="130" key="GridCell.Tab.1.bottom/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.1.center" />
-    <state width="1493" height="130" key="GridCell.Tab.1.center/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.1.left" />
-    <state width="1493" height="130" key="GridCell.Tab.1.left/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.1.right" />
-    <state width="1493" height="130" key="GridCell.Tab.1.right/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.2.bottom" />
-    <state width="1493" height="130" key="GridCell.Tab.2.bottom/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.2.center" />
-    <state width="1493" height="130" key="GridCell.Tab.2.center/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.2.left" />
-    <state width="1493" height="130" key="GridCell.Tab.2.left/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.2.right" />
-    <state width="1493" height="130" key="GridCell.Tab.2.right/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.3.bottom" />
-    <state width="1493" height="130" key="GridCell.Tab.3.bottom/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.3.center" />
-    <state width="1493" height="130" key="GridCell.Tab.3.center/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.3.left" />
-    <state width="1493" height="130" key="GridCell.Tab.3.left/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.3.right" />
-    <state width="1493" height="130" key="GridCell.Tab.3.right/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.4.bottom" />
-    <state width="1493" height="130" key="GridCell.Tab.4.bottom/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.4.center" />
-    <state width="1493" height="130" key="GridCell.Tab.4.center/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.4.left" />
-    <state width="1493" height="130" key="GridCell.Tab.4.left/1920.1080" />
-    <state width="1493" height="130" key="GridCell.Tab.4.right" />
-    <state width="1493" height="130" key="GridCell.Tab.4.right/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.0.bottom" />
+    <state width="1493" height="306" key="GridCell.Tab.0.bottom/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.0.center" />
+    <state width="1493" height="306" key="GridCell.Tab.0.center/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.0.left" />
+    <state width="1493" height="306" key="GridCell.Tab.0.left/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.0.right" />
+    <state width="1493" height="306" key="GridCell.Tab.0.right/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.1.bottom" />
+    <state width="1493" height="306" key="GridCell.Tab.1.bottom/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.1.center" />
+    <state width="1493" height="306" key="GridCell.Tab.1.center/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.1.left" />
+    <state width="1493" height="306" key="GridCell.Tab.1.left/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.1.right" />
+    <state width="1493" height="306" key="GridCell.Tab.1.right/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.2.bottom" />
+    <state width="1493" height="306" key="GridCell.Tab.2.bottom/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.2.center" />
+    <state width="1493" height="306" key="GridCell.Tab.2.center/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.2.left" />
+    <state width="1493" height="306" key="GridCell.Tab.2.left/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.2.right" />
+    <state width="1493" height="306" key="GridCell.Tab.2.right/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.3.bottom" />
+    <state width="1493" height="306" key="GridCell.Tab.3.bottom/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.3.center" />
+    <state width="1493" height="306" key="GridCell.Tab.3.center/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.3.left" />
+    <state width="1493" height="306" key="GridCell.Tab.3.left/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.3.right" />
+    <state width="1493" height="306" key="GridCell.Tab.3.right/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.4.bottom" />
+    <state width="1493" height="306" key="GridCell.Tab.4.bottom/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.4.center" />
+    <state width="1493" height="306" key="GridCell.Tab.4.center/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.4.left" />
+    <state width="1493" height="306" key="GridCell.Tab.4.left/1920.1080" />
+    <state width="1493" height="306" key="GridCell.Tab.4.right" />
+    <state width="1493" height="306" key="GridCell.Tab.4.right/1920.1080" />
     <state x="256" y="169" key="Rider.ProjectTemplateDialog.Size" />
     <state x="256" y="169" key="Rider.ProjectTemplateDialog.Size/1920.1080" />
     <state x="591" y="87" key="RiderGenerateDialog" />
     <state x="591" y="87" key="RiderGenerateDialog/1920.1080" />
+    <state x="261" y="54" key="SettingsEditor" />
+    <state x="261" y="54" key="SettingsEditor/1920.1080" />
     <state width="776" height="420" key="XDebugger.FullValuePopup" />
     <state width="776" height="420" key="XDebugger.FullValuePopup/1920.1080" />
+    <state x="287" y="141" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" />
+    <state x="287" y="141" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/1920.1080" />
     <state x="393" y="82" width="749" height="660" key="find.popup" />
     <state x="393" y="82" width="749" height="660" key="find.popup/1920.1080" />
     <state x="431" y="145" width="672" height="679" key="search.everywhere.popup" />
@@ -458,30 +503,82 @@
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/JsonMessageReaderWriter.cs</url>
-          <line>62</line>
-          <properties documentPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/JsonMessageReaderWriter.cs" initialLine="54">
-            <startOffsets>
-              <option value="1949" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1978" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/JsonMessageReaderWriter.cs</url>
+          <url>file://$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/SystemTextJsonMessageReaderWriter.cs</url>
           <line>59</line>
           <properties documentPath="$PROJECT_DIR$/REDTransport.NET.Server.AspNet/Message/JsonMessageReaderWriter.cs" initialLine="59">
             <startOffsets>
-              <option value="1896" />
+              <option value="2779" />
             </startOffsets>
             <endOffsets>
-              <option value="1913" />
+              <option value="2796" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="99" />
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F4BAD1BC-FBCE-402E-8980-ED4A7609CCB0/5b/bef87a55/JsonSerializer.cs</url>
+          <line>1057</line>
+          <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F4BAD1BC-FBCE-402E-8980-ED4A7609CCB0/5b/bef87a55/JsonSerializer.cs" initialLine="1057">
+            <startOffsets>
+              <option value="41337" />
+            </startOffsets>
+            <endOffsets>
+              <option value="41404" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="120" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F4BAD1BC-FBCE-402E-8980-ED4A7609CCB0/5b/bef87a55/JsonSerializer.cs</url>
+          <line>1060</line>
+          <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F4BAD1BC-FBCE-402E-8980-ED4A7609CCB0/5b/bef87a55/JsonSerializer.cs" initialLine="1060">
+            <startOffsets>
+              <option value="41494" />
+            </startOffsets>
+            <endOffsets>
+              <option value="41555" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F4BAD1BC-FBCE-402E-8980-ED4A7609CCB0/91/3d29fda9/JsonPropertyInfo.cs</url>
+          <line>415</line>
+          <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F4BAD1BC-FBCE-402E-8980-ED4A7609CCB0/91/3d29fda9/JsonPropertyInfo.cs" initialLine="415">
+            <startOffsets>
+              <option value="16695" />
+            </startOffsets>
+            <endOffsets>
+              <option value="16734" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/REDTransport.NET/Collections/KeyValuesCollection.Enumerator.cs</url>
+          <line>103</line>
+          <properties documentPath="$PROJECT_DIR$/REDTransport.NET/Collections/KeyValuesCollection.Enumerator.cs" initialLine="97">
+            <startOffsets>
+              <option value="3210" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3231" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F4BAD1BC-FBCE-402E-8980-ED4A7609CCB0/0e/20bcf070/JsonPropertyInfoNotNullable`4.cs</url>
+          <line>81</line>
+          <properties documentPath="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F4BAD1BC-FBCE-402E-8980-ED4A7609CCB0/0e/20bcf070/JsonPropertyInfoNotNullable`4.cs" initialLine="81">
+            <startOffsets>
+              <option value="3636" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3739" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="127" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -490,6 +587,7 @@
         <RevealItemInfo typeName="Microsoft.AspNetCore.Http.Features.FeatureReferences`1[Microsoft.AspNetCore.Http.DefaultHttpContext+FeatureInterfaces]" fieldName="Collection" />
         <RevealItemInfo typeName="REDTransport.NET.Messages.RequestMessage" fieldName="Body" />
         <RevealItemInfo typeName="System.Collections.Generic.KeyValuePair`2[System.Type,System.Object]" fieldName="Value" />
+        <RevealItemInfo typeName="System.IO.MemoryStream" fieldName="_buffer" />
         <RevealItemInfo typeName="Microsoft.AspNetCore.Http.DefaultHttpContext" fieldName="Response" />
       </revealed-members>
     </reveal-manager>

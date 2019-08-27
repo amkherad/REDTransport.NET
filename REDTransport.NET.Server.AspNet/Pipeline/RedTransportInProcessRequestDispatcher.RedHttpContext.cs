@@ -58,14 +58,12 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
             private FeatureReferences<FeatureInterfaces> _features;
 
 
-            public RedHttpContext(FeatureCollection features, RequestMessage requestMessage)
+            public RedHttpContext(FeatureCollection features, RequestMessage requestMessage, ResponseMessage responseMessage)
             {
                 Features = features;
                 RequestMessage = requestMessage;
 
                 this._features = new FeatureReferences<FeatureInterfaces>(features);
-
-                var responseMessage = new ResponseMessage();
 
                 Request = new RedHttpRequest(this, requestMessage);
                 Response = new RedHttpResponse(this, responseMessage);

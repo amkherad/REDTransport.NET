@@ -50,7 +50,7 @@ namespace REDTransport.NET.Server.AspNet
                     DefaultMessage2NetHttpConverter>();
 
             services.AddSingleton<MultipartMessageReaderWriter>();
-            services.AddSingleton<JsonMessageReaderWriter>();
+            services.AddSingleton<SystemTextJsonMessageReaderWriter>();
 
             //services.AddTransient<IRedTransportRequestDispatcher, RedTransportRequestDispatcher>();
         }

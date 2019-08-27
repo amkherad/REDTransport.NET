@@ -24,7 +24,7 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
 
         public MultipartMessageReaderWriter MultipartMessageReaderWriter { get; }
 
-        public JsonMessageReaderWriter JsonMessageReaderWriter { get; }
+        public SystemTextJsonMessageReaderWriter JsonMessageReaderWriter { get; }
 
 
         public RedTransportInProcessRequestDispatcher(
@@ -32,7 +32,7 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
             RedTransportMiddlewareConfiguration configuration,
             IRedTransportMessageConverter<HttpRequest, HttpResponse> messageConverter,
             MultipartMessageReaderWriter multipartMessageReaderWriter,
-            JsonMessageReaderWriter jsonMessageReaderWriter
+            SystemTextJsonMessageReaderWriter jsonMessageReaderWriter
         )
         {
             //Application = application;
@@ -53,8 +53,6 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
         {
             var contentType = message.Headers.ContentType;
 
-            GC.KeepAlive(context.Features);
-
             IMessageReaderWriter readerWriter;
             if (contentType != null && contentType.StartsWith("multipart/"))
             {
@@ -66,6 +64,7 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
             }
 
 
+            var response = context.Response;
             var responseStream = context.Response.Body;
 
             if (message is RequestAggregationMessage aggregationMessage)
@@ -75,14 +74,21 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
                     request => ProgressPipeline(context, next, request, cancellationToken)
                 );
 
+                var responseContentType = readerWriter.GetResponseContentTypeFromRequestContentType(contentType);
+                
+                var headers = response.Headers;
+                headers.Add("Content-Type", responseContentType);
+
                 await readerWriter.WriteResponseMessageToStream(responseStream, requestToResponseAdapter,
                     cancellationToken);
             }
             else
             {
-                var response = await ProgressPipeline(context, next, message, cancellationToken);
+                var pipelineResponse = await ProgressPipeline(context, next, message, cancellationToken);
 
-                await readerWriter.WriteResponseMessageToStream(responseStream, response, cancellationToken);
+                await readerWriter.WriteResponseMessageToStream(responseStream, pipelineResponse, cancellationToken);
+
+                await MessageConverter.CopyResponseMessageToTarget(response, pipelineResponse, cancellationToken);
             }
         }
 
@@ -94,8 +100,10 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
             CancellationToken cancellationToken
         )
         {
+            var responseMessage = new ResponseMessage();
+            
             var requestFeature = new RequestFeature(requestMessage);
-            var responseFeature = new ResponseFeature();
+            var responseFeature = new ResponseFeature(responseMessage);
 
             var requestLifetimeFeature = new HttpRequestLifetimeFeature
             {
@@ -122,7 +130,7 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
             features.Set<IHttpBodyControlFeature>(httpBodyControlFeature);
 //            features.Set<IHttpBodyControlFeature>(httpBodyControlFeature);
 
-            var ctx = new RedHttpContext(features, requestMessage);
+            var ctx = new RedHttpContext(features, requestMessage, responseMessage);
 
             IServiceProvider serviceProvider;
 
@@ -153,7 +161,7 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
 
             await next(ctx);
 
-            return await MessageConverter.FromResponseAsync(ctx.Response, cancellationToken);
+            return responseMessage; //await MessageConverter.FromResponseAsync(ctx.Response, cancellationToken);
         }
 
 

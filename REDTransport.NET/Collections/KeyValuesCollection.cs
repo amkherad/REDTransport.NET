@@ -12,12 +12,14 @@ namespace REDTransport.NET.Collections
     /// <typeparam name="TKey"></typeparam>
     /// <typeparam name="TValue"></typeparam>
     [DebuggerDisplay("KeyCount={KeyCount}, EntryCount={Count}")]
-    public partial class KeyValuesCollection<TKey, TValue> : ICollection<KeyValuePair<TKey, TValue>>,
+    public partial class KeyValuesCollection<TKey, TValue> :
+        ICollection<KeyValuePair<TKey, TValue>>,
         IEnumerable<KeyValuePair<TKey, TValue>>,
-        IDictionary<TKey, TValue>, IDictionary<TKey, IEnumerable<TValue>>
+        IDictionary<TKey, TValue>,
+        IDictionary<TKey, IEnumerable<TValue>>
     {
-        private Dictionary<TKey, Entry> _entries;
-        private List<TKey> _orderedKeys;
+        private readonly Dictionary<TKey, Entry> _entries;
+        private readonly List<TKey> _orderedKeys;
         private readonly IEqualityComparer<TKey> _keyComparer;
         private readonly IEqualityComparer<TValue> _valueComparer;
         private KeyCollection _keyCollection;
@@ -791,7 +793,7 @@ namespace REDTransport.NET.Collections
 
         public virtual void CopyTo(Array array, int index) => ((ICollection) _entries).CopyTo(array, index);
 
-        public void CopyTo(KeyValuePair<TKey, IEnumerable<TValue>>[] array, int arrayIndex)
+        public virtual void CopyTo(KeyValuePair<TKey, IEnumerable<TValue>>[] array, int arrayIndex)
         {
             for (var i = arrayIndex; i < _entries.Count; i++)
             {
@@ -800,7 +802,7 @@ namespace REDTransport.NET.Collections
             }
         }
 
-        public void CopyTo(KeyValuePair<TKey, TValue>[] array, int arrayIndex)
+        public virtual void CopyTo(KeyValuePair<TKey, TValue>[] array, int arrayIndex)
         {
             for (var i = arrayIndex; i < _entries.Count; i++)
             {
@@ -809,8 +811,31 @@ namespace REDTransport.NET.Collections
             }
         }
 
+        public virtual bool Any
+        {
+            get
+            {
+                if (_entries.Count == 0) return false;
+
+                return _entries.Any(e => e.Value.Count > 0);
+            }
+        }
+
         public virtual int KeyCount => _entries.Count;
-        public virtual int Count => _entries.Sum(e => e.Value.Count);
+
+        public virtual int Count
+        {
+            get
+            {
+                if (_entries.Count == 0)
+                {
+                    return 0;
+                }
+
+                return _entries.Sum(e => e.Value.Count);
+            }
+        }
+
         public bool IsReadOnly { get; }
 
         public virtual bool IsSynchronized => ((ICollection) _entries).IsSynchronized;

@@ -8,6 +8,8 @@ namespace REDTransport.NET.Server.AspNet.Message
 {
     public interface IMessageReaderWriter
     {
+        string GetResponseContentTypeFromRequestContentType(string requestContentType);
+        
         Task WriteResponseMessageToStream(
             Stream stream,
             ResponseMessage message,

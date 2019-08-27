@@ -17,7 +17,6 @@ namespace REDTransport.NET.Server.AspNet
 
         public RequestDispatcherStrategy RequestDispatcherStrategy { get; set; }
 
-
         public RedTransportInProcessScopeMode InProcessScopeMode { get; set; }
 
 

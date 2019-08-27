@@ -9,6 +9,26 @@ namespace REDTransport.NET.Server.AspNet.Message
 {
     public class MultipartMessageReaderWriter : IMessageReaderWriter
     {
+        
+        public string GetResponseContentTypeFromRequestContentType(string requestContentType)
+        {
+            if (requestContentType == null) throw new ArgumentNullException(nameof(requestContentType));
+            
+            requestContentType = requestContentType.ToLower();
+
+            if (requestContentType == "application/json")
+            {
+                return "application/json";
+            }
+
+            if (requestContentType == "text/json")
+            {
+                return "text/json";
+            }
+
+            throw new InvalidOperationException();
+        }
+        
         public async Task WriteResponseMessageToStream(
             Stream stream,
             ResponseMessage message,

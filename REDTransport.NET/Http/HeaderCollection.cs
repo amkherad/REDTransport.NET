@@ -279,8 +279,8 @@ namespace REDTransport.NET.Http
         
         public IEnumerable<string> CookieStrings
         {
-            get => this[_cookieHeaderName];
-            set => this[_cookieHeaderName] = value;
+            get => Get(_cookieHeaderName);
+            set => Set(_cookieHeaderName, value);
         }
 
         public HeaderCookieCollection Cookies => _cookies;

@@ -6,13 +6,17 @@ namespace REDTransport.NET.Collections
 {
     public partial class KeyValuesCollection<TKey, TValue>
     {
-        protected class Enumerator : IEnumerator<KeyValuePair<TKey, TValue>>
+        protected class Enumerator : IEnumerator<KeyValuePair<TKey, TValue>>, IDictionaryEnumerator
         {
             private readonly KeyValuesCollection<TKey, TValue> _parent;
 
             private int _entriesCount;
             private int _currentIndex;
             private int _currentSubIndex;
+
+            private Entry _currentEntry;
+
+            private TValue _current;
             //private TKey _currentKey;
 
 
@@ -23,6 +27,8 @@ namespace REDTransport.NET.Collections
                 _entriesCount = _parent._entries.Count;
                 _currentIndex = 0;
                 _currentSubIndex = -1;
+                _currentEntry = null;
+                _current = default;
             }
 
             public void Dispose()
@@ -31,6 +37,8 @@ namespace REDTransport.NET.Collections
                 _entriesCount = _parent._entries.Count;
                 _currentIndex = 0;
                 _currentSubIndex = -1;
+                _currentEntry = null;
+                _current = default;
             }
 
             public bool MoveNext()
@@ -39,7 +47,7 @@ namespace REDTransport.NET.Collections
                 {
                     throw new System.Exception("A key was added to collection while enumerating.");
                 }
-                
+
                 if (_parent._entries.Count == 0 || _parent._entries.Count <= _currentIndex)
                 {
                     return false;
@@ -57,7 +65,13 @@ namespace REDTransport.NET.Collections
                     {
                         return false;
                     }
+                    
+                    col = _parent.GetEntryByIndex(_currentIndex);
+                    count = col.Count;
                 }
+
+                _currentEntry = col;
+                _current = col[_currentSubIndex];
 
                 return true;
             }
@@ -67,23 +81,27 @@ namespace REDTransport.NET.Collections
                 _entriesCount = _parent._entries.Count;
                 _currentIndex = 0;
                 _currentSubIndex = -1;
+                _currentEntry = null;
+                _current = default;
             }
 
-            object IEnumerator.Current
+            object IEnumerator.Current =>
+                new KeyValuePair<TKey, TValue>(_currentEntry.Key, _current);
+
+            public KeyValuePair<TKey, TValue> Current =>
+                new KeyValuePair<TKey, TValue>(_currentEntry.Key, _current);
+
+            public DictionaryEntry Entry => new DictionaryEntry(_currentEntry.Key, _current);
+
+            public object Key => _currentEntry.Key;
+
+            public object Value
             {
                 get
                 {
-                    var entry = _parent.GetEntryByIndex(_currentIndex);
-                    return new KeyValuePair<TKey, TValue>(entry.Key, entry[_currentSubIndex]);
-                }
-            }
+                    var val = _current;
 
-            public KeyValuePair<TKey, TValue> Current
-            {
-                get
-                {
-                    var entry = _parent.GetEntryByIndex(_currentIndex);
-                    return new KeyValuePair<TKey, TValue>(entry.Key, entry[_currentSubIndex]);
+                    return val as string;
                 }
             }
         }

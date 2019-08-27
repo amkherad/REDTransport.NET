@@ -21,14 +21,14 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
 
         public MultipartMessageReaderWriter MultipartMessageReaderWriter { get; }
 
-        public JsonMessageReaderWriter JsonMessageReaderWriter { get; }
+        public SystemTextJsonMessageReaderWriter JsonMessageReaderWriter { get; }
 
 
         public RedTransportHttpChannelRequestDispatcher(
             RedTransportMiddlewareConfiguration config,
             IRedTransportMessageConverter<HttpRequestMessage, HttpResponseMessage> messageConverter,
             MultipartMessageReaderWriter multipartMessageReaderWriter,
-            JsonMessageReaderWriter jsonMessageReaderWriter
+            SystemTextJsonMessageReaderWriter jsonMessageReaderWriter
         )
         {
             Configuration = config ?? throw new ArgumentNullException(nameof(config));
@@ -44,7 +44,7 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
             RedTransportMiddlewareConfiguration config,
             HttpClient httpClient,
             IRedTransportMessageConverter<HttpRequestMessage, HttpResponseMessage> messageConverter,
-            MultipartMessageReaderWriter multipartMessageReaderWriter, JsonMessageReaderWriter jsonMessageReaderWriter)
+            MultipartMessageReaderWriter multipartMessageReaderWriter, SystemTextJsonMessageReaderWriter jsonMessageReaderWriter)
         {
             Configuration = config ?? throw new ArgumentNullException(nameof(config));
             HttpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
