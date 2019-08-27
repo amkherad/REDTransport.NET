@@ -65,6 +65,7 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
 
                 this._features = new FeatureReferences<FeatureInterfaces>(features);
 
+                //DefaultHttpResponse
                 Request = new RedHttpRequest(this, requestMessage);
                 Response = new RedHttpResponse(this, responseMessage);
             }

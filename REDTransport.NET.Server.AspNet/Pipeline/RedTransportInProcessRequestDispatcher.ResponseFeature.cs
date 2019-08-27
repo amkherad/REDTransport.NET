@@ -50,20 +50,20 @@ namespace REDTransport.NET.Server.AspNet.Pipeline
 
             public bool HasStarted
             {
-                get;
-                set;
+                get => true;
+                set => value = value;
             }
             
             
             
             public void OnStarting(Func<object, Task> callback, object state)
             {
-                HasStarted = true;
+                
             }
 
             public void OnCompleted(Func<object, Task> callback, object state)
             {
-                HasStarted = true;
+                
             }
         }
     }

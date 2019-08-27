@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http.Internal;
 using REDTransport.NET.Http;
 using REDTransport.NET.Messages;
 
@@ -120,17 +121,36 @@ namespace REDTransport.NET.Server.AspNet.Message
 
             if (message.Body != null)
             {
-                await writer.WriteAsync(",\"Body\":\"\"");
+                message.Body.Position = 0;
                 
-//                using (var stream1 = new MemoryStream())
-//                using (var reader = new StreamReader(message.Body))
-//                {
-//                    var input = await reader.ReadToEndAsync();
-//                    await JsonSerializer.SerializeAsync(stream1, input, JsonSerializerOptions, cancellationToken);
-//                    await stream1.CopyToAsync(stream, cancellationToken);
-//                }
+                await writer.WriteAsync(",\"Body\":");
+                
+                await writer.FlushAsync();
+                using (var stream1 = new MemoryStream())
+                using (var reader = new StreamReader(message.Body))
+                {
+                    if (message.Headers != null)
+                    {
+                        var contentType = message.Headers.ContentType;
+                        if (contentType == "application/json" || contentType == "text/json")
+                        {
+                            var input = await reader.ReadToEndAsync();
+                            await writer.WriteAsync(input);
+                        }
+                    }
+                    else
+                    {
+                        
+                    }
 
-                await message.Body.CopyToAsync(stream);
+                    //await JsonSerializer.SerializeAsync(stream, input, JsonSerializerOptions, cancellationToken);
+                    //await stream1.CopyToAsync(stream, cancellationToken);
+                }
+
+                
+
+//
+//                await message.Body.CopyToAsync(stream);
 
                 //writer.Write(',');
             }

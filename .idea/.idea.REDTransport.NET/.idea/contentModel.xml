@@ -121,6 +121,7 @@
           <e p="RedTransportInProcessRequestDispatcher.cs" t="Include" />
           <e p="RedTransportInProcessRequestDispatcher.RedHttpContext.cs" t="Include" />
           <e p="RedTransportInProcessRequestDispatcher.RequestFeature.cs" t="Include" />
+          <e p="RedTransportInProcessRequestDispatcher.ResponseBodyFeature.cs" t="Include" />
           <e p="RedTransportInProcessRequestDispatcher.ResponseFeature.cs" t="Include" />
           <e p="RedTransportInProcessScopeMode.cs" t="Include" />
           <e p="RequestDispatcherStrategy.cs" t="Include" />
